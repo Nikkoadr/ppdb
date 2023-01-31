@@ -33,9 +33,6 @@
               <div class="card-header">
                 <h3 class="card-title">Data Peserta Didik Baru</h3>
               </div>
-              <div>
-                <button type="button" class="btn btn-primary" style="float: right; margin: 15px;" data-toggle="modal" data-target="#tambah" control-id="ControlID-3"> <i class="fas fa-plus"></i> Tambah</button>
-              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="table_ppdb" class="table table-bordered table-striped">
@@ -74,9 +71,8 @@
                     <td>{{ $data -> referensi }}</td>
                     <td style="text-align: center">
                         <div style="display: inline;">
-                            <button style="margin-right: 2px" class="btn btn-info" data-toggle="modal" data-target="#edit-{{ $data->id }}"><i class="far fa-edit"></i></button>
-                            <a href="hapus_peserta_didik_baru/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
-                        </div>
+                          <a href="hapus_peserta_didik_baru/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
+                          </div>
                     </td>
                   </tr>
                   @endforeach

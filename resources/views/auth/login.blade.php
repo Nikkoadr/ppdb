@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/logo.png') }}" alt="formulir PPDB" width="70"></p>
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

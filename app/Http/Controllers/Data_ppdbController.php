@@ -28,4 +28,24 @@ class Data_ppdbController extends Controller
         $data_ppdb = User::all();
         return view('data_ppdb', compact(['data_ppdb']), ["judul" => "Data PPDB"]);
     }
+
+    public function update($id, Request $request)
+    {
+        $user = User::find($id);
+        $data_valid = $request->validate([
+            'nisn'          => ['required', 'string', 'max:20'],
+            'nama'          => ['required', 'string', 'max:255'],
+            'sex'           => ['required', 'string', 'max:255'],
+            'tempat_lahir'  => ['required', 'string', 'max:255'],
+            'tanggal_lahir' => ['required', 'string', 'max:255'],
+            'asal_sekolah'  => ['required', 'string', 'max:255'],
+            'no_siswa'      => ['required', 'string', 'max:255'],
+            'no_wali'       => ['required', 'string', 'max:255'],
+            'alamat'        => ['required', 'string', 'max:255'],
+            'keahlian'      => ['required', 'string', 'max:255'],
+            'referensi'     => ['string', 'max:255'],
+        ]);
+        $user->update($data_valid);
+        return redirect('profil')->with('success', 'Data berhasil diedit');
+    }
 }
