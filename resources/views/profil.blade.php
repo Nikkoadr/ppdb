@@ -50,7 +50,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-envelope-open-text mr-1"></i> Email</strong>
+                <strong><i class="fas fa-envelope-open-text mr-1"></i>Email</strong>
 
                 <p class="text-muted">
                   {{ Auth::user()->email }}
@@ -58,7 +58,7 @@
 
                 <hr>
 
-                <strong><i class="fas fa-phone mr-1"></i> Nomor HP</strong>
+                <strong><i class="fas fa-phone mr-1"></i>Nomor HP</strong>
 
                 <p class="text-muted">
                   <span class="tag tag-danger">Siswa: {{ Auth::user()->no_siswa }}</span><br>
@@ -81,7 +81,7 @@
 
                 <strong><i class="fa-solid fa-cake-candles mr-1"></i> Tempat dan Tanggal Lahir</strong>
 
-                <p class="text-muted">{{ Auth::user()->tempat_lahir }},{{ Auth::user()->tanggal_lahir }}</p>
+                <p class="text-muted">{{ Auth::user()->tempat_lahir }}, {{ Auth::user()->tanggal_lahir }}</p>
 
                 <hr>
                 
@@ -127,13 +127,16 @@
                       <div class="form-group row">
                         <label for="inputName2" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" value="{{ Auth::user()->sex }}">
+                          <select type="text" class="form-control" ame="" id="">
+                            <option value="Laki - Laki">Laki - Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                          </select>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                         <div class="col-sm-10">
-                          <textarea class="form-control" id="alamat" placeholder="{{ Auth::user()->alamat }}" ></textarea>
+                        <input type="text" class="form-control" id="inputSkills" value="{{ Auth::user()->alamat }}">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -142,7 +145,7 @@
                           <input type="text" class="form-control" id="inputSkills" value="{{ Auth::user()->tempat_lahir }}">
                         </div>
                         <div class="col-sm-5">
-                        <input type="text" class="form-control" id="inputSkills" value="{{ Auth::user()->tanggal_lahir }}">
+                        <input type="date" class="form-control" id="inputSkills" value="{{ Auth::user()->tanggal_lahir }}">
                         </div>
                       </div>
                       <div class="form-group row">

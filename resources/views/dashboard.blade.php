@@ -7,7 +7,7 @@
 
 @section('preloader')
 <div class="preloader flex-column justify-content-center align-items-center">
-  <img class="animation__shake" src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
+  <img class="animation__shake" src="{{ asset('assets/img/logo.png') }}" alt="AdminLTELogo" height="80" width="60">
 </div>
 @endsection
 
@@ -46,12 +46,12 @@
                 <p>Jumlah Siswa Baru</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-stalker"></i>
+                <i class="ion ion-person-add"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
+          {{-- <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
@@ -76,7 +76,7 @@
                 <p>User Registrations</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-person-stalker"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -96,7 +96,7 @@
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
+          <!-- ./col --> --}}
         </div>
 </div>
 
