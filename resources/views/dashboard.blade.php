@@ -41,14 +41,14 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>2000</h3>
+                <h3>{{ $data_ppdb }}</h3>
 
-                <p>Jumlah siswa</p>
+                <p>Jumlah Siswa Baru</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-stalker"></i>
               </div>
-              <a href="#" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

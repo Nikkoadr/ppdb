@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -23,6 +24,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard', ["judul" => "Dashboard"]);
+        $data_ppdb = User::count();
+        return view('dashboard', compact(['data_ppdb']), ["judul" => "Dashboard"]);
+    }
+    public function profil()
+    {
+        return view('profil', ["judul" => "Profil"]);
     }
 }
