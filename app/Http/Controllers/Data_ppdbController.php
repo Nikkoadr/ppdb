@@ -34,7 +34,7 @@ class Data_ppdbController extends Controller
     {
         $user = User::find($id);
         $data_valid = $request->validate([
-            'nisn'          => ['required', 'string', 'max:20'],
+            'nisn'          => ['required', 'string', 'max:10'],
             'nama'          => ['required', 'string', 'max:50'],
             'sex'           => ['required', 'string', 'max:12'],
             'tempat_lahir'  => ['required', 'string', 'max:50'],
@@ -43,8 +43,8 @@ class Data_ppdbController extends Controller
             'no_siswa'      => ['required', 'string', 'max:15'],
             'no_wali'       => ['required', 'string', 'max:15'],
             'blok'          => ['required', 'string', 'max:100'],
-            'rt'            => ['required', 'string', 'max:3'],
-            'rw'            => ['required', 'string', 'max:3'],
+            'rt'            => ['required', 'integer', 'max:3'],
+            'rw'            => ['required', 'integer', 'max:3'],
             'desa'          => ['required', 'string', 'max:50'],
             'kecamatan'     => ['required', 'string', 'max:50'],
             'kabupaten'     => ['required', 'string', 'max:50'],
