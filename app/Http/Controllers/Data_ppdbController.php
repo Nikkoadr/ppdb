@@ -34,18 +34,29 @@ class Data_ppdbController extends Controller
         $user = User::find($id);
         $data_valid = $request->validate([
             'nisn'          => ['required', 'string', 'max:20'],
-            'nama'          => ['required', 'string', 'max:255'],
-            'sex'           => ['required', 'string', 'max:255'],
-            'tempat_lahir'  => ['required', 'string', 'max:255'],
-            'tanggal_lahir' => ['required', 'string', 'max:255'],
-            'asal_sekolah'  => ['required', 'string', 'max:255'],
-            'no_siswa'      => ['required', 'string', 'max:255'],
-            'no_wali'       => ['required', 'string', 'max:255'],
-            'alamat'        => ['required', 'string', 'max:255'],
-            'keahlian'      => ['required', 'string', 'max:255'],
-            'referensi'     => ['string', 'max:255'],
+            'nama'          => ['required', 'string', 'max:50'],
+            'sex'           => ['required', 'string', 'max:12'],
+            'tempat_lahir'  => ['required', 'string', 'max:50'],
+            'tanggal_lahir' => ['required', 'string', 'max:50'],
+            'asal_sekolah'  => ['required', 'string', 'max:50'],
+            'no_siswa'      => ['required', 'string', 'max:15'],
+            'no_wali'       => ['required', 'string', 'max:15'],
+            'blok'          => ['required', 'string', 'max:100'],
+            'rt'            => ['required', 'string', 'max:3'],
+            'rw'            => ['required', 'string', 'max:3'],
+            'desa'          => ['required', 'string', 'max:50'],
+            'kecamatan'     => ['required', 'string', 'max:50'],
+            'kabupaten'     => ['required', 'string', 'max:50'],
+            'keahlian'      => ['required', 'string', 'max:6'],
+            'referensi'     => [],
         ]);
         $user->update($data_valid);
-        return redirect('profil')->with('success', 'Data berhasil diedit');
+        return redirect('profil')->with('success', 'Perubahan Data Berhasil');
+    }
+    public function destroy($id)
+    {
+        $ppdb = User::find($id);
+        $ppdb->delete();
+        return redirect('data_ppdb')->with('success', 'Data berhasil dihapus');
     }
 }

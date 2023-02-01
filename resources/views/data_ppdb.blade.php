@@ -62,16 +62,16 @@
                     <td>{{ $data -> tempat_lahir }}, {{ \Carbon\Carbon::parse($data -> tanggal_lahir)->translatedFormat('d F Y')}}</td>
                     <td>{{ $data -> asal_sekolah }}</td>
                     <td>
-                      <b>Alamat: </b>{{ $data -> alamat }} <br>
-                      <b>Siswa: </b>{{ $data -> no_hp_siswa }}
+                      <b>Alamat: </b>Blok {{ $data -> blok }}-RT {{ $data -> rt }}-RW {{ $data -> rw }}-Desa {{ $data -> desa }}-Kecamatan {{ $data -> kecamatan }}-Kabupaten {{ $data -> kabupaten }} <br>
+                      <b>Siswa: </b>{{ $data -> no_siswa }}
                         <br>
-                        <b>Orang tua: </b>{{ $data -> no_hp_wali }}
+                        <b>Orang tua: </b>{{ $data -> no_wali }}
                     </td>
                     <td>{{ $data -> keahlian }}</td>
                     <td>{{ $data -> referensi }}</td>
                     <td style="text-align: center">
                         <div style="display: inline;">
-                          <a href="hapus_peserta_didik_baru/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
+                          <a href="hapus_data_ppdb/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
                           </div>
                     </td>
                   </tr>

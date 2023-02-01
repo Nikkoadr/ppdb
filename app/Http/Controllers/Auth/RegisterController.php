@@ -60,9 +60,14 @@ class RegisterController extends Controller
             'asal_sekolah' => ['required', 'string', 'max:255'],
             'no_siswa' => ['required', 'string', 'max:255'],
             'no_wali' => ['required', 'string', 'max:255'],
-            'alamat' => ['required', 'string', 'max:255'],
-            'keahlian' => ['required', 'string', 'max:255'],
-            'referensi' => ['string', 'max:255'],
+            'blok' => ['required', 'string', 'max:100'],
+            'rt' => ['required', 'string', 'max:3'],
+            'rw' => ['required', 'string', 'max:3'],
+            'desa' => ['required', 'string', 'max:50'],
+            'kecamatan' => ['required', 'string', 'max:50'],
+            'kabupaten' => ['required', 'string', 'max:50'],
+            'keahlian' => ['required', 'string', 'max:50'],
+            'referensi' => [],
 
         ]);
     }
@@ -86,7 +91,12 @@ class RegisterController extends Controller
             'asal_sekolah' => $data['asal_sekolah'],
             'no_siswa' => $data['no_siswa'],
             'no_wali' => $data['no_wali'],
-            'alamat' => $data['alamat'],
+            'blok' => $data['blok'],
+            'rt' => $data['rw'],
+            'rw' => $data['rt'],
+            'desa' => $data['desa'],
+            'kecamatan' => $data['kecamatan'],
+            'kabupaten' => $data['kabupaten'],
             'keahlian' => $data['keahlian'],
             'referensi' => $data['referensi'],
         ]);

@@ -27,9 +27,14 @@ class CreateUsersTable extends Migration
             $table->string('asal_sekolah');
             $table->string('no_siswa');
             $table->string('no_wali');
-            $table->string('alamat');
+            $table->string('blok');
+            $table->string('rt');
+            $table->string('rw');
+            $table->string('desa');
+            $table->string('kecamatan');
+            $table->string('kabupaten');
             $table->string('keahlian');
-            $table->string('referensi');
+            $table->string('referensi')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

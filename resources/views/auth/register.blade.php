@@ -69,8 +69,8 @@
                             <div class="col-md-6">
                                 <select name="sex" id="sex" class="form-control @error('sex') is-invalid @enderror" required>
                                     <option value="">Pilih Jenis Kelamin</option>
-                                    <option value="Laki - Laki" @if (old('jenis_kelamin') == "Laki - Laki") {{ 'selected' }} @endif>Laki - Laki</option>
-                                    <option value="Perempuan" @if (old('jenis_kelamin') == "Perempuan") {{ 'selected' }} @endif>Perempuan</option>
+                                    <option value="Laki - Laki" @if (old('sex') == "Laki - Laki") selected @endif>Laki - Laki</option>
+                                    <option value="Perempuan" @if (old('sex') == "Perempuan") selected @endif>Perempuan</option>
                                 </select>
                                 @error('sex')
                                     <span class="invalid-feedback" role="alert">
@@ -89,7 +89,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror">
+                                <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror" value="{{ old('tanggal_lahir') }}">
                                 @error('tanggal_lahir')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -124,7 +124,8 @@
                         <div class="row mb-3">
                             <label for="no_wali" class="col-md-4 col-form-label text-md-end">Nomor HP Orang Tua :</label>
                             <div class="col-md-6">
-                                <input id="no_wali" type="number" class="form-control @error('no_wali') is-invalid @enderror" name="no_wali" value="{{ old('no_wali') }}" required placeholder="Nomor HP Orang Tua">
+                                <input id="no_wali" type="number" class="form-control @error('no_wali') is-invalid @enderror" 
+                                name="no_wali" value="{{ old('no_wali') }}" required placeholder="Nomor HP Orang Tua">
                                 @error('no_wali')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -135,8 +136,44 @@
                         <div class="row mb-3">
                             <label for="alamat" class="col-md-4 col-form-label text-md-end">Alamat :</label>
                             <div class="col-md-6">
-                                <textarea name="alamat" id="alamat" cols="30" rows="3" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}" required placeholder="Contoh: Blok/Dusun-RT/RW-Desa-Kecamatan-Kabupaten"></textarea>
-                                @error('alamat')
+                                <input id="alamat" type="text" class="form-control @error('blok') is-invalid @enderror" 
+                                name="blok" value="{{ old('blok') }}" required placeholder="Blok">
+                                @error('blok')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                <input id="alamat" type="text" class="form-control @error('rt') is-invalid @enderror" 
+                                name="rt" value="{{ old('rt') }}" required placeholder="RT">
+                                @error('rt')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                <input id="alamat" type="text" class="form-control @error('rw') is-invalid @enderror" 
+                                name="rw" value="{{ old('rw') }}" required placeholder="RW">
+                                @error('rw')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                <input id="alamat" type="text" class="form-control @error('desa') is-invalid @enderror" 
+                                name="desa" value="{{ old('desa') }}" required placeholder="Desa">
+                                @error('desa')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                <input id="alamat" type="text" class="form-control @error('kecamatan') is-invalid @enderror" 
+                                name="kecamatan" value="{{ old('kecamatan') }}" required placeholder="Kecamatan">
+                                @error('kecamatan')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                <input id="alamat" type="text" class="form-control @error('kabupaten') is-invalid @enderror" 
+                                name="kabupaten" value="{{ old('kabupaten') }}" required placeholder="Kabupaten">
+                                @error('kabupaten')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -149,12 +186,12 @@
                             <div class="col-md-6">
                                 <select name="keahlian" id="keahlian" class="form-control @error('keahlian') is-invalid @enderror" required>
                                     <option value="">Pilih Konsentrasi Keahlian</option>
-                                    <option value="TPFL" @if (old('keahlian') == "TPFL") {{ 'selected' }} @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
-                                    <option value="TKRO" @if (old('keahlian') == "TKRO") {{ 'selected' }} @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
-                                    <option value="TE" @if (old('keahlian') == "TE") {{ 'selected' }} @endif>Teknik Elektronika ( TE )</option>
-                                    <option value="TJKT" @if (old('keahlian') == "TJKT") {{ 'selected' }} @endif>Teknik Jaringan Komputer Dan Telekomunikasi ( TJKT )</option>
-                                    <option value="TBSM" @if (old('keahlian') == "TBSM") {{ 'selected' }} @endif>Teknik Dan Bisnis Sepeda Motor ( TBSM )</option>
-                                    <option value="TF" @if (old('keahlian') == "TF") {{ 'selected' }} @endif>Teknologi Farmasi ( TF )</option>
+                                    <option value="TPFL" @if (old('keahlian') == "TPFL")selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
+                                    <option value="TKRO" @if (old('keahlian') == "TKRO")selected @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
+                                    <option value="TE" @if (old('keahlian') == "TE") selected @endif>Teknik Elektronika ( TE )</option>
+                                    <option value="TJKT" @if (old('keahlian') == "TJKT") selected @endif>Teknik Jaringan Komputer Dan Telekomunikasi ( TJKT )</option>
+                                    <option value="TBSM" @if (old('keahlian') == "TBSM") selected @endif>Teknik Dan Bisnis Sepeda Motor ( TBSM )</option>
+                                    <option value="TF" @if (old('keahlian') == "TF") selected @endif>Teknologi Farmasi ( TF )</option>
                                 </select>
                                 @error('keahlian')
                                     <span class="invalid-feedback" role="alert">
