@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Data_ppdbController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\Data_ppdbController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/cari', [RegisterController::class, 'cari_data'])->name('cari');
+
 
 Auth::routes();
 

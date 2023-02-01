@@ -101,7 +101,7 @@
                         <div class="row mb-3">
                             <label for="asal_sekolah" class="col-md-4 col-form-label text-md-end">Asal Sekolah :</label>
                             <div class="col-md-6">
-                                <input id="asal_sekolah" type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value="{{ old('asal_sekolah') }}" required placeholder="Asal Sekolah">
+                                <input id="asal_sekolah" type="text" class="typeahead form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value="{{ old('asal_sekolah') }}" required placeholder="Asal Sekolah">
                                 @error('asal_sekolah')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -136,42 +136,42 @@
                         <div class="row mb-3">
                             <label for="alamat" class="col-md-4 col-form-label text-md-end">Alamat :</label>
                             <div class="col-md-6">
-                                <input id="alamat" type="text" class="form-control @error('blok') is-invalid @enderror" 
+                                <input type="text" class="form-control @error('blok') is-invalid @enderror" 
                                 name="blok" value="{{ old('blok') }}" required placeholder="Blok">
                                 @error('blok')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input id="alamat" type="text" class="form-control @error('rt') is-invalid @enderror" 
+                                <input type="text" class="form-control @error('rt') is-invalid @enderror" 
                                 name="rt" value="{{ old('rt') }}" required placeholder="RT">
                                 @error('rt')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input id="alamat" type="text" class="form-control @error('rw') is-invalid @enderror" 
+                                <input type="text" class="form-control @error('rw') is-invalid @enderror" 
                                 name="rw" value="{{ old('rw') }}" required placeholder="RW">
                                 @error('rw')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input id="alamat" type="text" class="form-control @error('desa') is-invalid @enderror" 
+                                <input type="text" class="form-control @error('desa') is-invalid @enderror" 
                                 name="desa" value="{{ old('desa') }}" required placeholder="Desa">
                                 @error('desa')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input id="alamat" type="text" class="form-control @error('kecamatan') is-invalid @enderror" 
+                                <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" 
                                 name="kecamatan" value="{{ old('kecamatan') }}" required placeholder="Kecamatan">
                                 @error('kecamatan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input id="alamat" type="text" class="form-control @error('kabupaten') is-invalid @enderror" 
+                                <input type="text" class="form-control @error('kabupaten') is-invalid @enderror" 
                                 name="kabupaten" value="{{ old('kabupaten') }}" required placeholder="Kabupaten">
                                 @error('kabupaten')
                                     <span class="invalid-feedback" role="alert">
@@ -224,4 +224,19 @@
         </div>
     </div>
 </div>
+@endsection
+@section('skrip')
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" ></script>
+    
+<script type="text/javascript">
+    var path = "{{ route('cari') }}";
+    $('input.typeahead').typeahead({
+        source:  function (query, process) {
+        return $.get(path, { query: query }, function (data) {
+                return process(data);
+            });
+        }
+    });
+</script>
 @endsection

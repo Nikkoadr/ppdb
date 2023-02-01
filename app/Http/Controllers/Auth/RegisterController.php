@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -23,6 +23,15 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+    public function cari_data(Request $request)
+    {
+        $data = User::select("asal_sekolah")
+            ->where("asal_sekolah", "LIKE", "%{$request->query}%")
+            ->get();
+
+        return response()->json($data);
+    }
 
     /**
      * Where to redirect users after registration.

@@ -79,5 +79,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('skrip')
 </body>
 </html>
