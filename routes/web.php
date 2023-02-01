@@ -27,3 +27,5 @@ Route::get('/profil', [DashboardController::class, 'profil'])->name('detail');
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');
 Route::put('/edit/profil/{id}', [Data_ppdbController::class, 'update']);
 Route::get('/hapus_data_ppdb/{id}', [Data_ppdbController::class, 'destroy']);
+Route::get('/print/formulir_ppdb', [Data_ppdbController::class, 'print']);
+Route::get('/cetak}', [Data_ppdbController::class, 'cetak']);

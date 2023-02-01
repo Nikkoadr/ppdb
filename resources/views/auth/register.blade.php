@@ -182,10 +182,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Konsentrasi Keahlian :</label>
+                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Program Keahlian :</label>
                             <div class="col-md-6">
                                 <select name="keahlian" id="keahlian" class="form-control @error('keahlian') is-invalid @enderror" required>
-                                    <option value="">Pilih Konsentrasi Keahlian</option>
+                                    <option value="">Pilih Program Keahlian</option>
                                     <option value="TPFL" @if (old('keahlian') == "TPFL")selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
                                     <option value="TKRO" @if (old('keahlian') == "TKRO")selected @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
                                     <option value="TE" @if (old('keahlian') == "TE") selected @endif>Teknik Elektronika ( TE )</option>

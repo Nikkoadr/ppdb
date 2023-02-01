@@ -64,7 +64,7 @@
                 <strong><i class="fa-solid fa-check-double mr-1"></i></i>Daftar Ulang</strong>
 
                 <p class="text-muted">
-                  Sudah Daftar Ulang
+                  Belum Daftar Ulang
                 </p>
 
                 <hr>
@@ -107,9 +107,9 @@
                         <div class="col-sm-10">
                           <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="nama" value="{{ Auth::user()->nama }}">
                         @error('nama')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
                         @enderror
                         </div>
                       </div>
@@ -132,7 +132,7 @@
                         <label for="alamat" class="col-sm-12 col-form-label">Alamat :</label>
                         <label for="alamat" class="col-sm-2 col-form-label">- Blok / Rt / Rw </label>
                         <div class="col-sm-6">
-                        <input type="text" class="form-control" name="blok" id="blok" value="{{ Auth::user()->blok }}">
+                        <input type="text" class="form-control @error('blok') is-invalid @enderror" name="blok" id="blok" value="{{ Auth::user()->blok }}">
                         @error('blok')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -140,7 +140,7 @@
                         @enderror
                         </div>
                         <div class="col-sm-2">
-                          <input type="text" class="form-control" name="rt" id="rt" value="{{ Auth::user()->rt }}">
+                          <input type="text" class="form-control @error('rt') is-invalid @enderror" name="rt" id="rt" value="{{ Auth::user()->rt }}">
                         @error('rt')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -148,7 +148,7 @@
                         @enderror
                       </div>
                       <div class="col-sm-2">
-                          <input type="text" class="form-control" name="rw" id="rw" value="{{ Auth::user()->rw }}">
+                          <input type="text" class="form-control @error('rw') is-invalid @enderror" name="rw" id="rw" value="{{ Auth::user()->rw }}">
                         @error('rw')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -157,7 +157,7 @@
                       </div>
                       <label for="alamat" class="col-sm-2 col-form-label">- Desa</label>
                       <div class="col-sm-10">
-                          <input type="text" class="form-control" name="desa" id="desa" value="{{ Auth::user()->desa }}">
+                          <input type="text" class="form-control @error('desa') is-invalid @enderror" name="desa" id="desa" value="{{ Auth::user()->desa }}">
                         @error('desa')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -166,7 +166,7 @@
                       </div>
                       <label for="alamat" class="col-sm-2 col-form-label">- Kecamatan</label>
                       <div class="col-sm-10">
-                          <input type="text" class="form-control" name="kecamatan" id="kecamatan" value="{{ Auth::user()->kecamatan }}">
+                          <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan" value="{{ Auth::user()->kecamatan }}">
                         @error('kecamatan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -175,7 +175,7 @@
                       </div>
                       <label for="alamat" class="col-sm-2 col-form-label">- Kabupaten</label>
                       <div class="col-sm-10">
-                          <input type="text" class="form-control" name="kabupaten" id="kabupaten" value="{{ Auth::user()->kabupaten }}">
+                          <input type="text" class="form-control @error('kabupaten') is-invalid @enderror" name="kabupaten" id="kabupaten" value="{{ Auth::user()->kabupaten }}">
                         @error('kabupaten')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -188,34 +188,59 @@
                       <div class="form-group row">
                         <label for="ttl" class="col-sm-2 col-form-label">Tempat,  Tanggal Lahir :</label>
                         <div class="col-sm-5">
-                          <input type="text" class="form-control" name="tempat_lahir" id="ttl" value="{{ Auth::user()->tempat_lahir }}">
+                          <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" id="ttl" value="{{ Auth::user()->tempat_lahir }}">
+                        @error('tempat_lahir')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                         <div class="col-sm-5">
-                        <input type="date" class="form-control" name="tanggal_lahir" id="ttl" value="{{ Auth::user()->tanggal_lahir }}">
-                        </div>
+                        <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="ttl" value="{{ Auth::user()->tanggal_lahir }}">
+                      @error('tanggal_lahir')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror  
+                      </div>
                       </div>
                       <div class="form-group row">
                         <label for="asal_sekolah" class="col-sm-2 col-form-label">Asal Sekolah :</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" value="{{ Auth::user()->asal_sekolah }}" >
+                          <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" id="asal_sekolah" value="{{ Auth::user()->asal_sekolah }}" >
+                        @error('asal_sekolah')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="no_siswa" class="col-sm-2 col-form-label">Nomor HP Siswa :</label>
                         <div class="col-sm-10">
-                          <input type="number" class="form-control" name="no_siswa" id="no_siswa" value="{{ Auth::user()->no_siswa }}">
+                          <input type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" id="no_siswa" value="{{ Auth::user()->no_siswa }}">
+                        @error('no_siswa')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="no_wali" class="col-sm-2 col-form-label">No HP Orang Tua :</label>
                         <div class="col-sm-10">
-                          <input type="number" class="form-control" name="no_wali" id="no_wali" value="{{ Auth::user()->no_wali }}">
+                          <input type="number" class="form-control @error('no_wali') is-invalid @enderror" name="no_wali" id="no_wali" value="{{ Auth::user()->no_wali }}">
+                        @error('no_wali')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="keahlian" class="col-sm-2 col-form-label">Konsentrasi Keahlian :</label>
+                      <label for="keahlian" class="col-sm-2 col-form-label">Program Keahlian :</label>
                         <div class="col-sm-10">
-                          <select type="text" class="form-control" name="keahlian" id="keahlian">
+                          <select type="text" class="form-control @error('keahlian') is-invalid @enderror" name="keahlian" id="keahlian">
                             <option value="TPFL" @if (Auth::user()->keahlian =="TPFL") selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
                             <option value="TKRO" @if (Auth::user()->keahlian =="TKRO") selected @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
                             <option value="TE" @if (Auth::user()->keahlian =="TE") selected @endif>Teknik Elektronika ( TE )</option>
@@ -223,17 +248,28 @@
                             <option value="TBSM" @if (Auth::user()->keahlian =="TBSM") selected @endif>Teknik Dan Bisnis Sepeda Motor ( TBSM )</option>
                             <option value="TF" @if (Auth::user()->keahlian =="TF") selected @endif>Teknologi Farmasi ( TF )</option>
                           </select>
+                        @error('keahlian')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="referensi" class="col-sm-2 col-form-label">Referensi :</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="referensi" id="referensi" value="{{ Auth::user()->referensi }}">
+                          <input type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" id="referensi" value="{{ Auth::user()->referensi }}">
+                        @error('referensi')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" style="float: right" class="btn btn-info">Edit</button>
+                          <button type="submit" style="float: right; margin: 5px;" class="btn btn-info">Edit</button>
+                          <a href="/print/formulir_ppdb" target="_blank" style="float: right; margin: 5px;" class="btn btn-success">Print</a>
                         </div>
                       </div>
                     </form>

@@ -29,7 +29,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          @can('isadmin')
+            <li class="nav-item">
             <a href="/data_ppdb" class="nav-link {{ $judul === "Data PPDB" ? 'active':'' }}">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
@@ -37,6 +38,7 @@
               </p>
             </a>
           </li>
+          @endcan
             </ul>
           </li>
         </ul>

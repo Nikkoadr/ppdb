@@ -37,7 +37,8 @@
 <div class="container-fluid">
   <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
+          @can('isadmin')
+            <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
@@ -51,6 +52,22 @@
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          @endcan
+          @can('isuser')
+          <div class="container py-5">
+              <div style="background: rgba(128, 128, 128, 0.158); border-radius: 10px;" class="row p-5">
+                  <div class="wow slideInUp" data-wow-delay="0.3s">
+                      <h1 style="text-align: center">Terima Kasih</h1>
+                      <h4 style="text-align: center">Telah mendaftarkan diri anda ke SMK Muhammadiyah Kandanghaur</h4>
+                      <h4 style="text-align: center">Untuk informasi selanjutnya bisa bergabung ke grup WhatsApp PPDB SMK Muhammadiyah Kandanghaur.</h4>
+                      <h4 style="text-align: center">untuk bergabung ke grup WhatsApp bisa <a href="https://chat.whatsapp.com/Giq7lEOyyIZ2BAJKIcWasn">Klik Disini</a>.</h4>
+                      <h4 style="text-align: center">atau bisa scan barcode di bawah ini</h4>
+                      <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/barcode_ppdb.png') }}" alt="Barcode PPDB" width="150"></p>
+                      <h4 style="text-align: center">Untuk melihat profil anda Bisa klik : <a href="/profil">Profil</a> atau klik di nama anda</h4>
+                  </div>
+              </div>
+          </div>
+          @endcan
           {{-- <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->

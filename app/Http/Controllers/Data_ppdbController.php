@@ -25,6 +25,7 @@ class Data_ppdbController extends Controller
      */
     public function index()
     {
+        $this->authorize('isadmin');
         $data_ppdb = User::all();
         return view('data_ppdb', compact(['data_ppdb']), ["judul" => "Data PPDB"]);
     }
@@ -53,6 +54,17 @@ class Data_ppdbController extends Controller
         $user->update($data_valid);
         return redirect('profil')->with('success', 'Perubahan Data Berhasil');
     }
+
+    public function print()
+    {
+        return view('layouts.admin.partials.cetak_formulir_ppdb', ["judul" => "Cetak Formulir PPDB"]);
+    }
+
+    public function cetak()
+    {
+        return view('layouts.admin.partials.iframe_cetak', ["judul" => "Cetak Formulir PPDB"]);
+    }
+
     public function destroy($id)
     {
         $ppdb = User::find($id);
