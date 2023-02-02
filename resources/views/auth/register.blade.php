@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('link')
+    <link rel="stylesheet" href="assets/plugins/jquery-ui/jquery-ui.css">
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -225,18 +227,14 @@
     </div>
 </div>
 @endsection
-@section('skrip')
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" ></script>
-    
-<script type="text/javascript">
-    var path = "{{ route('cari') }}";
-    $('input.typeahead').typeahead({
-        source:  function (query, process) {
-        return $.get(path, { query: query }, function (data) {
-                return process(data);
-            });
-        }
+@section('script')
+<script src="assets/plugins/jquery/jquery.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
+<script>
+$( function() {
+    $( "#asal_sekolah" ).autocomplete({
+    source: '/autocomplete'
     });
+} );
 </script>
 @endsection

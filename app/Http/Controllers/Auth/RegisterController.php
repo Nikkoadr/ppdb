@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -21,17 +20,19 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+    public function cari_sekolah()
+    {
+        $query = request('term');
+        $data = User::where('asal_sekolah', 'like', '%' . $query . '%')->get();
+        $result = [];
+        foreach ($data as $row) {
+            $result[] = ['value' => $row->asal_sekolah,];
+        }
+        return response()->json($result);
+    }
 
     use RegistersUsers;
 
-    public function cari_data(Request $request)
-    {
-        $data = User::select("asal_sekolah")
-            ->where("asal_sekolah", "LIKE", "%{$request->query}%")
-            ->get();
-
-        return response()->json($data);
-    }
 
     /**
      * Where to redirect users after registration.
