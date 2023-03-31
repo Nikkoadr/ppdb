@@ -43,8 +43,8 @@ class Data_ppdbController extends Controller
             'no_siswa'      => ['required', 'string', 'max:15'],
             'no_wali'       => ['required', 'string', 'max:15'],
             'blok'          => ['required', 'string', 'max:100'],
-            'rt'            => ['required', 'integer', 'max:3'],
-            'rw'            => ['required', 'integer', 'max:3'],
+            'rt'            => ['required', 'integer', 'max:100'],
+            'rw'            => ['required', 'integer', 'max:100'],
             'desa'          => ['required', 'string', 'max:50'],
             'kecamatan'     => ['required', 'string', 'max:50'],
             'kabupaten'     => ['required', 'string', 'max:50'],
@@ -52,7 +52,7 @@ class Data_ppdbController extends Controller
             'referensi'     => [],
         ]);
         $user->update($data_valid);
-        return redirect('profil')->with('success', 'Perubahan Data Berhasil');
+        return redirect('profil')->with('success', 'Data Berhasil di Update');
     }
 
     public function print()
