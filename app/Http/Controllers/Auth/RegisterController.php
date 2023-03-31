@@ -23,7 +23,9 @@ class RegisterController extends Controller
     public function cari_sekolah()
     {
         $query = request('term');
-        $data = User::where('asal_sekolah', 'like', '%' . $query . '%')->get();
+        $data = User::where('asal_sekolah', 'like', '%' . $query . '%')
+            ->take(10)
+            ->get();
         $result = [];
         foreach ($data as $row) {
             $result[] = ['value' => $row->asal_sekolah,];

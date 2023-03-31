@@ -13,7 +13,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">Email :</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">Email <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
                                 @error('email')
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">Password :</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">Password <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
                                 @error('password')
@@ -36,14 +36,14 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">Konfirmasi Password :</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">Konfirmasi Password <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Konfirmasi Password">
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            <label for="nisn" class="col-md-4 col-form-label text-md-end">NISN :</label>
+                            <label for="nisn" class="col-md-4 col-form-label text-md-end">NISN <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="nisn" type="number" class="form-control @error('nisn') is-invalid @enderror" name="nisn" value="{{ old('nisn') }}" required placeholder="Nomer Induk Siswa Nasional">
                                 @error('nisn')
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="nama" class="col-md-4 col-form-label text-md-end">Nama Lengkap :</label>
+                            <label for="nama" class="col-md-4 col-form-label text-md-end">Nama Lengkap <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required placeholder="Nama Lengkap">
                                 @error('nama')
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">Jenis Kelamin :</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Jenis Kelamin <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <select name="sex" id="sex" class="form-control @error('sex') is-invalid @enderror" required>
                                     <option value="">Pilih Jenis Kelamin</option>
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="tempat_lahir" class="col-md-4 col-form-label text-md-end">Tempat, Tanggal Lahir :</label>
+                            <label for="tempat_lahir" class="col-md-4 col-form-label text-md-end">Tempat, Tanggal Lahir <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="tempat_lahir" type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{ old('tempat_lahir') }}" required placeholder="Tempat Lahir">
                                 @error('tempat_lahir')
@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="asal_sekolah" class="col-md-4 col-form-label text-md-end">Asal Sekolah :</label>
+                            <label for="asal_sekolah" class="col-md-4 col-form-label text-md-end">Asal Sekolah <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="asal_sekolah" type="text" class="typeahead form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value="{{ old('asal_sekolah') }}" required placeholder="Asal Sekolah">
                                 @error('asal_sekolah')
@@ -113,7 +113,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="no_siswa" class="col-md-4 col-form-label text-md-end">Nomor HP Siswa / Siswi :</label>
+                            <label for="no_siswa" class="col-md-4 col-form-label text-md-end">Nomor HP Siswa / Siswi <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="no_siswa" type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" value="{{ old('no_siswa') }}" required placeholder="Nomor HP Siswa / Siswi">
                                 @error('no_siswa')
@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="no_wali" class="col-md-4 col-form-label text-md-end">Nomor HP Orang Tua :</label>
+                            <label for="no_wali" class="col-md-4 col-form-label text-md-end">Nomor HP Orang Tua <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="no_wali" type="number" class="form-control @error('no_wali') is-invalid @enderror" 
                                 name="no_wali" value="{{ old('no_wali') }}" required placeholder="Nomor HP Orang Tua">
@@ -136,7 +136,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="alamat" class="col-md-4 col-form-label text-md-end">Alamat :</label>
+                            <label for="alamat" class="col-md-4 col-form-label text-md-end">Alamat <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control @error('blok') is-invalid @enderror" 
                                 name="blok" value="{{ old('blok') }}" required placeholder="Blok">
@@ -184,7 +184,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Program Keahlian :</label>
+                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Program Keahlian <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <select name="keahlian" id="keahlian" class="form-control @error('keahlian') is-invalid @enderror" required>
                                     <option value="">Pilih Program Keahlian</option>
@@ -205,7 +205,7 @@
                         <div class="row mb-3">
                             <label for="referensi" class="col-md-4 col-form-label text-md-end">Referensi :</label>
                             <div class="col-md-6">
-                                <input id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Contoh Meru Dipantara 11-TJKT-2">
+                                <input id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Contoh: Meru Dipantara 11-TJKT-2">
                                 @error('referensi')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -215,6 +215,7 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
+                                <label >Yang bertanda <span style="color: red">*</span> wajib diisi</label>
                                 <button style="float: right" type="submit" class="btn btn-primary">
                                     Daftar
                                 </button>
