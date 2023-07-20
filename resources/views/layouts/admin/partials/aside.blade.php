@@ -14,7 +14,7 @@
           <img src="{{ asset('assets/img/defaultpp.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/profil" class="d-block">{{ Auth::user()->nama }}</a>
+          <a href="/profile" class="d-block">{{ Auth::user()->nama }}</a>
         </div>
       </div>
 

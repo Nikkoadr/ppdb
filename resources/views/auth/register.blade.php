@@ -113,9 +113,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="no_siswa" class="col-md-4 col-form-label text-md-end">Nomor HP Siswa / Siswi <span style="color: red">*</span> :</label>
+                            <label for="no_siswa" class="col-md-4 col-form-label text-md-end">Nomor HP Siswa / Siswi <span style="color: red">*</span>:</label>
                             <div class="col-md-6">
-                                <input id="no_siswa" type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" value="{{ old('no_siswa') }}" required placeholder="Nomor HP Siswa / Siswi">
+                                <input id="no_siswa" type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" value="{{ old('no_siswa') }}" required placeholder="Gunakan angka 0 (nol) diawal">
                                 @error('no_siswa')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -127,7 +127,7 @@
                             <label for="no_wali" class="col-md-4 col-form-label text-md-end">Nomor HP Orang Tua <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="no_wali" type="number" class="form-control @error('no_wali') is-invalid @enderror" 
-                                name="no_wali" value="{{ old('no_wali') }}" required placeholder="Nomor HP Orang Tua">
+                                name="no_wali" value="{{ old('no_wali') }}" required placeholder="Gunakan angka 0 (nol) diawal">
                                 @error('no_wali')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

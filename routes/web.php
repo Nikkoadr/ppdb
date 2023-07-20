@@ -25,7 +25,7 @@ Route::get('/autocomplete', [RegisterController::class, 'cari_sekolah']);
 Auth::routes();
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/profil', [DashboardController::class, 'profil'])->name('detail');
+Route::get('/profile', [DashboardController::class, 'profile'])->name('detail');
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');
 Route::put('/edit/profil/{id}', [Data_ppdbController::class, 'update']);
 Route::get('/hapus_data_ppdb/{id}', [Data_ppdbController::class, 'destroy']);

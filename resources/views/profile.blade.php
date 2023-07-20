@@ -49,16 +49,18 @@
               <div class="card-body">
                 <strong><i class="fa-solid fa-check mr-1"></i></i>Verifikasi</strong>
                 <p class="text-muted">
-                  Verified
+                  {{ Auth::user()->verifikasi }}
                 </p>
                 <hr>
                 <strong><i class="fa-solid fa-check-double mr-1"></i></i>Daftar Ulang</strong>
                 <p class="text-muted">
-                  Belum Daftar Ulang
+                  {{ Auth::user()->daftar_ulang }}
                 </p>
                 <hr>
                 <strong><i class="fa-solid fa-user-check mr-1"></i></i> Siap MPLS</strong>
-                <p class="text-muted">Siap</p>
+                <p class="text-muted">
+                  {{ Auth::user()->siap_mpls }}
+                </p>
               </div>
               <!-- /.card-body -->
             </div>

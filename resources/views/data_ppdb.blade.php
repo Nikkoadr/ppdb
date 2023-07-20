@@ -46,7 +46,7 @@
                     <th>Asal Sekolah</th>
                     <th>Kontak</th>
                     <th>Program Keahlian</th>
-                    <th>Referensi</th>
+                    <th>Status</th>
                     <th data-orderable="false">Menu</th>
                   </tr>
                   </thead>
@@ -62,14 +62,33 @@
                     <td>{{ $data -> tempat_lahir }}, {{ \Carbon\Carbon::parse($data -> tanggal_lahir)->translatedFormat('d F Y')}}</td>
                     <td>{{ $data -> asal_sekolah }}</td>
                     <td>
-                      <b>Alamat: </b>Blok {{ $data -> blok }}-RT {{ $data -> rt }}-RW {{ $data -> rw }}-Desa {{ $data -> desa }}-Kecamatan {{ $data -> kecamatan }}-Kabupaten {{ $data -> kabupaten }} 
-                      <br>
-                      <b>Siswa: </b>{{ $data -> no_siswa }}
-                      <br>
-                      <b>Orang tua: </b>{{ $data -> no_wali }}
+                      {{-- <b>Alamat: </b>Blok {{ $data -> blok }}-RT {{ $data -> rt }}-RW {{ $data -> rw }}-Desa {{ $data -> desa }}-Kecamatan {{ $data -> kecamatan }}-Kabupaten {{ $data -> kabupaten }}  --}}
+                      {{-- <br> --}}
+                      <a href="https://wa.me/62{{ $data -> no_siswa }}">{{ $data -> no_siswa }}</a>
+                      {{-- <br> --}}
+                      {{-- <b>Orang tua: </b>{{ $data -> no_wali }} --}}
                     </td>
                     <td>{{ $data -> keahlian }}</td>
-                    <td>{{ $data -> referensi }}</td>
+                    <td>
+                      <b>Verifikasi :</b>
+                      @if ($data -> verifikasi == 'Verified')
+                          Sudah
+                      @else
+                          Belum
+                      @endif <br>
+                      <b>Daftar Ulang :</b>
+                      @if ($data -> daftar_ulang == 'Sudah Daftar Ulang')
+                          Sudah
+                      @else
+                          Belum
+                      @endif <br>
+                      <b>MPLS :</b>
+                      @if ($data -> siap_mpls == 'siap')
+                          Sudah
+                      @else
+                          Belum
+                      @endif
+                    </td>
                     <td style="text-align: center">
                         <div style="display: inline;">
                         <a href="hapus_data_ppdb/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>

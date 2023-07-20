@@ -52,7 +52,7 @@ class Data_ppdbController extends Controller
             'referensi'     => [],
         ]);
         $user->update($data_valid);
-        return redirect('profil')->with('success', 'Data Berhasil di Update');
+        return redirect('profile')->with('success', 'Data Berhasil di Update');
     }
 
     public function print()
