@@ -31,8 +31,8 @@ class CreateUsersTable extends Migration
             $table->string('no_siswa');
             $table->string('no_wali');
             $table->string('blok');
-            $table->integer('rt');
-            $table->integer('rw');
+            $table->string('rt');
+            $table->string('rw');
             $table->string('desa');
             $table->string('kecamatan');
             $table->string('kabupaten');

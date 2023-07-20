@@ -145,14 +145,14 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input type="text" class="form-control @error('rt') is-invalid @enderror" 
+                                <input type="number" class="form-control @error('rt') is-invalid @enderror" 
                                 name="rt" value="{{ old('rt') }}" required placeholder="RT">
                                 @error('rt')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input type="text" class="form-control @error('rw') is-invalid @enderror" 
+                                <input type="number" class="form-control @error('rw') is-invalid @enderror" 
                                 name="rw" value="{{ old('rw') }}" required placeholder="RW">
                                 @error('rw')
                                     <span class="invalid-feedback" role="alert">
