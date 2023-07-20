@@ -1,4 +1,7 @@
 @extends('layouts.admin.main_admin')
+@section('title')
+  {{'Profile PPDB'}}
+@endsection
 @section('link')
   <link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 @endsection
@@ -59,7 +62,7 @@
                 <hr>
                 <strong><i class="fa-solid fa-user-check mr-1"></i></i> Siap MPLS</strong>
                 <p class="text-muted">
-                  {{ Auth::user()->siap_mpls }}
+                  {{ Auth::user()->status_mpls }}
                 </p>
               </div>
               <!-- /.card-body -->

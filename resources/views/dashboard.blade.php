@@ -1,5 +1,7 @@
 @extends('layouts.admin.main_admin')
-
+@section('title')
+  {{'Dashboard PPDB'}}
+@endsection
 @section('link')
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">

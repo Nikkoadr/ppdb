@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->enum('role', ['admin', 'user'])->default('user');
             $table->enum('verifikasi', ['Verified', 'Not Verified'])->default('Not Verified');
             $table->enum('daftar_ulang', ['Belum Daftar Ulang', 'Sudah Daftar Ulang'])->default('Belum Daftar Ulang');
-            $table->enum('siap_mpls', ['siap', 'belum siap'])->default('belum siap');
+            $table->enum('status_mpls', ['Sudah Siap', 'Belum Siap'])->default('Belum Siap');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

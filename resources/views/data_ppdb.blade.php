@@ -1,10 +1,14 @@
 @extends('layouts.admin.main_admin')
+@section('title')
+  {{'Data PPDB'}}
+@endsection
 @section('link')
   <!-- DataTables -->
   <link rel="stylesheet" href="assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
 @endsection
 @section('content')
   <div class="content-wrapper">
@@ -83,7 +87,7 @@
                           Belum
                       @endif <br>
                       <b>MPLS :</b>
-                      @if ($data -> siap_mpls == 'siap')
+                      @if ($data -> status_mpls == 'Sudah Siap')
                           Sudah
                       @else
                           Belum

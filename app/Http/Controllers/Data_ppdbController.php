@@ -43,13 +43,13 @@ class Data_ppdbController extends Controller
             'no_siswa'      => ['required', 'string', 'max:15'],
             'no_wali'       => ['required', 'string', 'max:15'],
             'blok'          => ['required', 'string', 'max:100'],
-            'rt'            => ['required', 'integer', 'max:100'],
-            'rw'            => ['required', 'integer', 'max:100'],
+            'rt'            => ['required', 'string', 'max:3'],
+            'rw'            => ['required', 'string', 'max:3'],
             'desa'          => ['required', 'string', 'max:50'],
             'kecamatan'     => ['required', 'string', 'max:50'],
             'kabupaten'     => ['required', 'string', 'max:50'],
-            'keahlian'      => ['required', 'string', 'max:6'],
-            'referensi'     => [],
+            'keahlian'      => ['required', 'string', 'max:50'],
+            'referensi'     => ['string', 'max:50'],
         ]);
         $user->update($data_valid);
         return redirect('profile')->with('success', 'Data Berhasil di Update');
