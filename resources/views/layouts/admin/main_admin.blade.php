@@ -25,9 +25,9 @@
 @yield('content')
   <footer class="main-footer">
   <div class="float-right d-none d-sm-inline-block">
-    <b>Beta</b> 0.2
+    <b>Version</b> 1.1.2
   </div>
-    <strong>Copyright &copy; 2020-2024 <a href="https://github.com/Nikkoadr">Nikko Adrian</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2020-2023 <a href="https://github.com/Nikkoadr">Nikko Adrian</a>.</strong> All rights reserved.
   </footer>
 </div>
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
