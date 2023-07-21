@@ -95,13 +95,16 @@
                     </td>
                     <td style="text-align: center">
                         <div style="display: inline;">
+                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_siswa_id{{ $data->id }}"><i class="fa-regular fa-pen-to-square"></i></button>
+                          @include('layouts.admin.component.modal_edit_data_ppdb')
                         <a href="hapus_data_ppdb/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
-                        </div>
+                      </div>
                     </td>
                   </tr>
                   @endforeach
                   </tbody>
                 </table>
+                
               </div>
               <!-- /.card-body -->
             </div>

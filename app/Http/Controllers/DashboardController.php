@@ -24,7 +24,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $data_ppdb = User::count();
+        $query = User::count();
+        $admin = 1;
+        $data_ppdb = $query - $admin;
         return view('dashboard', compact(['data_ppdb']), ["judul" => "Dashboard"]);
     }
     public function profile()

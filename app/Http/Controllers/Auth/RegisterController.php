@@ -79,7 +79,7 @@ class RegisterController extends Controller
             'kecamatan'         => ['required', 'string', 'max:50'],
             'kabupaten'         => ['required', 'string', 'max:50'],
             'keahlian'          => ['required', 'string', 'max:50'],
-            'referensi'         => ['string', 'max:50'],
+            'referensi'         => [],
 
         ]);
     }

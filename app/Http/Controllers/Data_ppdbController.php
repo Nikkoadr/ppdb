@@ -26,7 +26,7 @@ class Data_ppdbController extends Controller
     public function index()
     {
         $this->authorize('isadmin');
-        $data_ppdb = User::all();
+        $data_ppdb = User::latest()->paginate(100);
         return view('data_ppdb', compact(['data_ppdb']), ["judul" => "Data PPDB"]);
     }
 
@@ -49,7 +49,7 @@ class Data_ppdbController extends Controller
             'kecamatan'     => ['required', 'string', 'max:50'],
             'kabupaten'     => ['required', 'string', 'max:50'],
             'keahlian'      => ['required', 'string', 'max:50'],
-            'referensi'     => ['string', 'max:50'],
+            'referensi'     => [],
         ]);
         $user->update($data_valid);
         return redirect('profile')->with('success', 'Data Berhasil di Update');
