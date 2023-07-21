@@ -8,9 +8,76 @@
             </button>
         </div>
         <div class="modal-body">
-        <form action="#" method="POST" class="form-horizontal">
+        <form action="/edit/data_ppdb_admin/{{ $data->id }}" method="POST" class="form-horizontal">
                     @method('put')
                     @csrf
+                    <div class="form-group row">
+                    <label for="role" class="col-sm-3 col-form-label">Role :</label>
+                    <div class="col-sm-9">
+                        <select type="text" class="form-control @error('role') is-invalid @enderror" name="role" id="role">
+                        <option value="admin" @if ($data->role =="admin") selected @endif>Admin</option>
+                        <option value="user" @if ($data->role =="user") selected @endif>User</option>
+                        </select>
+                        @error('role')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="verifikasi" class="col-sm-3 col-form-label">Verifikasi :</label>
+                    <div class="col-sm-9">
+                        <select type="text" class="form-control @error('verifikasi') is-invalid @enderror" name="verifikasi" id="verifikasi">
+                        <option value="Verified" @if ($data->verifikasi =="Verified") selected @endif>Verified</option>
+                        <option value="Not Verified" @if ($data->verifikasi =="Not Verified") selected @endif>Not Verified</option>
+                        </select>
+                        @error('verifikasi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="daftar_ulang" class="col-sm-3 col-form-label">Daftar Ulang :</label>
+                    <div class="col-sm-9">
+                        <select type="text" class="form-control @error('daftar_ulang') is-invalid @enderror" name="daftar_ulang" id="daftar_ulang">
+                        <option value="Belum Daftar Ulang" @if ($data->daftar_ulang =="Belum Daftar Ulang") selected @endif>Belum Daftar Ulang</option>
+                        <option value="Sudah Daftar Ulang" @if ($data->daftar_ulang =="Sudah Daftar Ulang") selected @endif>Sudah Daftar Ulang</option>
+                        </select>
+                        @error('verifikasi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="status_mpls" class="col-sm-3 col-form-label">Status MPLS :</label>
+                    <div class="col-sm-9">
+                        <select type="text" class="form-control @error('status_mpls') is-invalid @enderror" name="status_mpls" id="status_mpls">
+                        <option value="Sudah Siap" @if ($data->status_mpls =="Sudah Siap") selected @endif>Sudah Siap</option>
+                        <option value="Belum Siap" @if ($data->status_mpls =="Belum Siap") selected @endif>Belum Siap</option>
+                        </select>
+                        @error('status_mpls')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Email :</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ $data->email }}">
+                    @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                    @enderror
+                    </div>
+                    </div>
                     <div class="form-group row">
                     <label for="nisn" class="col-sm-3 col-form-label">NISN :</label>
                     <div class="col-sm-9">
@@ -183,11 +250,11 @@
                     @enderror
                     </div>
                     </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
                 </form>
-        </div>
-        <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
         </div>
         <!-- /.modal-content -->
