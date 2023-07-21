@@ -97,6 +97,8 @@
                         <div style="display: inline;">
                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_siswa_id{{ $data->id }}"><i class="fa-regular fa-pen-to-square"></i></button>
                           @include('layouts.admin.component.modal_edit_data_ppdb')
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ubah_password_siswa_id{{ $data->id }}"><i class="fa-solid fa-unlock-keyhole"></i></button>
+                          @include('layouts.admin.component.modal_ubah_password_siswa')
                         <a href="hapus_data_ppdb/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
                       </div>
                     </td>

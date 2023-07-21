@@ -38,7 +38,7 @@
                       alt="User profile picture">
                 </div>
                 <h3 class="profile-username text-center">{{ Auth::user()->nama }}</h3>
-                <p class="text-muted text-center">{{ Auth::user()->nisn }}</p>
+                <p class="text-muted text-center">{{ Auth::user()->email }}</p>
               </div>
               <!-- /.card-body -->
             </div>
@@ -76,7 +76,7 @@
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#data_diri" data-toggle="tab">Data diri</a></li>
                   @if (Auth::user()-> daftar_ulang =='Sudah Daftar Ulang')
-                    <li class="nav-item"><a class="nav-link" href="#dokumen" data-toggle="tab">Dokument</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dokumen" data-toggle="tab">Dokumen</a></li>
                   @endif
                   
                 </ul>
