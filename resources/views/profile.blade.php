@@ -73,12 +73,18 @@
           <div class="col-md-9">
             <div class="card">
               <div class="card-header p-2">
-                <h3 style="text-align: center"><b>BIODATA CALON PESERTA DIDIK BARU</b></h3>
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#data_diri" data-toggle="tab">Data diri</a></li>
+                  @if (Auth::user()-> daftar_ulang =='Sudah Daftar Ulang')
+                    <li class="nav-item"><a class="nav-link" href="#dokumen" data-toggle="tab">Dokument</a></li>
+                  @endif
+                  
+                </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
-                  <div class="active tab-pane" id="settings">
-                    <form action="edit/profil/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
+                  <div class="active tab-pane" id="data_diri">
+                    <form action="edit/profile/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
                       @method('put')
                       @csrf
                       <div class="form-group row">
@@ -260,6 +266,51 @@
                         </div>
                       </div>
                     </form>
+                  </div>
+                  
+                  <div class="tab-pane" id="dokumen">
+                    <div class="row">
+                      <div class="col-md-4 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Pas Foto</div>
+                            <div class="card-body">
+                              <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('assets/dist/img/avatar.png') }}" class="mt-3">
+                            </div>
+                            <div class="card-footer">
+                              <input type="file" accept=".jpg,.jpeg,.png" id="pasfoto" name="pasfoto" onchange="unggah_dokumen('pasfoto')"></div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Kartu Keluarga</div>
+                            <div class="card-body">
+                              <img style="max-width: 250px;" id="kk_preview" src="{{ asset('assets/dist/img/photo1.png') }}" class="mt-3">
+                            </div>
+                            <div class="card-footer">
+                              <input type="file" accept=".jpg,.jpeg,.png" id="kk" name="kk" onchange="unggah_dokumen('kk')"></div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Akta Kelahir</div>
+                            <div class="card-body">
+                              <img style="max-width: 250px;" id="akta_preview" src="{{ asset('assets/dist/img/photo2.png') }}" class="mt-3">
+                            </div>
+                            <div class="card-footer">
+                              <input type="file" accept=".jpg,.jpeg,.png" id="akta" name="akta" onchange="unggah_dokumen('akta')"></div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Ijazah SMP</div>
+                            <div class="card-body">
+                              <img style="max-width: 250px;" id="ijazah_preview" src="{{ asset('assets/dist/img/photo3.jpg') }}" class="mt-3">
+                            </div>
+                            <div class="card-footer">
+                              <input type="file" accept=".jpg,.jpeg,.png" id="ijazah" name="ijazah" onchange="unggah_dokumen('ijazah')"></div>
+                          </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
