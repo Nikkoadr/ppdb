@@ -270,45 +270,77 @@
                   
                   <div class="tab-pane" id="dokumen">
                     <div class="row">
-                      <div class="col-md-4 mt-2">
+                      <div class="col-md-12 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Upload Dokumen</div>
+                            <form action="upload_data_siswa" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                            <div class="card-body">
+                                @csrf
+                                <div class="form-group row">
+                                  <label for="upload_pasfoto" class="col-sm-2 col-form-label">Pas Foto :</label>
+                                  <div class="col-sm-10 custom-file">
+                                  <input type="file" class="custom-file-input" id="upload_pasfoto" control-id="ControlID-3" name="pasfoto">
+                                    <label class="custom-file-label" for="upload_pasfoto">Pilih Pas Foto</label>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="upload_kk" class="col-sm-2 col-form-label">Kartu Keluarga :</label>
+                                  <div class="col-sm-10 custom-file">
+                                  <input type="file" class="custom-file-input" id="upload_kk" control-id="ControlID-3">
+                                    <label class="custom-file-label" for="upload_kk">Pilih Kartu Keluarga</label>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="upload_akta" class="col-sm-2 col-form-label">Akta Kelahiran :</label>
+                                  <div class="col-sm-10 custom-file">
+                                  <input type="file" class="custom-file-input" id="upload_akta" control-id="ControlID-3">
+                                    <label class="custom-file-label" for="upload_akta">Pilih AKTA Kelahiran</label>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="upload_skl" class="col-sm-2 col-form-label">Surat Keterangan Lulus :</label>
+                                  <div class="col-sm-10 custom-file">
+                                  <input type="file" class="custom-file-input" id="upload_skl" control-id="ControlID-3">
+                                    <label class="custom-file-label" for="upload_skl">Pilih Surat Keterangan Lulus</label>
+                                  </div>
+                                </div>
+                                  <div class="col-12">
+                                    <button type="submit" class="btn btn-primary float-right">Upload</button>
+                                  </div>
+                            </div>
+                            </form>
+                          </div>
+                      </div>
+                      <div class="col-md-3 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Pas Foto</div>
                             <div class="card-body">
                               <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('assets/dist/img/avatar.png') }}" class="mt-3">
                             </div>
-                            <div class="card-footer">
-                              <input type="file" accept=".jpg,.jpeg,.png" id="pasfoto" name="pasfoto" onchange="unggah_dokumen('pasfoto')"></div>
                           </div>
                       </div>
-                      <div class="col-md-4 mt-2">
+                      <div class="col-md-3 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Kartu Keluarga</div>
                             <div class="card-body">
                               <img style="max-width: 250px;" id="kk_preview" src="{{ asset('assets/dist/img/photo1.png') }}" class="mt-3">
                             </div>
-                            <div class="card-footer">
-                              <input type="file" accept=".jpg,.jpeg,.png" id="kk" name="kk" onchange="unggah_dokumen('kk')"></div>
                           </div>
                       </div>
-                      <div class="col-md-4 mt-2">
+                      <div class="col-md-3 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Akta Kelahir</div>
                             <div class="card-body">
                               <img style="max-width: 250px;" id="akta_preview" src="{{ asset('assets/dist/img/photo2.png') }}" class="mt-3">
                             </div>
-                            <div class="card-footer">
-                              <input type="file" accept=".jpg,.jpeg,.png" id="akta" name="akta" onchange="unggah_dokumen('akta')"></div>
                           </div>
                       </div>
-                      <div class="col-md-4 mt-2">
+                      <div class="col-md-3 mt-2">
                         <div class="card h-100">
-                            <div class="card-header">Ijazah SMP</div>
+                            <div class="card-header">Surat Keterangan Lulus</div>
                             <div class="card-body">
                               <img style="max-width: 250px;" id="ijazah_preview" src="{{ asset('assets/dist/img/photo3.jpg') }}" class="mt-3">
                             </div>
-                            <div class="card-footer">
-                              <input type="file" accept=".jpg,.jpeg,.png" id="ijazah" name="ijazah" onchange="unggah_dokumen('ijazah')"></div>
-                          </div>
                       </div>
                     </div>
                   </div>
@@ -324,6 +356,7 @@
 @endsection
 @section('script')
 <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script>
   @if (session()->has('success'))
     $(function() {
@@ -339,5 +372,10 @@
       })
   });
   @endif
+</script>
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
 </script>
 @endsection

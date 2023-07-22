@@ -29,6 +29,7 @@ Route::get('/profile', [DashboardController::class, 'profile'])->name('detail');
 
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');
 Route::put('/edit/profile/{id}', [Data_ppdbController::class, 'update_profile']);
+Route::post('/upload_data_siswa', [Data_ppdbController::class, 'upload_data_siswa']);
 Route::put('/edit/data_ppdb_admin/{id}', [Data_ppdbController::class, 'update_data_ppdb_admin']);
 Route::put('/ubah_password_siswa/{id}', [Data_ppdbController::class, 'ubah_password_siswa']);
 Route::get('/hapus_data_ppdb/{id}', [Data_ppdbController::class, 'destroy']);
