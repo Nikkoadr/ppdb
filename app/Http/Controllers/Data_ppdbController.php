@@ -56,6 +56,11 @@ class Data_ppdbController extends Controller
         return redirect('profile')->with('success', 'Data Berhasil di Update');
     }
 
+    public function upload_data_siswa(Request $request)
+    {
+        return $request->file('pasfoto')->store('dokumen-ppdb');
+    }
+
     public function update_data_ppdb_admin($id, Request $request)
     {
         $data_valid = $request->validate([
