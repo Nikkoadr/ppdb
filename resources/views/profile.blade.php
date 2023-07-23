@@ -273,7 +273,7 @@
                       <div class="col-md-12 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Upload Dokumen</div>
-                            <form action="upload_data_siswa" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="upload_data_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                             <div class="card-body">
                                 @csrf
                                 <div class="form-group row">
@@ -315,7 +315,11 @@
                         <div class="card h-100">
                             <div class="card-header">Pas Foto</div>
                             <div class="card-body">
-                              <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('assets/dist/img/avatar.png') }}" class="mt-3">
+                              @if (Auth::user()->pasfoto)
+                                <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}" class="mt-3">
+                              @else
+                                <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('assets/dist/img/avatar.png') }}" class="mt-3">
+                              @endif
                             </div>
                           </div>
                       </div>
