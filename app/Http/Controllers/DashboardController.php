@@ -29,8 +29,5 @@ class DashboardController extends Controller
         $data_ppdb = $query - $admin;
         return view('dashboard', compact(['data_ppdb']), ["judul" => "Dashboard"]);
     }
-    public function profile()
-    {
-        return view('profile', ["judul" => "Profile"]);
-    }
+    
 }

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Data_ppdbController;
+use App\Http\Controllers\DetailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,13 +27,16 @@ Route::get('/autocomplete', [RegisterController::class, 'cari_sekolah']);
 Auth::routes();
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/profile', [DashboardController::class, 'profile'])->name('detail');
+
+Route::put('/edit/profile/{id}', [DetailController::class, 'update_profile']);
+Route::get('/profile', [DetailController::class, 'profile'])->name('detail');
+Route::post('/upload_pasfoto_siswa/{id}', [DetailController::class, 'upload_pasfoto_siswa']);
+Route::post('/upload_kk_siswa/{id}', [DetailController::class, 'upload_kk_siswa']);
+Route::post('/upload_akta_siswa/{id}', [DetailController::class, 'upload_akta_siswa']);
+Route::post('/upload_skl_siswa/{id}', [DetailController::class, 'upload_skl_siswa']);
+Route::get('/print/formulir_ppdb', [DetailController::class, 'print']);
 
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');
-Route::put('/edit/profile/{id}', [Data_ppdbController::class, 'update_profile']);
-Route::post('/upload_data_siswa/{id}', [Data_ppdbController::class, 'upload_data_siswa']);
 Route::put('/edit/data_ppdb_admin/{id}', [Data_ppdbController::class, 'update_data_ppdb_admin']);
 Route::put('/ubah_password_siswa/{id}', [Data_ppdbController::class, 'ubah_password_siswa']);
 Route::get('/hapus_data_ppdb/{id}', [Data_ppdbController::class, 'destroy']);
-Route::get('/print/formulir_ppdb', [Data_ppdbController::class, 'print']);
-Route::get('/cetak}', [Data_ppdbController::class, 'cetak']);

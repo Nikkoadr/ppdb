@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 
 class Data_ppdbController extends Controller
 {
@@ -31,47 +29,6 @@ class Data_ppdbController extends Controller
         $data_ppdb = User::latest()->paginate(100);
         return view('data_ppdb', compact(['data_ppdb']), ["judul" => "Data PPDB"]);
     }
-
-    public function update_profile($id, Request $request)
-    {
-        $data_valid = $request->validate([
-            'nisn'          => ['required', 'string', 'max:10'],
-            'nama'          => ['required', 'string', 'max:50'],
-            'sex'           => ['required', 'string', 'max:12'],
-            'tempat_lahir'  => ['required', 'string', 'max:50'],
-            'tanggal_lahir' => ['required', 'string', 'max:50'],
-            'asal_sekolah'  => ['required', 'string', 'max:50'],
-            'no_siswa'      => ['required', 'string', 'max:15'],
-            'no_wali'       => ['required', 'string', 'max:15'],
-            'blok'          => ['required', 'string', 'max:100'],
-            'rt'            => ['required', 'string', 'max:3'],
-            'rw'            => ['required', 'string', 'max:3'],
-            'desa'          => ['required', 'string', 'max:50'],
-            'kecamatan'     => ['required', 'string', 'max:50'],
-            'kabupaten'     => ['required', 'string', 'max:50'],
-            'keahlian'      => ['required', 'string', 'max:50'],
-            'referensi'     => [],
-        ]);
-        $user = User::find($id);
-        $user->update($data_valid);
-        return redirect('profile')->with('success', 'Data Berhasil di Update');
-    }
-
-    public function upload_data_siswa($id, Request $request)
-    {
-        $request->validate([
-            'pasfoto' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:2048',
-        ]);
-        $imageName = 'pasfoto' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '.' . $request->pasfoto->getClientOriginalExtension();
-        $request->pasfoto->storeAs('public/dokumen-ppdb', $imageName);
-        $user = User::find($id);
-        $user->update(['pasfoto' => $imageName]);
-        return redirect('profile')->with('success', 'Data Berhasil di Update');
-    }
-    // public function upload_data_siswa(Request $request)
-    // {
-    //     return $request->file('pasfoto')->store('dokumen-ppdb');
-    // }
 
     public function update_data_ppdb_admin($id, Request $request)
     {
@@ -113,16 +70,6 @@ class Data_ppdbController extends Controller
         $user = User::find($id);
         $user->update(['password' => $hash]);
         return redirect('data_ppdb')->with('success', 'Password Berhasil diganti');
-    }
-
-    public function print()
-    {
-        return view('layouts.admin.partials.cetak_formulir_ppdb', ["judul" => "Cetak Formulir PPDB"]);
-    }
-
-    public function cetak()
-    {
-        return view('layouts.admin.partials.iframe_cetak', ["judul" => "Cetak Formulir PPDB"]);
     }
 
     public function destroy($id)
