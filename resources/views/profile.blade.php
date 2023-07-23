@@ -270,56 +270,34 @@
                   
                   <div class="tab-pane" id="dokumen">
                     <div class="row">
-                      <div class="col-md-12 mt-2">
-                        <div class="card h-100">
-                            <div class="card-header">Upload Dokumen</div>
-                            <form action="upload_data_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
-                            <div class="card-body">
-                                @csrf
-                                <div class="form-group row">
-                                  <label for="upload_pasfoto" class="col-sm-2 col-form-label">Pas Foto :</label>
-                                  <div class="col-sm-10 custom-file">
-                                  <input type="file" class="custom-file-input" id="upload_pasfoto" control-id="ControlID-3" name="pasfoto">
-                                    <label class="custom-file-label" for="upload_pasfoto">Pilih Pas Foto</label>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <label for="upload_kk" class="col-sm-2 col-form-label">Kartu Keluarga :</label>
-                                  <div class="col-sm-10 custom-file">
-                                  <input type="file" class="custom-file-input" id="upload_kk" control-id="ControlID-3">
-                                    <label class="custom-file-label" for="upload_kk">Pilih Kartu Keluarga</label>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <label for="upload_akta" class="col-sm-2 col-form-label">Akta Kelahiran :</label>
-                                  <div class="col-sm-10 custom-file">
-                                  <input type="file" class="custom-file-input" id="upload_akta" control-id="ControlID-3">
-                                    <label class="custom-file-label" for="upload_akta">Pilih AKTA Kelahiran</label>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <label for="upload_skl" class="col-sm-2 col-form-label">Surat Keterangan Lulus :</label>
-                                  <div class="col-sm-10 custom-file">
-                                  <input type="file" class="custom-file-input" id="upload_skl" control-id="ControlID-3">
-                                    <label class="custom-file-label" for="upload_skl">Pilih Surat Keterangan Lulus</label>
-                                  </div>
-                                </div>
-                                  <div class="col-12">
-                                    <button type="submit" class="btn btn-primary float-right">Upload</button>
-                                  </div>
-                            </div>
-                            </form>
-                          </div>
-                      </div>
                       <div class="col-md-3 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Pas Foto</div>
                             <div class="card-body">
                               @if (Auth::user()->pasfoto)
-                                <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}" class="mt-3">
+                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}" class="mt-3">
                               @else
-                                <img style="max-width: 250px;" id="pasfoto_preview" src="{{ asset('assets/dist/img/avatar.png') }}" class="mt-3">
+                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
                               @endif
+                            </div>
+                            <div class="card-footer">
+                              <form action="upload_pasfoto_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="upload_pasfoto">Upload Pas Foto</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="upload_pasfoto" name="pasfoto">
+                                        <label class="custom-file-label" for="upload_pasfoto">Pilih file</label>
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Upload</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </form>
                             </div>
                           </div>
                       </div>
@@ -327,15 +305,61 @@
                         <div class="card h-100">
                             <div class="card-header">Kartu Keluarga</div>
                             <div class="card-body">
-                              <img style="max-width: 250px;" id="kk_preview" src="{{ asset('assets/dist/img/photo1.png') }}" class="mt-3">
+                              @if (Auth::user()->kk)
+                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->kk) }}" class="mt-3">
+                              @else
+                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                              @endif
+                            </div>
+                            <div class="card-footer">
+                              <form action="upload_kk_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="upload_kk">Upload Kartu Keluarga</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="upload_kk" name="kk">
+                                        <label class="custom-file-label" for="upload_kk">Pilih file</label>
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Upload</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </form>
                             </div>
                           </div>
                       </div>
                       <div class="col-md-3 mt-2">
                         <div class="card h-100">
-                            <div class="card-header">Akta Kelahir</div>
+                            <div class="card-header">AKTA Kelahiran</div>
                             <div class="card-body">
-                              <img style="max-width: 250px;" id="akta_preview" src="{{ asset('assets/dist/img/photo2.png') }}" class="mt-3">
+                              @if (Auth::user()->akta)
+                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->akta) }}" class="mt-3">
+                              @else
+                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                              @endif
+                            </div>
+                            <div class="card-footer">
+                              <form action="upload_akta_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="upload_akta">Upload AKTA Kelahiran</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="upload_akta" name="akta">
+                                        <label class="custom-file-label" for="upload_akta">Pilih file</label>
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Upload</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </form>
                             </div>
                           </div>
                       </div>
@@ -343,9 +367,32 @@
                         <div class="card h-100">
                             <div class="card-header">Surat Keterangan Lulus</div>
                             <div class="card-body">
-                              <img style="max-width: 250px;" id="ijazah_preview" src="{{ asset('assets/dist/img/photo3.jpg') }}" class="mt-3">
+                              @if (Auth::user()->skl)
+                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->skl) }}" class="mt-3">
+                              @else
+                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                              @endif
                             </div>
-                      </div>
+                            <div class="card-footer">
+                              <form action="upload_skl_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="upload_akta">Upload SKL</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="upload_skl" name="skl">
+                                        <label class="custom-file-label" for="upload_skl">Pilih file</label>
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Upload</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </form>
+                            </div>
+                          </div>
                     </div>
                   </div>
                 </div>
