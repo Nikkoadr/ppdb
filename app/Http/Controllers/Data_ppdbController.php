@@ -6,6 +6,7 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class Data_ppdbController extends Controller
 {
@@ -56,10 +57,21 @@ class Data_ppdbController extends Controller
         return redirect('profile')->with('success', 'Data Berhasil di Update');
     }
 
-    public function upload_data_siswa(Request $request)
+    public function upload_data_siswa($id, Request $request)
     {
-        return $request->file('pasfoto')->store('dokumen-ppdb');
+        $request->validate([
+            'pasfoto' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:2048',
+        ]);
+        $imageName = 'pasfoto' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '.' . $request->pasfoto->getClientOriginalExtension();
+        $request->pasfoto->storeAs('public/dokumen-ppdb', $imageName);
+        $user = User::find($id);
+        $user->update(['pasfoto' => $imageName]);
+        return redirect('profile')->with('success', 'Data Berhasil di Update');
     }
+    // public function upload_data_siswa(Request $request)
+    // {
+    //     return $request->file('pasfoto')->store('dokumen-ppdb');
+    // }
 
     public function update_data_ppdb_admin($id, Request $request)
     {

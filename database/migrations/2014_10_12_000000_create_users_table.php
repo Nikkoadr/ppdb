@@ -38,6 +38,7 @@ class CreateUsersTable extends Migration
             $table->string('kabupaten');
             $table->string('keahlian');
             $table->string('referensi')->nullable();
+            $table->string('pasfoto')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
