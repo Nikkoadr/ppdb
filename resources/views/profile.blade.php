@@ -33,9 +33,15 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
+                  @if (Auth::user()->pasfoto)
+                    <img class="profile-user-img img-fluid img-circle"
+                      src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}"
+                      alt="User profile picture">
+                  @else
+                    <img class="profile-user-img img-fluid img-circle"
                       src="{{ asset('assets/img/defaultpp.png') }}"
                       alt="User profile picture">
+                  @endif
                 </div>
                 <h3 class="profile-username text-center">{{ Auth::user()->nama }}</h3>
                 <p class="text-muted text-center">{{ Auth::user()->email }}</p>
@@ -288,13 +294,18 @@
                                     <label for="upload_pasfoto">Upload Pas Foto</label>
                                     <div class="input-group">
                                       <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="upload_pasfoto" name="pasfoto">
-                                        <label class="custom-file-label" for="upload_pasfoto">Pilih file</label>
+                                        <input type="file" class="custom-file-input @error('pasfoto') is-invalid @enderror" id="pasfoto" name="pasfoto">
+                                        <label class="custom-file-label" for="pasfoto">Pilih file</label>
                                       </div>
                                       <div class="input-group-append">
                                         <button type="submit" class="input-group-text">Upload</button>
                                       </div>
                                     </div>
+                                    @error('pasfoto')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
                                   </div>
                                 </div>
                                 </form>
@@ -316,16 +327,21 @@
                                 @csrf
                               <div class="form-group">
                                   <div class="form-group">
-                                    <label for="upload_kk">Upload Kartu Keluarga</label>
+                                    <label for="kk">Upload Kartu Keluarga</label>
                                     <div class="input-group">
                                       <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="upload_kk" name="kk">
-                                        <label class="custom-file-label" for="upload_kk">Pilih file</label>
+                                        <input type="file" class="custom-file-input @error('kk') is-invalid @enderror" id="kk" name="kk">
+                                        <label class="custom-file-label" for="kk">Pilih file</label>
                                       </div>
                                       <div class="input-group-append">
                                         <button type="submit" class="input-group-text">Upload</button>
                                       </div>
                                     </div>
+                                    @error('kk')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
                                   </div>
                                 </div>
                                 </form>
@@ -347,16 +363,21 @@
                                 @csrf
                               <div class="form-group">
                                   <div class="form-group">
-                                    <label for="upload_akta">Upload AKTA Kelahiran</label>
+                                    <label for="akta">Upload AKTA Kelahiran</label>
                                     <div class="input-group">
                                       <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="upload_akta" name="akta">
-                                        <label class="custom-file-label" for="upload_akta">Pilih file</label>
+                                        <input type="file" class="custom-file-input @error('akta') is-invalid @enderror" id="akta" name="akta">
+                                        <label class="custom-file-label" for="akta">Pilih file</label>
                                       </div>
                                       <div class="input-group-append">
                                         <button type="submit" class="input-group-text">Upload</button>
                                       </div>
                                     </div>
+                                    @error('akta')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
                                   </div>
                                 </div>
                                 </form>
@@ -378,16 +399,21 @@
                                 @csrf
                               <div class="form-group">
                                   <div class="form-group">
-                                    <label for="upload_akta">Upload SKL</label>
+                                    <label for="skl">Upload SKL</label>
                                     <div class="input-group">
                                       <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="upload_skl" name="skl">
-                                        <label class="custom-file-label" for="upload_skl">Pilih file</label>
+                                        <input type="file" class="custom-file-input @error('skl') is-invalid @enderror" id="skl" name="skl">
+                                        <label class="custom-file-label" for="skl">Pilih file</label>
                                       </div>
                                       <div class="input-group-append">
                                         <button type="submit" class="input-group-text">Upload</button>
                                       </div>
                                     </div>
+                                    @error('skl')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
                                   </div>
                                 </div>
                                 </form>
