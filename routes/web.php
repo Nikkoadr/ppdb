@@ -40,3 +40,5 @@ Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb
 Route::put('/edit/data_ppdb_admin/{id}', [Data_ppdbController::class, 'update_data_ppdb_admin']);
 Route::put('/ubah_password_siswa/{id}', [Data_ppdbController::class, 'ubah_password_siswa']);
 Route::get('/hapus_data_ppdb/{id}', [Data_ppdbController::class, 'destroy']);
+
+Route::post('/multiple_delete', [Data_ppdbController::class, 'deleteChecked']);

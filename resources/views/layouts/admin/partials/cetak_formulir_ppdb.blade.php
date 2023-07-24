@@ -20,7 +20,7 @@
         <table width="100%">
             <tr>
                 <td width="100px" align="center" valign="middle">
-                    <img src="{{asset('assets/img/dikdasmenmuh.png')}}" width="80%">
+                    <img src="{{asset('assets/img/dikdasmenmuh.png')}}" width="100%">
                 </td>
                 <td align="center" valign="middle">
                     <b style="color:#007bff;font-size:10pt !important;">MAJELIS PENDIDIKAN DASAR DAN MENENGAH</b><br>
@@ -43,11 +43,11 @@
             </tr>
         </table>
         <div style="height:5px;border-bottom:solid 2px black;border-top:solid 1px black;margin:10px 0"></div>
-        <div style="text-align:center; margin:40px auto 60px auto">
-            <b style="font-size:14pt !important;">FORMULIR PENDAFTARAN ONLINE</b>
+        <div style="text-align:center; margin:40px auto 30px auto">
+            <b style="font-size:20pt !important;">FORMULIR PENDAFTARAN ONLINE</b>
         </div>
         <div style="text-align:left; margin:20px auto 20px auto">
-            <b style="font-size:12pt !important;">Code Pendaftaran : {{ Auth::user()->id }}</b>
+            <b style="font-size:14pt !important;">Code Pendaftaran : {{ Auth::user()->id }}</b>
         </div>
         <table width="100%" class="it-grid">
             <tr style="background:#f6ff00">
@@ -95,6 +95,13 @@
                 <td>Referensi</td>
                 <td>{{ Auth::user()->referensi }}</td>
             </tr>
+            {{-- <tr>
+                <td><b>Status</b></td>
+                <td><b>Verifikasi   : </b>{{ Auth::user()->verifikasi }}<br>
+                    <b>Daftar Ulang : </b>{{ Auth::user()->daftar_ulang }}<br>
+                    <b>Siap MPLS    : </b>{{ Auth::user()->status_mpls }}
+                </td>
+            </tr> --}}
         </table>
         <table width="100%" style="margin:20px auto">
             <tr>
@@ -117,35 +124,37 @@
                     <br>
                     <br>
                     &nbsp;<br>
-                    Panitia PPDB TA.<br>
+                    Panitia PPDB<br>
                     SMK Muhammadiyah Kandanghaur
                 </td>
             </tr>
         </table>
-        <div style="text-align: center">
-            Jangan lupa Follow, Like and Subscribe Media Sosial Sekolah Kami yaaa...
-        </div>
+        {{-- <div style="text-align: center">
+            Follow, Like and Subscribe Media Sosial SMK Muhammadiyah Kandanghaur untuk melihat seluruh informasi yang ada di SMK Muhammadiyah Kami
+        </div> --}}
         <table width="100%" style="margin-top:40px">
             <tr>
-                <td width="60px">
-                    <img src="https://img2.pngdownload.id/20171202/5b3/facebook-picture-5a22b43e9826a5.9836884015122238066232.jpg" width="50px">
+                <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-1-2.png" width="30px">
                 </td>
                 <td>SMK Muhammadiyah Kandanghaur</td>
-            </tr>
-            <tr>
                 <td>
-                    <img src="https://1.bp.blogspot.com/-FWcDAk4ya0o/V15WPwj-J-I/AAAAAAAAALw/CsKpzk5WuV8K8M7ARKfU-mA_gmtDyTmRACKgB/s1600/maxresdefault.png" width="50px">
-                </td>
-                <td>
-                    Smkmuhkandanghaur
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="https://1.bp.blogspot.com/-W3R9CzV2AWk/YCo9Ev2CcVI/AAAAAAAAD88/qymHYkY-wUwHrClgIXxaZVL_echTZbD0ACLcBGAsYHQ/s1600/Logo%2BYoutube.png" width="50px">
+                    <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" width="30px">
                 </td>
                 <td>
                     SMK Muhammadiyah Kandanghaur
+                </td>
+                <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" width="30px">
+                </td>
+                <td>
+                    smkmuhkandanghaur
+                </td>
+                <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2019/08/tiktok-logo-0-1.png" width="30px">
+                </td>
+                <td>
+                    smkmuhkandanghaur
                 </td>
             </tr>
         </table>
