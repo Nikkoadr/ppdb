@@ -34,7 +34,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   @if (Auth::user()->pasfoto)
-                    <img class="profile-user-img img-fluid img-circle"
+                    <img class="profile-user-img img-fluid"
                       src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}"
                       alt="User profile picture">
                   @else
@@ -281,9 +281,9 @@
                             <div class="card-header">Pas Foto</div>
                             <div class="card-body">
                               @if (Auth::user()->pasfoto)
-                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->pasfoto) }}" class="mt-3">
                               @else
-                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
                               @endif
                             </div>
                             <div class="card-footer">
@@ -317,9 +317,9 @@
                             <div class="card-header">Kartu Keluarga</div>
                             <div class="card-body">
                               @if (Auth::user()->kk)
-                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->kk) }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->kk) }}" class="mt-3">
                               @else
-                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
                               @endif
                             </div>
                             <div class="card-footer">
@@ -353,9 +353,9 @@
                             <div class="card-header">AKTA Kelahiran</div>
                             <div class="card-body">
                               @if (Auth::user()->akta)
-                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->akta) }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->akta) }}" class="mt-3">
                               @else
-                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
                               @endif
                             </div>
                             <div class="card-footer">
@@ -389,9 +389,9 @@
                             <div class="card-header">Surat Keterangan Lulus</div>
                             <div class="card-body">
                               @if (Auth::user()->skl)
-                                <img style="max-width: 250px;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->skl) }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->skl) }}" class="mt-3">
                               @else
-                                <img style="max-width: 250px;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
                               @endif
                             </div>
                             <div class="card-footer">
