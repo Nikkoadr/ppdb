@@ -72,6 +72,12 @@ class Data_ppdbController extends Controller
         return redirect('data_ppdb')->with('success', 'Password Berhasil diganti');
     }
 
+    public function print($id)
+    {
+        $user = User::find($id);
+        return view('layouts.admin.component.cetak_formulir_ppdb_via_admin', compact(['user']), ["judul" => "Cetak Formulir PPDB"]);
+    }
+
     public function destroy($id)
     {
         $ppdb = User::find($id);

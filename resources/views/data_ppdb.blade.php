@@ -73,33 +73,45 @@
                       {{-- <b>Orang tua: </b>{{ $data -> no_wali }} --}}
                     </td>
                     <td>{{ $data -> keahlian }}</td>
-                    <td>
-                      <b>Verifikasi :</b>
-                      @if ($data -> verifikasi == 'Verified')
-                          Sudah
-                      @else
-                          Belum
+                    <td width="14%">
+                      <div class="mb-2">
+                        <b>Verifikasi <span style="padding-left:50px;">:</span></b>
+                          @if ($data -> verifikasi == 'Verified')
+                              <span class="btn-success p-1 rounded">Sudah</span>
+                          @else
+                          <span class="btn-danger p-1 rounded">Belum</span>
                       @endif <br>
-                      <b>Daftar Ulang :</b>
+                      </div>
+                      <div class="mb-2">
+                        <b>Daftar Ulang <span style="padding-left:27px;">:</span></b>
                       @if ($data -> daftar_ulang == 'Sudah Daftar Ulang')
-                          Sudah
+                          <span class="btn-success p-1 rounded">Sudah</span>
                       @else
-                          Belum
+                          <span class="btn-danger p-1 rounded">Belum</span>
                       @endif <br>
-                      <b>MPLS :</b>
+                      </div>
+                      <div>
+                        <b>MPLS <span style="padding-left:77px;">:</span></b>
                       @if ($data -> status_mpls == 'Sudah Siap')
-                          Sudah
+                          <span class="btn-success p-1 rounded">Sudah</span>
                       @else
-                          Belum
+                          <span class="btn-danger p-1 rounded">Belum</span>
                       @endif
+                      </div>
                     </td>
-                    <td style="text-align: center">
+                    <td width="10%" style="text-align: center">
                         <div style="display: inline;">
-                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_siswa_id{{ $data->id }}"><i class="fa-regular fa-pen-to-square"></i></button>
+
+                            <button type="button" class="btn btn-info m-1" data-toggle="modal" data-target="#edit_siswa_id{{ $data->id }}"><i class="fa-regular fa-pen-to-square"></i></button>
                           @include('layouts.admin.component.modal_edit_data_ppdb')
-                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ubah_password_siswa_id{{ $data->id }}"><i class="fa-solid fa-unlock-keyhole"></i></button>
+                          
+                          <a href="print_formulir_ppdb_via_admin/{{ $data->id }}" target="_blank" class="btn btn-primary m-1"><i class="fa-solid fa-print"></i></i></a>
+
+                            <button type="button" class="btn btn-warning m-1" data-toggle="modal" data-target="#ubah_password_siswa_id{{ $data->id }}"><i class="fa-solid fa-unlock-keyhole"></i></button>
                           @include('layouts.admin.component.modal_ubah_password_siswa')
-                        <a href="hapus_data_ppdb/{{ $data->id }}" class="btn btn-danger konfirmasi"><i class="far fa-trash-alt"></i></a>
+                          
+                          <a href="hapus_data_ppdb/{{ $data->id }}" class="btn btn-danger konfirmasi m-1"><i class="far fa-trash-alt"></i></a>
+                          
                       </div>
                     </td>
                   </tr>

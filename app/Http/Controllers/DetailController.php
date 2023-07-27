@@ -28,7 +28,7 @@ class DetailController extends Controller
     {
         return view('profile', ["judul" => "Profile"]);
     }
-    
+
     public function update_profile($id, Request $request)
     {
         $data_valid = $request->validate([
@@ -104,7 +104,6 @@ class DetailController extends Controller
 
     public function print()
     {
-        return view('layouts.admin.partials.cetak_formulir_ppdb', ["judul" => "Cetak Formulir PPDB"]);
+        return view('layouts.admin.component.cetak_formulir_ppdb', ["judul" => "Cetak Formulir PPDB"]);
     }
-
 }
