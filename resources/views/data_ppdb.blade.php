@@ -68,7 +68,7 @@
                     <td>
                       {{-- <b>Alamat: </b>Blok {{ $data -> blok }}-RT {{ $data -> rt }}-RW {{ $data -> rw }}-Desa {{ $data -> desa }}-Kecamatan {{ $data -> kecamatan }}-Kabupaten {{ $data -> kabupaten }}  --}}
                       {{-- <br> --}}
-                      <a href="https://wa.me/62{{ $data -> no_siswa }}">{{ $data -> no_siswa }}</a>
+                      <a href="https://wa.me/62{{ $data -> no_siswa }}?text=Terima kasih sudah mendaftar ke SMK Muhammadiyah Kandanghaur.">{{ $data -> no_siswa }}</a>
                       {{-- <br> --}}
                       {{-- <b>Orang tua: </b>{{ $data -> no_wali }} --}}
                     </td>
