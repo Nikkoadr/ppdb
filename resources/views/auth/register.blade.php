@@ -12,6 +12,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        <h3><b>Account :</b></h3>
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">Email <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
@@ -42,11 +43,36 @@
                             </div>
                         </div>
 
+                        <h3><b>Data Siswa :</b></h3>
                         <div class="row mb-3">
                             <label for="nisn" class="col-md-4 col-form-label text-md-end">NISN <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="nisn" type="number" class="form-control @error('nisn') is-invalid @enderror" name="nisn" value="{{ old('nisn') }}" required placeholder="Nomer Induk Siswa Nasional">
                                 @error('nisn')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="no_kk" class="col-md-4 col-form-label text-md-end">Nomor Kartu Keluarga (KK) :</label>
+                            <div class="col-md-6">
+                                <input id="no_kk" type="number" class="form-control @error('no_kk') is-invalid @enderror" name="no_kk" value="{{ old('no_kk') }}" placeholder="lihat di Kartu Keluarga">
+                                @error('no_kk')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="no_nik" class="col-md-4 col-form-label text-md-end">Nomor Induk Kependudukan (NIK) :</label>
+                            <div class="col-md-6">
+                                <input id="no_nik" type="number" class="form-control @error('no_nik') is-invalid @enderror" name="no_nik" value="{{ old('no_nik') }}" placeholder="lihat di Kartu Keluarga">
+                                @error('no_nik')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -112,10 +138,80 @@
                             </div>
                         </div>
 
+                        <h3><b>Data Orang Tua :</b></h3>
+
+                        <div class="row mb-3">
+                            <label for="nama_ayah" class="col-md-4 col-form-label text-md-end">Nama Ayah :</label>
+                            <div class="col-md-6">
+                                <input id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Nama Ayah Kandung">
+                                @error('nama_ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="pekerjaan_ayah" class="col-md-4 col-form-label text-md-end">Pekerjaan Ayah :</label>
+                            <div class="col-md-6">
+                                <input id="pekerjaan_ayah" type="text" class="form-control @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" value="{{ old('pekerjaan_ayah') }}" placeholder="Pekerjaan Ayah">
+                                @error('pekerjaan_ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="nama_ibu" class="col-md-4 col-form-label text-md-end">Nama Ibu :</label>
+                            <div class="col-md-6">
+                                <input id="nama_ibu" type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Nama Ibu Kandung">
+                                @error('nama_ibu')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="pekerjaan_ibu" class="col-md-4 col-form-label text-md-end">Pekerjaan Ibu :</label>
+                            <div class="col-md-6">
+                                <input id="pekerjaan_ibu" type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" value="{{ old('pekerjaan_ibu') }}" placeholder="Pekerjaan Ibu">
+                                @error('pekerjaan_ibu')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="status_orang_tua" class="col-md-4 col-form-label text-md-end">Status Orang Tua :</label>
+                            <div class="col-md-6">
+                                <select name="status_orang_tua" id="status_orang_tua" class="form-control @error('status_orang_tua') is-invalid @enderror">
+                                    <option value="">Pilih Status Orang Tua</option>
+                                    <option value="Masih Ada" @if (old('status_orang_tua') == "Masih Ada") selected @endif>Masih Ada</option>
+                                    <option value="Yatim" @if (old('status_orang_tua') == "yatim") selected @endif>Yatim (Ayah Sudah Tidak Ada)</option>
+                                    <option value="Piatu" @if (old('status_orang_tua') == "piatu") selected @endif>Piatu (Ibu Sudah Tidak Ada)</option>
+                                    <option value="Yatim Piatu" @if (old('status_orang_tua') == "piatu") selected @endif>Yatim Piatu (Ayah Dan Ibu Sudah Tidak Ada)</option>
+                                </select>
+                                @error('status_orang_tua')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <h3><b>Data Kontak :</b></h3>
+
                         <div class="row mb-3">
                             <label for="no_siswa" class="col-md-4 col-form-label text-md-end">Nomor HP Siswa / Siswi <span style="color: red">*</span>:</label>
                             <div class="col-md-6">
-                                <input id="no_siswa" type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" value="{{ old('no_siswa') }}" required placeholder="Gunakan angka 0 (nol) diawal">
+                                <input id="no_siswa" type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" value="{{ old('no_siswa') }}" required placeholder="Ex : 08xxxxxxxxxx">
                                 @error('no_siswa')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -123,11 +219,12 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="row mb-3">
                             <label for="no_wali" class="col-md-4 col-form-label text-md-end">Nomor HP Orang Tua <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <input id="no_wali" type="number" class="form-control @error('no_wali') is-invalid @enderror" 
-                                name="no_wali" value="{{ old('no_wali') }}" required placeholder="Gunakan angka 0 (nol) diawal">
+                                name="no_wali" value="{{ old('no_wali') }}" required placeholder="Ex : 08xxxxxxxxxx">
                                 @error('no_wali')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -135,6 +232,9 @@
                                 @enderror
                             </div>
                         </div>
+
+                        
+
                         <div class="row mb-3">
                             <label for="alamat" class="col-md-4 col-form-label text-md-end">Alamat <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
@@ -205,7 +305,7 @@
                         <div class="row mb-3">
                             <label for="referensi" class="col-md-4 col-form-label text-md-end">Referensi :</label>
                             <div class="col-md-6">
-                                <input id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Contoh: Meru Dipantara 11-TJKT-2">
+                                <input id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Ex : Meru Dipantara 11-TJKT-2">
                                 @error('referensi')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
