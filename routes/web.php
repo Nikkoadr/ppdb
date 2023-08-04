@@ -33,7 +33,7 @@ Route::get('/profile', [DetailController::class, 'profile'])->name('detail');
 Route::post('/upload_pasfoto_siswa/{id}', [DetailController::class, 'upload_pasfoto_siswa']);
 Route::post('/upload_kk_siswa/{id}', [DetailController::class, 'upload_kk_siswa']);
 Route::post('/upload_akta_siswa/{id}', [DetailController::class, 'upload_akta_siswa']);
-Route::post('/upload_skl_siswa/{id}', [DetailController::class, 'upload_skl_siswa']);
+Route::post('/upload_ijazah_siswa/{id}', [DetailController::class, 'upload_ijazah_siswa']);
 Route::get('/print/formulir_ppdb', [DetailController::class, 'print']);
 
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');

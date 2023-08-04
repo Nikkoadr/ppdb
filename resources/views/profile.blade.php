@@ -96,8 +96,30 @@
                       <div class="form-group row">
                         <label for="nisn" class="col-sm-3 col-form-label">NISN :</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control @error('nisn') is-invalid @enderror" name="nisn" id="nisn" value="{{ Auth::user()->nisn }}">
+                          <input type="number" class="form-control @error('nisn') is-invalid @enderror" name="nisn" id="nisn" value="{{ Auth::user()->nisn }}">
                         @error('nisn')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="no_kk" class="col-sm-3 col-form-label">Nomor Kartu Keluarga (KK) :</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control @error('no_kk') is-invalid @enderror" name="no_kk" id="no_kk" value="{{ Auth::user()->no_kk }}">
+                        @error('no_kk')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="no_nik" class="col-sm-3 col-form-label">Nomor Induk Kependudukan (NIK) :</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control @error('no_nik') is-invalid @enderror" name="no_nik" id="no_nik" value="{{ Auth::user()->no_nik }}">
+                        @error('no_ nik')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -127,6 +149,118 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                           @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                    <label for="ttl" class="col-sm-3 col-form-label">Tempat,  Tanggal Lahir :</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" id="ttl" value="{{ Auth::user()->tempat_lahir }}">
+                    @error('tempat_lahir')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    <div class="col-sm-5">
+                    <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="ttl" value="{{ Auth::user()->tanggal_lahir }}">
+                    @error('tanggal_lahir')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror  
+                    </div>
+                    </div>
+                      <div class="form-group row">
+                        <label for="asal_sekolah" class="col-sm-3 col-form-label">Asal Sekolah :</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" id="asal_sekolah" value="{{ Auth::user()->asal_sekolah }}" >
+                        @error('asal_sekolah')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="nama_ayah" class="col-sm-3 col-form-label">Nama Ayah :</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" id="nama_ayah" value="{{ Auth::user()->nama_ayah }}" >
+                        @error('nama_ayah')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="pekerjaan_ayah" class="col-sm-3 col-form-label">Pekerjaan Ayah :</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" id="pekerjaan_ayah" value="{{ Auth::user()->pekerjaan_ayah }}" >
+                        @error('pekerjaan_ayah')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="nama_ibu" class="col-sm-3 col-form-label">Nama Ibu :</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" id="nama_ibu" value="{{ Auth::user()->nama_ibu }}" >
+                        @error('nama_ibu')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Pekerjaan Ibu :</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                        @error('pekerjaan_ibu')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="status_orang_tua" class="col-sm-3 col-form-label">Status Orang Tua :</label>
+                        <div class="col-sm-9">
+                          <select type="text" class="form-control @error('status_orang_tua') is-invalid @enderror" name="status_orang_tua" id="status_orang_tua">
+                            <option value="Masih Ada" @if (Auth::user()->status_orang_tua =="Masih Ada") selected @endif>Masih Ada</option>
+                            <option value="Yatim" @if (Auth::user()->status_orang_tua =="Yatim") selected @endif>Yatim</option>
+                            <option value="Piatu" @if (Auth::user()->status_orang_tua =="Piatu") selected @endif>Piatu</option>
+                            <option value="Yatim Piatu" @if (Auth::user()->status_orang_tua =="Yatim Piatu") selected @endif>Yatim Piatu</option>
+                          </select>
+                          @error('status_orang_tua')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                          @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="no_siswa" class="col-sm-3 col-form-label">Nomor HP Siswa :</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" id="no_siswa" value="{{ Auth::user()->no_siswa }}">
+                        @error('no_siswa')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="no_wali" class="col-sm-3 col-form-label">No HP Orang Tua :</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control @error('no_wali') is-invalid @enderror" name="no_wali" id="no_wali" value="{{ Auth::user()->no_wali }}">
+                        @error('no_wali')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
@@ -182,58 +316,6 @@
                               <strong>{{ $message }}</strong>
                             </span>
                           @enderror
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="ttl" class="col-sm-3 col-form-label">Tempat,  Tanggal Lahir :</label>
-                        <div class="col-sm-4">
-                          <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" id="ttl" value="{{ Auth::user()->tempat_lahir }}">
-                        @error('tempat_lahir')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                        </div>
-                        <div class="col-sm-5">
-                        <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="ttl" value="{{ Auth::user()->tanggal_lahir }}">
-                        @error('tanggal_lahir')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror  
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="asal_sekolah" class="col-sm-3 col-form-label">Asal Sekolah :</label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" id="asal_sekolah" value="{{ Auth::user()->asal_sekolah }}" >
-                        @error('asal_sekolah')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="no_siswa" class="col-sm-3 col-form-label">Nomor HP Siswa :</label>
-                        <div class="col-sm-9">
-                          <input type="number" class="form-control @error('no_siswa') is-invalid @enderror" name="no_siswa" id="no_siswa" value="{{ Auth::user()->no_siswa }}">
-                        @error('no_siswa')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="no_wali" class="col-sm-3 col-form-label">No HP Orang Tua :</label>
-                        <div class="col-sm-9">
-                          <input type="number" class="form-control @error('no_wali') is-invalid @enderror" name="no_wali" id="no_wali" value="{{ Auth::user()->no_wali }}">
-                        @error('no_wali')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
                         </div>
                       </div>
                       <div class="form-group row">
@@ -386,23 +468,23 @@
                       </div>
                       <div class="col-md-3 mt-2">
                         <div class="card h-100">
-                            <div class="card-header">Surat Keterangan Lulus</div>
+                            <div class="card-header">Ijazah</div>
                             <div class="card-body">
-                              @if (Auth::user()->skl)
-                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->skl) }}" class="mt-3">
+                              @if (Auth::user()->ijazah)
+                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->ijazah) }}" class="mt-3">
                               @else
                                 <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
                               @endif
                             </div>
                             <div class="card-footer">
-                              <form action="upload_skl_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                              <form action="upload_ijazah_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                               <div class="form-group">
                                   <div class="form-group">
-                                    <label for="skl">Upload SKL</label>
+                                    <label for="ijazah">Upload Ijazah</label>
                                     <div class="input-group">
                                       <div class="custom-file">
-                                        <input type="file" class="custom-file-input @error('skl') is-invalid @enderror" id="skl" name="skl">
+                                        <input type="file" class="custom-file-input @error('ijazah') is-invalid @enderror" id="ijazah" name="ijazah">
                                         <label class="custom-file-label" for="skl">Pilih file</label>
                                       </div>
                                       <div class="input-group-append">

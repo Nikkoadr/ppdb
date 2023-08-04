@@ -32,22 +32,29 @@ class DetailController extends Controller
     public function update_profile($id, Request $request)
     {
         $data_valid = $request->validate([
-            'nisn'          => ['required', 'string', 'max:10'],
-            'nama'          => ['required', 'string', 'max:50'],
-            'sex'           => ['required', 'string', 'max:12'],
-            'tempat_lahir'  => ['required', 'string', 'max:50'],
-            'tanggal_lahir' => ['required', 'string', 'max:50'],
-            'asal_sekolah'  => ['required', 'string', 'max:50'],
-            'no_siswa'      => ['required', 'string', 'max:15'],
-            'no_wali'       => ['required', 'string', 'max:15'],
-            'blok'          => ['required', 'string', 'max:100'],
-            'rt'            => ['required', 'string', 'max:3'],
-            'rw'            => ['required', 'string', 'max:3'],
-            'desa'          => ['required', 'string', 'max:50'],
-            'kecamatan'     => ['required', 'string', 'max:50'],
-            'kabupaten'     => ['required', 'string', 'max:50'],
-            'keahlian'      => ['required', 'string', 'max:50'],
-            'referensi'     => [],
+            'nisn'              => ['required', 'string', 'max:10'],
+            'no_kk'             => [],
+            'no_nik'            => [],
+            'nama'              => ['required', 'string', 'max:255'],
+            'sex'               => ['required', 'string', 'max:255'],
+            'tempat_lahir'      => ['required', 'string', 'max:255'],
+            'tanggal_lahir'     => ['required', 'date'],
+            'asal_sekolah'      => ['required', 'string', 'max:255'],
+            'nama_ayah'         => ['required', 'string', 'max:255'],
+            'pekerjaan_ayah'    => [],
+            'nama_ibu'          => ['required', 'string', 'max:255'],
+            'pekerjaan_ibu'     => [],
+            'status_orang_tua'  => ['required'],
+            'blok'              => ['required', 'string', 'max:100'],
+            'rt'                => ['required', 'string', 'max:3'],
+            'rw'                => ['required', 'string', 'max:3'],
+            'desa'              => ['required', 'string', 'max:50'],
+            'kecamatan'         => ['required', 'string', 'max:50'],
+            'kabupaten'         => ['required', 'string', 'max:50'],
+            'no_siswa'          => ['required', 'string', 'max:15'],
+            'no_wali'           => ['required', 'string', 'max:15'],
+            'keahlian'          => ['required', 'string', 'max:50'],
+            'referensi'         => [],
         ]);
         $user = User::find($id);
         $user->update($data_valid);
@@ -90,15 +97,15 @@ class DetailController extends Controller
         return redirect('profile')->with('success', 'AKTA Berhasil Diupload');
     }
 
-    public function upload_skl_siswa($id, Request $request)
+    public function upload_ijazah_siswa($id, Request $request)
     {
         $request->validate([
-            'skl' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:5120',
+            'ijazah' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:5120',
         ]);
-        $imageName = 'skl' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '_' . rand(0, 99999) . '.' . $request->skl->getClientOriginalExtension();
-        $request->skl->storeAs('public/dokumen-ppdb', $imageName);
+        $imageName = 'ijazah' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '_' . rand(0, 99999) . '.' . $request->ijazah->getClientOriginalExtension();
+        $request->ijazah->storeAs('public/dokumen-ppdb', $imageName);
         $user = User::find($id);
-        $user->update(['skl' => $imageName]);
+        $user->update(['ijazah' => $imageName]);
         return redirect('profile')->with('success', 'SKL Berhasil Diupload');
     }
 

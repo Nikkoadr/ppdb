@@ -141,9 +141,9 @@
                         <h3><b>Data Orang Tua :</b></h3>
 
                         <div class="row mb-3">
-                            <label for="nama_ayah" class="col-md-4 col-form-label text-md-end">Nama Ayah :</label>
+                            <label for="nama_ayah" class="col-md-4 col-form-label text-md-end">Nama Ayah <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Nama Ayah Kandung">
+                                <input id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Nama Ayah Kandung" required>
                                 @error('nama_ayah')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -165,9 +165,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="nama_ibu" class="col-md-4 col-form-label text-md-end">Nama Ibu :</label>
+                            <label for="nama_ibu" class="col-md-4 col-form-label text-md-end">Nama Ibu <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="nama_ibu" type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Nama Ibu Kandung">
+                                <input id="nama_ibu" type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Nama Ibu Kandung" required>
                                 @error('nama_ibu')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -189,9 +189,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="status_orang_tua" class="col-md-4 col-form-label text-md-end">Status Orang Tua :</label>
+                            <label for="status_orang_tua" class="col-md-4 col-form-label text-md-end">Status Orang Tua <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <select name="status_orang_tua" id="status_orang_tua" class="form-control @error('status_orang_tua') is-invalid @enderror">
+                                <select name="status_orang_tua" id="status_orang_tua" class="form-control @error('status_orang_tua') is-invalid @enderror" required>
                                     <option value="">Pilih Status Orang Tua</option>
                                     <option value="Masih Ada" @if (old('status_orang_tua') == "Masih Ada") selected @endif>Masih Ada</option>
                                     <option value="Yatim" @if (old('status_orang_tua') == "yatim") selected @endif>Yatim (Ayah Sudah Tidak Ada)</option>
