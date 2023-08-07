@@ -106,7 +106,7 @@ class DetailController extends Controller
         $request->ijazah->storeAs('public/dokumen-ppdb', $imageName);
         $user = User::find($id);
         $user->update(['ijazah' => $imageName]);
-        return redirect('profile')->with('success', 'SKL Berhasil Diupload');
+        return redirect('profile')->with('success', 'Ijazah Berhasil Diupload');
     }
 
     public function print()
