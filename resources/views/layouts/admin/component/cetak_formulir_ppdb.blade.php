@@ -26,7 +26,7 @@
                     <b style="color:#007bff;font-size:10pt !important;">MAJELIS PENDIDIKAN DASAR DAN MENENGAH</b><br>
                     <b style="color:#007bff;font-size:10pt !important;">PIMPINAN WILAYAH MUHAMMADIYAH JAWA BARAT</b><br>
                     <b style="color:#007bff;font-size:14pt !important;">SMK MUHAMMADIYAH KANDANGHAUR</b><br>
-                    <b style="color:#007bff;;font-size:14pt !important;">SEKOLAH PUSAT KEUNGGULAN (PK)</b><br>
+                    <b style="color:#007bff;;font-size:14pt !important;">SMK PUSAT KEUNGGULAN (PK)</b><br>
                     <b>Terakreditasi "A" (Unggul)</b><br>
                     <b>Nomor : 02.00/375/BAP-SM/XI/2008</b>
                     <div style="height:20px"></div>
