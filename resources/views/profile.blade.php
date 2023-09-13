@@ -83,6 +83,7 @@
                   <li class="nav-item"><a class="nav-link active" href="#data_diri" data-toggle="tab">Data diri</a></li>
                   @if (Auth::user()-> daftar_ulang =='Sudah Daftar Ulang')
                     <li class="nav-item"><a class="nav-link" href="#dokumen" data-toggle="tab">Dokumen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ukuran" data-toggle="tab">Ukuran Baju</a></li>
                   @endif
                   
                 </ul>
@@ -504,6 +505,111 @@
                     </div>
                   </div>
                 </div>
+
+                  <div class="tab-pane" id="ukuran">
+                    <div class="row">
+                      <div class="col-md-3 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Ukuran Baju</div>
+                            <div class="card-body">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" class="mt-3">
+                            </div>
+                            <div class="card-footer">
+                              <form action="upload_kk_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="kk">pilih Ukuran Baju</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="text" class="form-control @error('ukuran_baju') is-invalid @enderror" id="ukuran_baju" name="ukuran_baju">
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Simpan</button>
+                                      </div>
+                                    </div>
+                                    @error('kk')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                  </div>
+                                </div>
+                                </form>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">AKTA Kelahiran</div>
+                              <div class="card-body">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3">
+                              </div>
+                            <div class="card-footer">
+                              <form action="upload_akta_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="akta">Upload AKTA Kelahiran</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input @error('akta') is-invalid @enderror" id="akta" name="akta">
+                                        <label class="custom-file-label" for="akta">Pilih file</label>
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Upload</button>
+                                      </div>
+                                    </div>
+                                    @error('akta')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                  </div>
+                                </div>
+                                </form>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Ijazah</div>
+                            <div class="card-body">
+                              @if (Auth::user()->ijazah)
+                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->ijazah) }}" class="mt-3">
+                              @else
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
+                              @endif
+                            </div>
+                            <div class="card-footer">
+                              <form action="upload_ijazah_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                              <div class="form-group">
+                                  <div class="form-group">
+                                    <label for="ijazah">Upload Ijazah</label>
+                                    <div class="input-group">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input @error('ijazah') is-invalid @enderror" id="ijazah" name="ijazah">
+                                        <label class="custom-file-label" for="skl">Pilih file</label>
+                                      </div>
+                                      <div class="input-group-append">
+                                        <button type="submit" class="input-group-text">Upload</button>
+                                      </div>
+                                    </div>
+                                    @error('skl')
+                                      <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                  </div>
+                                </div>
+                                </form>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
         </div>
