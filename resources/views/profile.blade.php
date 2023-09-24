@@ -508,101 +508,129 @@
 
                   <div class="tab-pane" id="ukuran">
                     <div class="row">
-                      <div class="col-md-3 mt-2">
+                      <div class="col-md-12 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Ukuran Baju</div>
                             <div class="card-body">
+                              <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
                                 <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" class="mt-3">
                             </div>
                             <div class="card-footer">
-                              <form action="upload_kk_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                              <form action="ukuran_seragam/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
                                 @csrf
-                              <div class="form-group">
-                                  <div class="form-group">
-                                    <label for="kk">pilih Ukuran Baju</label>
-                                    <div class="input-group">
-                                      <div class="custom-file">
-                                        <input type="text" class="form-control @error('ukuran_baju') is-invalid @enderror" id="ukuran_baju" name="ukuran_baju">
-                                      </div>
-                                      <div class="input-group-append">
-                                        <button type="submit" class="input-group-text">Simpan</button>
-                                      </div>
-                                    </div>
-                                    @error('kk')
-                                      <span class="invalid-feedback d-block" role="alert">
+                                  <div class="form-group row">
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Panjang Baju :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                      @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
                                     @enderror
+                                    </div>
                                   </div>
-                                </div>
+                                  <div class="form-group row">
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Lingkar Dada :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                    @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">lebar punggung :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                    @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="alamat" class="col-sm-12 col-form-label">Panjang Lengan :</label>
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Pendek :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                    @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                    </div>
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Panjang :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                    @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <p><b>Catatan:</b> Semua Ukuran Berdasarakan Centimeter (CM)</p>
+                                    <div class="offset-sm-2 col-sm-10">
+                                      <button type="submit" style="float: right; margin: 5px;" class="btn btn-info">Simpan Ukuran</button>
+                                    </div>
+                                  </div>
                                 </form>
                             </div>
                           </div>
                       </div>
-                      <div class="col-md-3 mt-2">
+                      <div class="col-md-12 mt-2">
                         <div class="card h-100">
-                            <div class="card-header">AKTA Kelahiran</div>
+                            <div class="card-header">Ukuran Celana</div>
                               <div class="card-body">
+                                <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
                                 <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3">
                               </div>
                             <div class="card-footer">
                               <form action="upload_akta_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
-                              <div class="form-group">
-                                  <div class="form-group">
-                                    <label for="akta">Upload AKTA Kelahiran</label>
-                                    <div class="input-group">
-                                      <div class="custom-file">
-                                        <input type="file" class="custom-file-input @error('akta') is-invalid @enderror" id="akta" name="akta">
-                                        <label class="custom-file-label" for="akta">Pilih file</label>
-                                      </div>
-                                      <div class="input-group-append">
-                                        <button type="submit" class="input-group-text">Upload</button>
-                                      </div>
-                                    </div>
-                                    @error('akta')
-                                      <span class="invalid-feedback d-block" role="alert">
+                              <div class="form-group row">
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Panjang Celana :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                      @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
                                     @enderror
-                                  </div>
-                                </div>
-                                </form>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3 mt-2">
-                        <div class="card h-100">
-                            <div class="card-header">Ijazah</div>
-                            <div class="card-body">
-                              @if (Auth::user()->ijazah)
-                                <img style="max-width: 100%;"  src="{{ asset('storage/dokumen-ppdb/'. Auth::user()->ijazah) }}" class="mt-3">
-                              @else
-                                <img style="max-width: 100%;"  src="{{ asset('assets/img/logo.png') }}" class="mt-3">
-                              @endif
-                            </div>
-                            <div class="card-footer">
-                              <form action="upload_ijazah_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
-                                @csrf
-                              <div class="form-group">
-                                  <div class="form-group">
-                                    <label for="ijazah">Upload Ijazah</label>
-                                    <div class="input-group">
-                                      <div class="custom-file">
-                                        <input type="file" class="custom-file-input @error('ijazah') is-invalid @enderror" id="ijazah" name="ijazah">
-                                        <label class="custom-file-label" for="skl">Pilih file</label>
-                                      </div>
-                                      <div class="input-group-append">
-                                        <button type="submit" class="input-group-text">Upload</button>
-                                      </div>
                                     </div>
-                                    @error('skl')
-                                      <span class="invalid-feedback d-block" role="alert">
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Lingkar Panggul :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                    @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
                                     @enderror
+                                    </div>
                                   </div>
-                                </div>
+                                  <div class="form-group row">
+                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Lebar Panggul :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
+                                    @error('pekerjaan_ibu')
+                                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <p><b>Catatan:</b> Semua Ukuran Berdasarakan Centimeter (CM)</p>
+                                    <div class="offset-sm-2 col-sm-10">
+                                      <button type="submit" style="float: right; margin: 5px;" class="btn btn-info">Simpan Ukuran</button>
+                                    </div>
+                                  </div>
                                 </form>
                             </div>
                           </div>
