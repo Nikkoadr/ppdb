@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/logo.png') }}" alt="formulir PPDB" width="70"></p>
             <div class="card">
-                <div class="card-header">Formulir PPDB SMK Muhammadiyah Kandanghaur TA 2023/2024</div>
+                <div class="card-header">Formulir PPDB SMK Muhammadiyah Kandanghaur TA 2024/2025</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
