@@ -147,7 +147,7 @@
                 @enderror
                 </div>
                 <div class="col-sm-5">
-                <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="ttl" value="{{ $data->tanggal_lahir }}">
+                <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="tl" value="{{ $data->tanggal_lahir }}">
                 @error('tanggal_lahir')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
