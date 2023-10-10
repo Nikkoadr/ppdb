@@ -28,8 +28,9 @@ Auth::routes();
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::put('/edit/profile/{id}', [DetailController::class, 'update_profile']);
 Route::get('/profile', [DetailController::class, 'profile'])->name('detail');
+Route::put('/edit/profile/{id}', [DetailController::class, 'update_profile']);
+Route::put('/ukuran_baju/{id}', [DetailController::class, 'update_baju']);
 Route::post('/upload_pasfoto_siswa/{id}', [DetailController::class, 'upload_pasfoto_siswa']);
 Route::post('/upload_kk_siswa/{id}', [DetailController::class, 'upload_kk_siswa']);
 Route::post('/upload_akta_siswa/{id}', [DetailController::class, 'upload_akta_siswa']);

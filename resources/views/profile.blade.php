@@ -516,13 +516,14 @@
                                 <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" class="mt-3">
                             </div>
                             <div class="card-footer">
-                              <form action="ukuran_seragam/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
+                              <form action="ukuran_baju/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
                                 @csrf
+                                @method('put')
                                   <div class="form-group row">
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Panjang Baju :</label>
+                                    <label for="panjang_baju" class="col-sm-3 col-form-label">Panjang Baju :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                      @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('panjang_baju') is-invalid @enderror" name="panjang_baju" id="panjang_baju" value="{{ Auth::user()->panjang_baju }}" >
+                                      @error('panjang_baju')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
@@ -530,10 +531,10 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Lingkar Dada :</label>
+                                    <label for="lingkar_dada" class="col-sm-3 col-form-label">Lingkar Dada :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                    @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('lingkar_dada') is-invalid @enderror" name="lingkar_dada" id="lingkar_dada" value="{{ Auth::user()->lingkar_dada }}" >
+                                    @error('lingkar_dada')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
@@ -541,10 +542,10 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">lebar punggung :</label>
+                                    <label for="lebar_punggung" class="col-sm-3 col-form-label">lebar punggung :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                    @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('lebar_punggung') is-invalid @enderror" name="lebar_punggung" id="lebar_punggung" value="{{ Auth::user()->lebar_punggung }}" >
+                                    @error('lebar_punggung')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
@@ -552,20 +553,20 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="alamat" class="col-sm-12 col-form-label">Panjang Lengan :</label>
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Pendek :</label>
+                                    <label for="panjang_lengan_pendek" class="col-sm-12 col-form-label">Panjang Lengan :</label>
+                                    <label for="panjang_lengan_pendek" class="col-sm-3 col-form-label">Pendek :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                    @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('panjang_lengan_pendek') is-invalid @enderror" name="panjang_lengan_pendek" id="panjang_lengan_pendek" value="{{ Auth::user()->panjang_lengan_pendek }}" >
+                                    @error('panjang_lengan_pendek')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
                                     @enderror
                                     </div>
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Panjang :</label>
+                                    <label for="panjang_lengan_panjang" class="col-sm-3 col-form-label">Panjang :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                    @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('panjang_lengan_panjang') is-invalid @enderror" name="panjang_lengan_panjang" id="panjang_lengan_panjang" value="{{ Auth::user()->panjang_lengan_panjang }}" >
+                                    @error('panjang_lengan_panjang')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
