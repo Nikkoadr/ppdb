@@ -444,13 +444,14 @@
                                 <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3">
                               </div>
                             <div class="card-footer">
-                              <form action="upload_akta_siswa/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                              <form action="ukuran_celana/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
+                                @method('put')
                               <div class="form-group row">
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Panjang Celana :</label>
+                                    <label for="panjang_celana_rok" class="col-sm-3 col-form-label">Panjang Celana :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                      @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('panjang_celana_rok') is-invalid @enderror" name="panjang_celana_rok" id="panjang_celana_rok" value="{{ Auth::user()->panjang_celana_rok }}" >
+                                      @error('panjang_celana_rok')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
@@ -458,27 +459,61 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Lingkar Panggul :</label>
+                                    <label for="lingkar_panggul" class="col-sm-3 col-form-label">Lingkar Panggul :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                    @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('lingkar_panggul') is-invalid @enderror" name="lingkar_panggul" id="lingkar_panggul" value="{{ Auth::user()->lingkar_panggul }}" >
+                                    @error('lingkar_panggul')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
                                     @enderror
                                     </div>
                                   </div>
+                                  {{-- <div class="form-group row">
+                                    <label for="lebar_panggul" class="col-sm-3 col-form-label">Lebar Panggul :</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control @error('lebar_panggul') is-invalid @enderror" name="lebar_panggul" id="lebar_panggul" value="{{ Auth::user()->lebar_panggul }}" >
+                                    @error('lebar_panggul')
+                                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                      </span>
+                                    @enderror
+                                    </div>
+                                  </div> --}}
                                   <div class="form-group row">
-                                    <label for="pekerjaan_ibu" class="col-sm-3 col-form-label">Lebar Panggul :</label>
+                                    <p><b>Catatan:</b> Semua Ukuran Berdasarakan Centimeter (CM)</p>
+                                    <div class="offset-sm-2 col-sm-10">
+                                      <button type="submit" style="float: right; margin: 5px;" class="btn btn-info">Simpan Ukuran</button>
+                                    </div>
+                                  </div>
+                                </form>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="card h-100">
+                            <div class="card-header">Ukuran Sepatu</div>
+                              <div class="card-body">
+                                <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3">
+                              </div>
+                            <div class="card-footer">
+                              <form action="ukuran_sepatu/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                                @method('put')
+                              <div class="form-group row">
+                                    <label for="ukuran_sepatu" class="col-sm-3 col-form-label">Ukuran Sepatu :</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" id="pekerjaan_ibu" value="{{ Auth::user()->pekerjaan_ibu }}" >
-                                    @error('pekerjaan_ibu')
+                                      <input type="text" class="form-control @error('ukuran_sepatu') is-invalid @enderror" name="ukuran_sepatu" id="ukuran_sepatu" value="{{ Auth::user()->ukuran_sepatu }}" >
+                                      @error('ukuran_sepatu')
                                       <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                       </span>
                                     @enderror
                                     </div>
                                   </div>
+
                                   <div class="form-group row">
                                     <p><b>Catatan:</b> Semua Ukuran Berdasarakan Centimeter (CM)</p>
                                     <div class="offset-sm-2 col-sm-10">
