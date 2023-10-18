@@ -64,16 +64,40 @@ class DetailController extends Controller
     public function update_baju($id, Request $request)
     {
         $data_valid = $request->validate([
-            'panjang_baju'                      => ['nullable', 'integer', 'max:80', 'min:50'],
-            'lingkar_dada'                      => ['nullable', 'integer', 'max:130', 'min:100'],
-            'lebar_punggung'                    => ['nullable', 'integer', 'max:55', 'min:40'],
+            'panjang_baju'                     => ['nullable', 'integer', 'max:80', 'min:50'],
+            'lingkar_dada'                     => ['nullable', 'integer', 'max:130', 'min:100'],
+            'lebar_punggung'                   => ['nullable', 'integer', 'max:55', 'min:40'],
             'panjang_lengan_pendek'            => ['nullable', 'integer', 'max:30', 'min:20'],
-            'panjang_lengan_panjang'            => ['nullable', 'integer', 'max:65', 'min:55'],
+            'panjang_lengan_panjang'           => ['nullable', 'integer', 'max:65', 'min:55'],
 
         ]);
         $user = User::find($id);
         $user->update($data_valid);
         return redirect('profile')->with('success', 'Data Baju Berhasil di Tambahkan');
+    }
+
+    public function update_celana($id, Request $request)
+    {
+        $data_valid = $request->validate([
+            'panjang_celana_rok'                 => ['nullable', 'integer'],
+            'lingkar_panggul'                => ['nullable', 'integer'],
+            'lebar_panggul'                  => ['nullable', 'integer'],
+
+        ]);
+        $user = User::find($id);
+        $user->update($data_valid);
+        return redirect('profile')->with('success', 'Data Celana Berhasil di Tambahkan');
+    }
+
+    public function update_sepatu($id, Request $request)
+    {
+        $data_valid = $request->validate([
+            'ukuran_sepatu'                  => ['nullable', 'integer', 'max:50', 'min:30'],
+
+        ]);
+        $user = User::find($id);
+        $user->update($data_valid);
+        return redirect('profile')->with('success', 'Data Sepatu Berhasil di Tambahkan');
     }
 
     public function upload_pasfoto_siswa($id, Request $request)

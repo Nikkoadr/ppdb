@@ -31,6 +31,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/profile', [DetailController::class, 'profile'])->name('detail');
 Route::put('/edit/profile/{id}', [DetailController::class, 'update_profile']);
 Route::put('/ukuran_baju/{id}', [DetailController::class, 'update_baju']);
+Route::put('/ukuran_celana/{id}', [DetailController::class, 'update_celana']);
+Route::put('/ukuran_sepatu/{id}', [DetailController::class, 'update_sepatu']);
 Route::post('/upload_pasfoto_siswa/{id}', [DetailController::class, 'upload_pasfoto_siswa']);
 Route::post('/upload_kk_siswa/{id}', [DetailController::class, 'upload_kk_siswa']);
 Route::post('/upload_akta_siswa/{id}', [DetailController::class, 'upload_akta_siswa']);

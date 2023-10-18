@@ -27,7 +27,9 @@ class DashboardController extends Controller
         $query = User::count();
         $admin = 1;
         $data_ppdb = $query - $admin;
-        return view('dashboard', compact(['data_ppdb']), ["judul" => "Dashboard"]);
+        $keahlian_tkj = User::where('keahlian', 'TJKT')->count();
+        $keahlian_tkro = User::where('keahlian', 'TKRO')->count();
+        $keahlian_tpfl = User::where('keahlian', 'TPFL')->count();
+        return view('dashboard', compact(['data_ppdb'], ['keahlian_tkj'], ['keahlian_tkro'], ['keahlian_tpfl']), ["judul" => "Dashboard"]);
     }
-    
 }
