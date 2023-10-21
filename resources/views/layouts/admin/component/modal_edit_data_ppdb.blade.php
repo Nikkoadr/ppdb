@@ -366,6 +366,40 @@
                     @enderror
                     </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="panjang_baju" style="margin-left: 75px" class="col-sm-12 col-form-label text-left" >Ukuran Celana :</label>
+                    <label for="panjang_baju" class="col-sm-3 col-form-label">Panjang Celana :</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('panjang_celana_rok') is-invalid @enderror" name="panjang_celana_rok" id="panjang_celana_rok" value="{{ $data->panjang_celana_rok }}">
+                    @error('panjang_celana_rok')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="lingkar_panggul" class="col-sm-3 col-form-label">Lingkar Panggul :</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('lingkar_panggul') is-invalid @enderror" name="lingkar_panggul" id="lingkar_panggul" value="{{ $data->lingkar_panggul }}">
+                    @error('lingkar_panggul')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="ukuran_sepatu" class="col-sm-3 col-form-label">Ukuran Sepatu :</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('ukuran_sepatu') is-invalid @enderror" name="ukuran_sepatu" id="ukuran_sepatu" value="{{ $data->ukuran_sepatu }}">
+                    @error('ukuran_sepatu')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Edit</button>

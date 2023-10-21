@@ -54,7 +54,6 @@ class CreateUsersTable extends Migration
             $table->integer('panjang_lengan_panjang')->nullable();
             $table->integer('panjang_celana_rok')->nullable();
             $table->integer('lingkar_panggul')->nullable();
-            $table->integer('lebar_panggul')->nullable();
             $table->integer('ukuran_sepatu')->nullable();
             $table->string('keahlian');
             $table->string('referensi')->nullable();

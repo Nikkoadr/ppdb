@@ -81,7 +81,6 @@ class DetailController extends Controller
         $data_valid = $request->validate([
             'panjang_celana_rok'                 => ['nullable', 'integer'],
             'lingkar_panggul'                => ['nullable', 'integer'],
-            'lebar_panggul'                  => ['nullable', 'integer'],
 
         ]);
         $user = User::find($id);

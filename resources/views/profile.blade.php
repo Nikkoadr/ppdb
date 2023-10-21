@@ -366,7 +366,7 @@
                             <div class="card-header">Ukuran Baju</div>
                             <div class="card-body">
                               <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
-                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" class="mt-3 rounded mx-auto d-block">
                             </div>
                             <div class="card-footer">
                               <form action="ukuran_baju/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
@@ -441,7 +441,7 @@
                             <div class="card-header">Ukuran Celana</div>
                               <div class="card-body">
                                 <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
-                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3">
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3 rounded mx-auto d-block">
                               </div>
                             <div class="card-footer">
                               <form action="ukuran_celana/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -469,17 +469,6 @@
                                     @enderror
                                     </div>
                                   </div>
-                                  {{-- <div class="form-group row">
-                                    <label for="lebar_panggul" class="col-sm-3 col-form-label">Lebar Panggul :</label>
-                                    <div class="col-sm-9">
-                                      <input type="text" class="form-control @error('lebar_panggul') is-invalid @enderror" name="lebar_panggul" id="lebar_panggul" value="{{ Auth::user()->lebar_panggul }}" >
-                                    @error('lebar_panggul')
-                                      <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                      </span>
-                                    @enderror
-                                    </div>
-                                  </div> --}}
                                   <div class="form-group row">
                                     <p><b>Catatan:</b> Semua Ukuran Berdasarakan Centimeter (CM)</p>
                                     <div class="offset-sm-2 col-sm-10">
@@ -494,7 +483,10 @@
                     <div class="col-md-12 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Ukuran Sepatu</div>
-
+                              <div class="card-body">
+                                <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
+                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/sepatu.webp') }}" class="mt-3 rounded mx-auto d-block">
+                              </div>
                             <div class="card-footer">
                               <form action="ukuran_sepatu/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
@@ -512,7 +504,7 @@
                                   </div>
 
                                   <div class="form-group row">
-                                    <p><b>Catatan:</b> Semua Ukuran Berdasarakan Centimeter (CM)</p>
+                                    <p><b>Catatan:</b> Ukurna sepatu menggunakan nomor sepatu EU Contoh : 40</p>
                                     <div class="offset-sm-2 col-sm-10">
                                       <button type="submit" style="float: right; margin: 5px;" class="btn btn-info">Simpan Ukuran</button>
                                     </div>
