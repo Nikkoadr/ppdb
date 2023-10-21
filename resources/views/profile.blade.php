@@ -494,10 +494,7 @@
                     <div class="col-md-12 mt-2">
                         <div class="card h-100">
                             <div class="card-header">Ukuran Sepatu</div>
-                              <div class="card-body">
-                                <p style="text-align: center;"><b>Gambar Sebagai Patokan</b></p>
-                                <img style="max-width: 100%;"  src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" class="mt-3">
-                              </div>
+
                             <div class="card-footer">
                               <form action="ukuran_sepatu/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf

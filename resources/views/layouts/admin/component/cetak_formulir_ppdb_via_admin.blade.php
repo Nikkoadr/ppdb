@@ -48,15 +48,23 @@
         </div>
         
         <div style="text-align:left; margin:20px auto 20px auto">
-            <b style="font-size:14pt !important;">Code Pendaftaran : {{ $user -> id }}</b>
+            <b style="font-size:14pt !important;">ID Pendaftaran : {{ $user -> id }}</b>
         </div>
         <table width="100%" class="it-grid">
             <tr style="background:#f6ff00">
                 <td style="padding:10px" colspan="2" align="center"><b style="font-size:12pt !important;">IDENTITAS PESERTA DIDIK BARU</b></td>
             </tr>
             <tr>
-                <td width="250px">NISN</td>
+                <td width="250px">Nomor Unduk Siswa Nasional</td>
                 <td>{{ $user -> nisn }}</td>
+            </tr>
+            <tr>
+                <td width="250px">Nomor Kartu Keluarga</td>
+                <td>{{ $user -> no_kk }}</td>
+            </tr>
+            <tr>
+                <td width="250px">Nomor Kartu Tanda Penduduk</td>
+                <td>{{ $user -> no_nik }}</td>
             </tr>
             <tr>
                 <td width="250px">Nama Lengkap Calon Peserta Didik</td>
@@ -75,6 +83,32 @@
                 <td>{{ $user -> asal_sekolah }}</td>
             </tr>
             <tr>
+                <td>Nama Ayah</td>
+                <td>{{ $user -> nama_ayah }}</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan Ayah</td>
+                <td>{{ $user -> pekerjaan_ayah }}</td>
+            </tr>
+            <tr>
+                <td>Nama Ibu</td>
+                <td>{{ $user -> nama_ibu }}</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan Ibu</td>
+                <td>{{ $user -> pekerjaan_ibu }}</td>
+            </tr>
+            <tr>
+                <td>Status Orang Tua</td>
+                <td>{{ $user -> status_orang_tua }}</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>Blok {{ $user -> blok }} - RT {{ $user -> rt }} - RW {{ $user -> rw }}
+                Desa {{ $user -> desa }} - Kecamatan {{ $user -> kecamatan }} - Kabupaten {{ $user -> kabupaten }}
+                </td>
+            </tr>
+            <tr>
                 <td>Nomor HP Siswa</td>
                 <td>{{ $user -> no_siswa }}</td>
             </tr>
@@ -83,14 +117,23 @@
                 <td>{{ $user -> no_wali }}</td>
             </tr>
             <tr>
-                <td>Jurusan Yang Diminati</td>
-                <td>{{ $user -> keahlian }}</td>
+                <td>Ukuran Segaram</td>
+                <td><b>Ukuran Baju: </b> <br>
+                    - Panjang baju : {{ $user -> panjang_baju }}
+                    - Lingkar dada : {{ $user -> lingkar_dada }}
+                    - Lebar Punggung : {{ $user -> lebar_punggung }}
+                    - Lengan Panjang : {{ $user -> panjang_lengan_panjang }}
+                    - Lengan Pendek {{ $user -> panjang_lengan_pendek }} <br>
+                    <b>Ukuran Celana : </b><br>
+                    - Panjang Celana : {{ $user -> panjang_celana_rok }}
+                    - Lingkar Panggul : {{ $user -> lingkar_panggul }} <br>
+                    <b>Ukuran Sepatu : </b><br>
+                    - Ukuran Sepatu : {{ $user -> ukuran_sepatu }}
+                </td>
             </tr>
             <tr>
-                <td>Alamat</td>
-                <td>Blok {{ $user -> blok }} - RT {{ $user -> rt }} - RW {{ $user -> rw }}
-                Desa {{ $user -> desa }} - Kecamatan {{ $user -> kecamatan }} - Kabupaten {{ $user -> kabupaten }}
-                </td>
+                <td>Jurusan Yang Diminati</td>
+                <td>{{ $user -> keahlian }}</td>
             </tr>
             <tr>
                 <td>Referensi</td>
@@ -113,9 +156,7 @@
                         <br><br>
                     <b>Contact Person PPDB:</b> 
                         <br>
-                        Rifa Hamidah, S.Pd. : 0822 9977 1110
-                        <br>
-                        Afandi, S.Pd. : 0812 2065 570 
+                        Customer Services SMK : 081xxxxxxxxx
                     </div>
                 </td>
                 <td align="center">
@@ -136,17 +177,25 @@
         <table width="100%" style="margin-top:40px">
             <tr>
                 <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" width="30px">
+                </td>
+                <td>
+                    @smkmuhkandanghaur
+                </td>
+                <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2023/07/threads-logo-0.png" width="30px">
+                </td>
+                <td>
+                    @smkmuhkandanghaur
+                </td>
+                <td>
                     <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-1-2.png" width="30px">
                 </td>
-                <td>SMK Muhammadiyah Kandanghaur</td>
+                <td>
+                    smkmuhkandanghaur
+                </td>
                 <td>
                     <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" width="30px">
-                </td>
-                <td>
-                    SMK Muhammadiyah Kandanghaur
-                </td>
-                <td>
-                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" width="30px">
                 </td>
                 <td>
                     smkmuhkandanghaur
@@ -155,7 +204,7 @@
                     <img src="https://logodownload.org/wp-content/uploads/2019/08/tiktok-logo-0-1.png" width="30px">
                 </td>
                 <td>
-                    smkmuhkandanghaur
+                    @smkmuhkandanghaur
                 </td>
             </tr>
         </table>

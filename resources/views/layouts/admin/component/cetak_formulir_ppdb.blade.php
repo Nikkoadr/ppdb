@@ -46,54 +46,98 @@
         <div style="text-align:center; margin:40px auto 30px auto">
             <b style="font-size:20pt !important;">FORMULIR PENDAFTARAN ONLINE</b>
         </div>
+        
         <div style="text-align:left; margin:20px auto 20px auto">
-            <b style="font-size:14pt !important;">Code Pendaftaran : {{ Auth::user()->id }}</b>
+            <b style="font-size:14pt !important;">ID Pendaftaran : {{ Auth::user()-> id }}</b>
         </div>
         <table width="100%" class="it-grid">
             <tr style="background:#f6ff00">
                 <td style="padding:10px" colspan="2" align="center"><b style="font-size:12pt !important;">IDENTITAS PESERTA DIDIK BARU</b></td>
             </tr>
             <tr>
-                <td width="250px">NISN</td>
-                <td>{{ Auth::user()->nisn }}</td>
+                <td width="250px">Nomor Unduk Siswa Nasional</td>
+                <td>{{ Auth::user()-> nisn }}</td>
+            </tr>
+            <tr>
+                <td width="250px">Nomor Kartu Keluarga</td>
+                <td>{{ Auth::user()-> no_kk }}</td>
+            </tr>
+            <tr>
+                <td width="250px">Nomor Kartu Tanda Penduduk</td>
+                <td>{{ Auth::user()-> no_nik }}</td>
             </tr>
             <tr>
                 <td width="250px">Nama Lengkap Calon Peserta Didik</td>
-                <td>{{ Auth::user()->nama }}</td>
+                <td>{{ Auth::user()-> nama }}</td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
-                <td>{{ Auth::user()->sex }}</td>
+                <td>{{ Auth::user()-> sex }}</td>
             </tr>
             <tr>
                 <td>Tempat, Tangga Lahir</td>
-                <td>{{ Auth::user()->tempat_lahir }}, {{\Carbon\Carbon::parse( Auth::user()->tanggal_lahir )->translatedFormat('d F Y')}}</td>
+                <td>{{ Auth::user()-> tempat_lahir }}, {{\Carbon\Carbon::parse( Auth::user()-> tanggal_lahir )->translatedFormat('d F Y')}}</td>
             </tr>
             <tr>
                 <td>Asal Sekolah</td>
-                <td>{{ Auth::user()->asal_sekolah }}</td>
+                <td>{{ Auth::user()-> asal_sekolah }}</td>
             </tr>
             <tr>
-                <td>Nomor HP Siswa</td>
-                <td>{{ Auth::user()->no_siswa }}</td>
+                <td>Nama Ayah</td>
+                <td>{{ Auth::user()-> nama_ayah }}</td>
             </tr>
             <tr>
-                <td>Nomor HP Orang Tua</td>
-                <td>{{ Auth::user()->no_wali }}</td>
+                <td>Pekerjaan Ayah</td>
+                <td>{{ Auth::user()-> pekerjaan_ayah }}</td>
             </tr>
             <tr>
-                <td>Jurusan Yang Diminati</td>
-                <td>{{ Auth::user()->keahlian }}</td>
+                <td>Nama Ibu</td>
+                <td>{{ Auth::user()-> nama_ibu }}</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan Ibu</td>
+                <td>{{ Auth::user()-> pekerjaan_ibu }}</td>
+            </tr>
+            <tr>
+                <td>Status Orang Tua</td>
+                <td>{{ Auth::user()-> status_orang_tua }}</td>
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td>Blok {{ Auth::user()->blok }} - RT {{ Auth::user()->rt }} - RW {{ Auth::user()->rw }}
-                Desa {{ Auth::user()->desa }} - Kecamatan {{ Auth::user()->kecamatan }} - Kabupaten {{ Auth::user()->kabupaten }}
+                <td>Blok {{ Auth::user()-> blok }} - RT {{ Auth::user()-> rt }} - RW {{ Auth::user()-> rw }}
+                Desa {{ Auth::user()-> desa }} - Kecamatan {{ Auth::user()-> kecamatan }} - Kabupaten {{ Auth::user()-> kabupaten }}
                 </td>
             </tr>
             <tr>
+                <td>Nomor HP Siswa</td>
+                <td>{{ Auth::user()-> no_siswa }}</td>
+            </tr>
+            <tr>
+                <td>Nomor HP Orang Tua</td>
+                <td>{{ Auth::user()-> no_wali }}</td>
+            </tr>
+            <tr>
+                <td>Ukuran Segaram</td>
+                <td><b>Ukuran Baju: </b> <br>
+                    - Panjang baju : {{ Auth::user()-> panjang_baju }}
+                    - Lingkar dada : {{ Auth::user()-> lingkar_dada }}
+                    - Lebar Punggung : {{ Auth::user()-> lebar_punggung }}
+                    - Lengan Panjang : {{ Auth::user()-> panjang_lengan_panjang }}
+                    - Lengan Pendek {{ Auth::user()-> panjang_lengan_pendek }} <br>
+                    <b>Ukuran Celana : </b><br>
+                    - Panjang Celana : {{ Auth::user()-> panjang_celana_rok }}
+                    - Lingkar Panggul : {{ Auth::user()-> lingkar_panggul }} <br>
+                    <b>Ukuran Sepatu : </b><br>
+                    - Ukuran Sepatu : {{ Auth::user()-> ukuran_sepatu }}
+                </td>
+            </tr>
+            <tr>
+                <td>Jurusan Yang Diminati</td>
+                <td>{{ Auth::user()-> keahlian }}</td>
+            </tr>
+            <tr>
                 <td>Referensi</td>
-                <td>{{ Auth::user()->referensi }}</td>
+                <td>{{ Auth::user()-> referensi }}</td>
             </tr>
             {{-- <tr>
                 <td><b>Status</b></td>
@@ -112,9 +156,7 @@
                         <br><br>
                     <b>Contact Person PPDB:</b> 
                         <br>
-                        Rifa Hamidah, S.Pd. : 0822 9977 1110
-                        <br>
-                        Afandi, S.Pd. : 0812 2065 570 
+                        Customer Services SMK : 081xxxxxxxxx
                     </div>
                 </td>
                 <td align="center">
@@ -135,17 +177,25 @@
         <table width="100%" style="margin-top:40px">
             <tr>
                 <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" width="30px">
+                </td>
+                <td>
+                    @smkmuhkandanghaur
+                </td>
+                <td>
+                    <img src="https://logodownload.org/wp-content/uploads/2023/07/threads-logo-0.png" width="30px">
+                </td>
+                <td>
+                    @smkmuhkandanghaur
+                </td>
+                <td>
                     <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-1-2.png" width="30px">
                 </td>
-                <td>SMK Muhammadiyah Kandanghaur</td>
+                <td>
+                    smkmuhkandanghaur
+                </td>
                 <td>
                     <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" width="30px">
-                </td>
-                <td>
-                    SMK Muhammadiyah Kandanghaur
-                </td>
-                <td>
-                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" width="30px">
                 </td>
                 <td>
                     smkmuhkandanghaur
@@ -154,7 +204,7 @@
                     <img src="https://logodownload.org/wp-content/uploads/2019/08/tiktok-logo-0-1.png" width="30px">
                 </td>
                 <td>
-                    smkmuhkandanghaur
+                    @smkmuhkandanghaur
                 </td>
             </tr>
         </table>
