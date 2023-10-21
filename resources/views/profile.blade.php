@@ -82,7 +82,7 @@
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#data_diri" data-toggle="tab">Data diri</a></li>
                   @if (Auth::user()-> verifikasi =='Verified')
-                    <li class="nav-item"><a class="nav-link" href="#ukuran" data-toggle="tab">Ukuran Baju</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ukuran" data-toggle="tab">Ukuran Seragam</a></li>
                   @endif
                   @if (Auth::user()-> daftar_ulang =='Sudah Daftar Ulang')
                     <li class="nav-item"><a class="nav-link" href="#dokumen" data-toggle="tab">Dokumen</a></li>
