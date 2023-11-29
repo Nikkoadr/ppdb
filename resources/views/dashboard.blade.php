@@ -102,9 +102,9 @@
                       <h1 style="text-align: center">Terima Kasih</h1>
                       <h4 style="text-align: center">Telah mendaftarkan diri anda ke SMK Muhammadiyah Kandanghaur</h4>
                       <h4 style="text-align: center">Untuk informasi selanjutnya bisa bergabung ke grup WhatsApp PPDB SMK Muhammadiyah Kandanghaur.</h4>
-                      <h4 style="text-align: center">untuk bergabung ke grup WhatsApp bisa <a href="https://chat.whatsapp.com/Giq7lEOyyIZ2BAJKIcWasn">Klik Disini</a>.</h4>
+                      <h4 style="text-align: center">untuk bergabung ke grup WhatsApp bisa <a href="https://chat.whatsapp.com/BFETl63iJTD2LTsm6lJMCv">Klik Disini</a>.</h4>
                       <h4 style="text-align: center">atau bisa scan barcode di bawah ini</h4>
-                      <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/barcode_ppdb.png') }}" alt="Barcode PPDB" width="150"></p>
+                      <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/barcode_grup_wa.gif') }}" alt="Barcode PPDB" width="150"></p>
                       <h4 style="text-align: center">Untuk melihat profil anda Bisa klik : <a href="/profile">Profile</a> atau klik di nama anda</h4>
                   </div>
               </div>
