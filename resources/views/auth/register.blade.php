@@ -284,16 +284,16 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Program Keahlian <span style="color: red">*</span> :</label>
+                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Kosentrasi Keahlian <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <select name="keahlian" id="keahlian" class="form-control @error('keahlian') is-invalid @enderror" required>
-                                    <option value="">Pilih Program Keahlian</option>
-                                    <option value="TPFL" @if (old('keahlian') == "TPFL")selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
-                                    <option value="TKRO" @if (old('keahlian') == "TKRO")selected @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
-                                    <option value="TE" @if (old('keahlian') == "TE") selected @endif>Teknik Elektronika ( TE )</option>
-                                    <option value="TJKT" @if (old('keahlian') == "TJKT") selected @endif>Teknik Jaringan Komputer Dan Telekomunikasi ( TJKT )</option>
-                                    <option value="TBSM" @if (old('keahlian') == "TBSM") selected @endif>Teknik Dan Bisnis Sepeda Motor ( TBSM )</option>
-                                    <option value="TF" @if (old('keahlian') == "TF") selected @endif>Teknologi Farmasi ( TF )</option>
+                                    <option value="">Pilih Kosentrasi Keahlian</option>
+                                    <option value="TPFL" @if (old('keahlian') == "TPFL")selected @endif>Teknik Pengelasan ( TPL )</option>
+                                    <option value="TKRO" @if (old('keahlian') == "TKRO")selected @endif>Teknik Kendaraan Ringan( TKR )</option>
+                                    <option value="TE" @if (old('keahlian') == "TE") selected @endif>Teknik Elektronika Industri ( TEI )</option>
+                                    <option value="TJKT" @if (old('keahlian') == "TJKT") selected @endif>Teknik Komputer Dan Jaringan ( TKJ )</option>
+                                    <option value="TBSM" @if (old('keahlian') == "TBSM") selected @endif>Teknik Sepeda Motor ( TSM )</option>
+                                    <option value="TF" @if (old('keahlian') == "TF") selected @endif>Farmasi klinis dan Komunitas ( FKK )</option>
                                 </select>
                                 @error('keahlian')
                                     <span class="invalid-feedback" role="alert">
