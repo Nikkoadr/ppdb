@@ -69,9 +69,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="no_nik" class="col-md-4 col-form-label text-md-end">Nomor Induk Kependudukan (NIK) :</label>
+                            <label for="no_nik" class="col-md-4 col-form-label text-md-end">Nomor Induk Kependudukan (NIK) <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="no_nik" type="number" class="form-control @error('no_nik') is-invalid @enderror" name="no_nik" value="{{ old('no_nik') }}" placeholder="lihat di Kartu Keluarga">
+                                <input id="no_nik" type="number" class="form-control @error('no_nik') is-invalid @enderror" name="no_nik" value="{{ old('no_nik') }}" placeholder="lihat di Kartu Keluarga" required>
                                 @error('no_nik')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -284,10 +284,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Kosentrasi Keahlian <span style="color: red">*</span> :</label>
+                            <label for="keahlian" class="col-md-4 col-form-label text-md-end">Konsentrasi Keahlian <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
                                 <select name="keahlian" id="keahlian" class="form-control @error('keahlian') is-invalid @enderror" required>
-                                    <option value="">Pilih Kosentrasi Keahlian</option>
+                                    <option value="">Pilih Konsentrasi Keahlian</option>
                                     <option value="TPFL" @if (old('keahlian') == "TPFL")selected @endif>Teknik Pengelasan ( TPL )</option>
                                     <option value="TKRO" @if (old('keahlian') == "TKRO")selected @endif>Teknik Kendaraan Ringan( TKR )</option>
                                     <option value="TE" @if (old('keahlian') == "TE") selected @endif>Teknik Elektronika Industri ( TEI )</option>
