@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'password'          => ['required', 'string', 'min:8', 'confirmed'],
             'nisn'              => ['required', 'string', 'max:10'],
             'no_kk'             => [],
-            'no_nik'            => [],
+            'no_nik'            => ['required', 'min:16'],
             'nama'              => ['required', 'string', 'max:255'],
             'sex'               => ['required', 'string', 'max:255'],
             'tempat_lahir'      => ['required', 'string', 'max:255'],
