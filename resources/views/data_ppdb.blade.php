@@ -49,7 +49,7 @@
                     <th>TTL</th>
                     <th>Asal Sekolah</th>
                     <th>Kontak</th>
-                    <th>Program Keahlian</th>
+                    <th>Konsentrasi Keahlian</th>
                     <th>Status</th>
                     <th data-orderable="false">Menu</th>
                   </tr>
