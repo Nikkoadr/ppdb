@@ -26,7 +26,7 @@ class Data_ppdbController extends Controller
     public function index()
     {
         $this->authorize('isadmin');
-        $data_ppdb = User::latest()->paginate(100);
+        $data_ppdb = User::latest()->get();
         return view('data_ppdb', compact(['data_ppdb']), ["judul" => "Data PPDB"]);
     }
 
