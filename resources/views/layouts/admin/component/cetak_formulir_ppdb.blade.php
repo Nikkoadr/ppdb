@@ -47,10 +47,12 @@
         <div style="height:5px;border-bottom:solid 2px black;border-top:solid 1px black;margin:10px 0"></div>
         <div style="text-align:center; margin:40px auto 30px auto">
             <b style="font-size:20pt !important;">FORMULIR PENDAFTARAN ONLINE PESERTA DIDIK BARU</b>
+            <b style="font-size:20pt !important;">2024/2025</b>
         </div>
         
         <div style="text-align:left; margin:20px auto 20px auto">
-            <b style="font-size:14pt !important;">ID Pendaftaran : {{ Auth::user()-> id }}</b>
+            <b style="font-size:14pt !important;">ID Pendaftaran : {{ Auth::user() -> id }}</b><br>
+            <b style="font-size:10pt !important;">Daftar pada : {{\Carbon\Carbon::parse( Auth::user() -> created_at )->translatedFormat('d F Y')}}</b>
         </div>
         <table width="100%" class="it-grid">
             <tr style="background:#f6ff00">

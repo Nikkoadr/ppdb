@@ -50,6 +50,7 @@
                     <th>Asal Sekolah</th>
                     <th>Kontak</th>
                     <th>Konsentrasi Keahlian</th>
+                    <th>Upload Berkas</th>
                     <th>Status</th>
                     <th data-orderable="false">Menu</th>
                   </tr>
@@ -73,6 +74,40 @@
                       {{-- <b>Orang tua: </b>{{ $data -> no_wali }} --}}
                     </td>
                     <td>{{ $data -> keahlian }}</td>
+                    <td width="14%">
+                      <div class="mb-2">
+                        <b>Pas Foto <span style="padding-left:10px;">:</span></b>
+                          @if ($data -> pasfoto != null)
+                              <span class="btn-success p-1 rounded">Sudah</span>
+                          @else
+                          <span class="btn-danger p-1 rounded">Belum</span>
+                      @endif <br>
+                      </div>
+                      <div class="mb-2">
+                        <b>KK <span style="padding-left:50px;">:</span></b>
+                      @if ($data -> kk != null)
+                          <span class="btn-success p-1 rounded">Sudah</span>
+                      @else
+                          <span class="btn-danger p-1 rounded">Belum</span>
+                      @endif <br>
+                      </div>
+                      <div class="mb-2">
+                        <b>AKTA <span style="padding-left:35px;">:</span></b>
+                      @if ($data -> akta != null)
+                          <span class="btn-success p-1 rounded">Sudah</span>
+                      @else
+                          <span class="btn-danger p-1 rounded">Belum</span>
+                      @endif
+                      </div>
+                      <div class="mb-2">
+                        <b>Ijazah <span style="padding-left:29px;">:</span></b>
+                      @if ($data -> ijazah != null)
+                          <span class="btn-success p-1 rounded">Sudah</span>
+                      @else
+                          <span class="btn-danger p-1 rounded">Belum</span>
+                      @endif
+                      </div>
+                    </td>
                     <td width="14%">
                       <div class="mb-2">
                         <b>Verifikasi <span style="padding-left:50px;">:</span></b>
