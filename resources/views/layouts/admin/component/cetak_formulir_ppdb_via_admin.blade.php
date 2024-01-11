@@ -28,7 +28,7 @@
                     <b style="color:#007bff;font-size:14pt !important;">SMK MUHAMMADIYAH KANDANGHAUR</b><br>
                     <b style="color:#007bff;;font-size:14pt !important;">SMK PUSAT KEUNGGULAN (PK)</b><br>
                     <b>Terakreditasi "A" (Unggul)</b><br>
-                    <b>Nomor : 02.00/375/BAP-SM/XI/2008</b>
+                    <b>Nomor : 18572022/BAN-SM/SK/2022</b>
                     <div style="height:20px"></div>
                 </td>
                 <td width="100px" align="center" valign="middle">
@@ -37,14 +37,16 @@
             </tr>
             <tr>
                 <td colspan="3" align="center">
-                    <small style="font-size:8pt !important;">Program Keahlian : Teknik Kendaraan Ringan Otomotif(TKRO),Teknik Dan Bisnis Sepeda Motor(TBSM), Teknik Pengelasan dan Fabrikasi Logam(TPFL), Teknik Elektronika(TE), Teknik Jaringan Komputer dan Telekomunikasi(TJKT), Teknologi Farmasi(TF)</small><br>
-                    <small style="font-size:8pt !important;">Jl. Raya Karanganyar No. 28/A Kec. Kandanghaur Kab. Indramayu 45254 Telp. (0234) 507239, email : smkmuhkdh@gmail.com website : smkmuhkandanghaur.sch.id</small>
+                    <small style="font-size:10pt !important;">Konsentrasi Keahlian : Teknik Kendaraan Ringan (TKR),Teknik Sepeda Motor (TSM), Teknik Pengelasan (TPL),</small><br>
+                    <small style="font-size:10pt !important;">Teknik Elektronika Industri (TEI), Teknik Komputer dan Jaringan (TKJ), Farmasi Klinis dan Komunitas (FKK)</small><br>
+                    <small style="font-size:8pt !important;">Jl. Raya Karanganyar No. 28/A Kec. Kandanghaur Kab. Indramayu 45254 Telp. (0234) 507239,</small><br>
+                    <small style="font-size:8pt !important;">email : smkmuhkandanghaur@gmail.com website : https://www.smkmuhkandanghaur.sch.id</small>
                 </td>
             </tr>
         </table>
         <div style="height:5px;border-bottom:solid 2px black;border-top:solid 1px black;margin:10px 0"></div>
         <div style="text-align:center; margin:40px auto 30px auto">
-            <b style="font-size:20pt !important;">FORMULIR PENDAFTARAN ONLINE</b>
+            <b style="font-size:20pt !important;">FORMULIR PENDAFTARAN ONLINE PESERTA DIDIK BARU</b>
         </div>
         
         <div style="text-align:left; margin:20px auto 20px auto">
