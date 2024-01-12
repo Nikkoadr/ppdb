@@ -83,7 +83,7 @@
                         <div class="row mb-3">
                             <label for="nama" class="col-md-4 col-form-label text-md-end">Nama Lengkap <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required placeholder="Nama Lengkap">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required placeholder="Nama Lengkap">
                                 @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -111,7 +111,7 @@
                         <div class="row mb-3">
                             <label for="tempat_lahir" class="col-md-4 col-form-label text-md-end">Tempat, Tanggal Lahir <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="tempat_lahir" type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{ old('tempat_lahir') }}" required placeholder="Tempat Lahir">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="tempat_lahir" type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{ old('tempat_lahir') }}" required placeholder="Ex: INDRAMAYU">
                                 @error('tempat_lahir')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -143,7 +143,7 @@
                         <div class="row mb-3">
                             <label for="nama_ayah" class="col-md-4 col-form-label text-md-end">Nama Ayah <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Nama Ayah Kandung" required>
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Nama Ayah Kandung" required>
                                 @error('nama_ayah')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -155,7 +155,7 @@
                         <div class="row mb-3">
                             <label for="pekerjaan_ayah" class="col-md-4 col-form-label text-md-end">Pekerjaan Ayah :</label>
                             <div class="col-md-6">
-                                <input id="pekerjaan_ayah" type="text" class="form-control @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" value="{{ old('pekerjaan_ayah') }}" placeholder="Pekerjaan Ayah">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="pekerjaan_ayah" type="text" class="form-control @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" value="{{ old('pekerjaan_ayah') }}" placeholder="Pekerjaan Ayah">
                                 @error('pekerjaan_ayah')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -167,7 +167,7 @@
                         <div class="row mb-3">
                             <label for="nama_ibu" class="col-md-4 col-form-label text-md-end">Nama Ibu <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input id="nama_ibu" type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Nama Ibu Kandung" required>
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nama_ibu" type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Nama Ibu Kandung" required>
                                 @error('nama_ibu')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -179,7 +179,7 @@
                         <div class="row mb-3">
                             <label for="pekerjaan_ibu" class="col-md-4 col-form-label text-md-end">Pekerjaan Ibu :</label>
                             <div class="col-md-6">
-                                <input id="pekerjaan_ibu" type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" value="{{ old('pekerjaan_ibu') }}" placeholder="Pekerjaan Ibu">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="pekerjaan_ibu" type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" value="{{ old('pekerjaan_ibu') }}" placeholder="Pekerjaan Ibu">
                                 @error('pekerjaan_ibu')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -238,7 +238,7 @@
                         <div class="row mb-3">
                             <label for="alamat" class="col-md-4 col-form-label text-md-end">Alamat <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control @error('blok') is-invalid @enderror" 
+                                <input oninput="this.value = this.value.toUpperCase()"  type="text" class="form-control @error('blok') is-invalid @enderror" 
                                 name="blok" value="{{ old('blok') }}" required placeholder="Blok">
                                 @error('blok')
                                     <span class="invalid-feedback" role="alert">
@@ -259,21 +259,21 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input type="text" class="form-control @error('desa') is-invalid @enderror" 
+                                <input oninput="this.value = this.value.toUpperCase()"  type="text" class="form-control @error('desa') is-invalid @enderror" 
                                 name="desa" value="{{ old('desa') }}" required placeholder="Desa">
                                 @error('desa')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" 
+                                <input oninput="this.value = this.value.toUpperCase()"  type="text" class="form-control @error('kecamatan') is-invalid @enderror" 
                                 name="kecamatan" value="{{ old('kecamatan') }}" required placeholder="Kecamatan">
                                 @error('kecamatan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input type="text" class="form-control @error('kabupaten') is-invalid @enderror" 
+                                <input oninput="this.value = this.value.toUpperCase()"  type="text" class="form-control @error('kabupaten') is-invalid @enderror" 
                                 name="kabupaten" value="{{ old('kabupaten') }}" required placeholder="Kabupaten">
                                 @error('kabupaten')
                                     <span class="invalid-feedback" role="alert">
@@ -305,7 +305,7 @@
                         <div class="row mb-3">
                             <label for="referensi" class="col-md-4 col-form-label text-md-end">Referensi :</label>
                             <div class="col-md-6">
-                                <input id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Ex : Meru Dipantara 11-TJKT-2">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Ex : Meru Dipantara 11-TJKT-2">
                                 @error('referensi')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
