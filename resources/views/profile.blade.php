@@ -93,7 +93,7 @@
               <div class="card-body">
                 <div class="tab-content">
                   <div class="active tab-pane" id="data_diri">
-                    <form action="edit/profile/{{ Auth::user()->id }}" method="POST" class="form-horizontal">
+                    <form action="edit/profile/{{ Auth::user()->id }}" method="POST" class="form-horizontal" id="profile_form">
                       @method('put')
                       @csrf
                       <div class="form-group row">
@@ -342,7 +342,7 @@
                       <div class="form-group row">
                         <label for="referensi" class="col-sm-3 col-form-label">Referensi :</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" id="referensi" value="{{ Auth::user()->referensi }}" disabled>
+                          <input type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" id="referensi" value="{{ Auth::user()->referensi }}" readonly>
                         @error('referensi')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -697,5 +697,13 @@
 $(function () {
   bsCustomFileInput.init();
 });
+</script>
+<script>
+  $(document).ready(function() {
+    $('#profile_form').submit(function() {
+      // Aktifkan elemen select sebelum mengirim formulir
+      $('#keahlian').prop('disabled', false);
+    });
+  });
 </script>
 @endsection

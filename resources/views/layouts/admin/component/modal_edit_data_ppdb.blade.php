@@ -304,15 +304,15 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    <label for="keahlian" class="col-sm-3 col-form-label">Program Keahlian :</label>
+                    <label for="keahlian" class="col-sm-3 col-form-label">Konsentrasi Keahlian :</label>
                     <div class="col-sm-9">
                         <select type="text" class="form-control @error('keahlian') is-invalid @enderror" name="keahlian" id="keahlian">
-                        <option value="TPFL" @if ($data->keahlian =="TPFL") selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
-                        <option value="TKRO" @if ($data->keahlian =="TKRO") selected @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
-                        <option value="TE" @if ($data->keahlian =="TE") selected @endif>Teknik Elektronika ( TE )</option>
-                        <option value="TJKT" @if ($data->keahlian =="TJKT") selected @endif>Teknik Jaringan Komputer Dan Telekomunikasi ( TJKT )</option>
-                        <option value="TBSM" @if ($data->keahlian =="TBSM") selected @endif>Teknik Dan Bisnis Sepeda Motor ( TBSM )</option>
-                        <option value="TF" @if ($data->keahlian =="TF") selected @endif>Teknologi Farmasi ( TF )</option>
+                        <option value="TPFL" @if ($data->keahlian =="TPFL") selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPL )</option>
+                        <option value="TKRO" @if ($data->keahlian =="TKRO") selected @endif>Teknik Kendaraan Ringan( TKR )</option>
+                        <option value="TE" @if ($data->keahlian =="TE") selected @endif>Teknik Elektronika Industri ( TEI )</option>
+                        <option value="TJKT" @if ($data->keahlian =="TJKT") selected @endif>Teknik Komputer dan Jaringan ( TKJ )</option>
+                        <option value="TBSM" @if ($data->keahlian =="TBSM") selected @endif>Teknik Sepeda Motor ( TSM )</option>
+                        <option value="TF" @if ($data->keahlian =="TF") selected @endif>Farmasi Klinis dan Komunitas ( FKK )</option>
                         </select>
                     @error('keahlian')
                         <span class="invalid-feedback" role="alert">
