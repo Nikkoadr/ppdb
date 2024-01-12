@@ -63,7 +63,7 @@
                 <p>Siswa Baru TKJ</p>
               </div>
               <div class="icon">
-                <i class="ion ion-ios-world"></i>
+                <i class="ion ion-ios-cloud"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
