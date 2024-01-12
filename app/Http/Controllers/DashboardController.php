@@ -34,6 +34,8 @@ class DashboardController extends Controller
         $keahlian_tei = User::where('keahlian', 'TE')->count();
         $keahlian_fkk = User::where('keahlian', 'TF')->count();
         $keahlian_tsm = User::where('keahlian', 'TBSM')->count();
-        return view('dashboard', compact(['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm']), ["judul" => "Dashboard"]);
+        $daftar_ulang = User::where('daftar_ulang', 'Sudah Daftar Ulang')->count();
+        $daftar_ulang_min1 = $daftar_ulang - $admin;
+        return view('dashboard', compact(['daftar_ulang_min1'], ['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm']), ["judul" => "Dashboard"]);
     }
 }
