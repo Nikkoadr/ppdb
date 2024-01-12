@@ -42,7 +42,7 @@
           @can('isadmin')
             <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-dark">
               <div class="inner">
                 <h3>{{ $data_ppdb }}</h3>
 
@@ -59,7 +59,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{ $keahlian_tkj }}</h3>
+                <h3>{{ $tkjmin1 }}</h3>
                 <p>Siswa Baru TKJ</p>
               </div>
               <div class="icon">
@@ -73,7 +73,7 @@
             <div class="small-box bg-primary">
               <div class="inner">
                 <h3>{{ $keahlian_tkro }}</h3>
-                <p>Siswa Baru TKRO</p>
+                <p>Siswa Baru TKR</p>
               </div>
               <div class="icon">
                 <i class="ion ion-android-car"></i>
@@ -86,7 +86,46 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>{{ $keahlian_tpfl }}</h3>
-                <p>Siswa Baru TPFL</p>
+                <p>Siswa Baru TPL</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-contract"></i>
+              </div>
+              <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{ $keahlian_tei }}</h3>
+                <p>Siswa Baru TEI</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-contract"></i>
+              </div>
+              <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $keahlian_fkk }}</h3>
+                <p>Siswa Baru FKK</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-contract"></i>
+              </div>
+              <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-secondary">
+              <div class="inner">
+                <h3>{{ $keahlian_tsm }}</h3>
+                <p>Siswa Baru TSM</p>
               </div>
               <div class="icon">
                 <i class="ion ion-android-contract"></i>

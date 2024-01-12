@@ -28,8 +28,12 @@ class DashboardController extends Controller
         $admin = 1;
         $data_ppdb = $query - $admin;
         $keahlian_tkj = User::where('keahlian', 'TJKT')->count();
+        $tkjmin1 = $keahlian_tkj - $admin;
         $keahlian_tkro = User::where('keahlian', 'TKRO')->count();
         $keahlian_tpfl = User::where('keahlian', 'TPFL')->count();
-        return view('dashboard', compact(['data_ppdb'], ['keahlian_tkj'], ['keahlian_tkro'], ['keahlian_tpfl']), ["judul" => "Dashboard"]);
+        $keahlian_tei = User::where('keahlian', 'TE')->count();
+        $keahlian_fkk = User::where('keahlian', 'TF')->count();
+        $keahlian_tsm = User::where('keahlian', 'TBSM')->count();
+        return view('dashboard', compact(['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm']), ["judul" => "Dashboard"]);
     }
 }
