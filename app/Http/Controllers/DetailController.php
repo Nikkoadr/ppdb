@@ -104,7 +104,7 @@ class DetailController extends Controller
         $request->validate([
             'pasfoto' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:5120',
         ]);
-        $imageName = 'pasfoto' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '_' . rand(0, 99999) . '.' . $request->pasfoto->getClientOriginalExtension();
+        $imageName = 'pasfoto' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '.' . $request->pasfoto->getClientOriginalExtension();
         $request->pasfoto->storeAs('public/dokumen-ppdb', $imageName);
         $user = User::find($id);
         $user->update(['pasfoto' => $imageName]);
@@ -116,7 +116,7 @@ class DetailController extends Controller
         $request->validate([
             'kk' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:5120',
         ]);
-        $imageName = 'kk' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '_' . rand(0, 99999) . '.' . $request->kk->getClientOriginalExtension();
+        $imageName = 'kk' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '.' . $request->kk->getClientOriginalExtension();
         $request->kk->storeAs('public/dokumen-ppdb', $imageName);
         $user = User::find($id);
         $user->update(['kk' => $imageName]);
@@ -128,7 +128,7 @@ class DetailController extends Controller
         $request->validate([
             'akta' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:5120',
         ]);
-        $imageName = 'akta' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '_' . rand(0, 99999) . '.' . $request->akta->getClientOriginalExtension();
+        $imageName = 'akta' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '.' . $request->akta->getClientOriginalExtension();
         $request->akta->storeAs('public/dokumen-ppdb', $imageName);
         $user = User::find($id);
         $user->update(['akta' => $imageName]);
@@ -140,7 +140,7 @@ class DetailController extends Controller
         $request->validate([
             'ijazah' => 'required|image|mimes:jpeg,png,jpg,gif|file|max:5120',
         ]);
-        $imageName = 'ijazah' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '_' . rand(0, 99999) . '.' . $request->ijazah->getClientOriginalExtension();
+        $imageName = 'ijazah' . '_' . Auth::user()->id . '_' . Auth::user()->nama . '_' . \Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->translatedFormat('d-F-Y') . '.' . $request->ijazah->getClientOriginalExtension();
         $request->ijazah->storeAs('public/dokumen-ppdb', $imageName);
         $user = User::find($id);
         $user->update(['ijazah' => $imageName]);

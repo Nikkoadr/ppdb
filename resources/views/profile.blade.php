@@ -322,15 +322,15 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="keahlian" class="col-sm-3 col-form-label">Program Keahlian :</label>
+                        <label for="keahlian" class="col-sm-3 col-form-label">Konsentasi Keahlian :</label>
                         <div class="col-sm-9">
-                          <select type="text" class="form-control @error('keahlian') is-invalid @enderror" name="keahlian" id="keahlian">
-                            <option value="TPFL" @if (Auth::user()->keahlian =="TPFL") selected @endif>Teknik Pengelasan Dan Fabrikasi Logam ( TPFL )</option>
-                            <option value="TKRO" @if (Auth::user()->keahlian =="TKRO") selected @endif>Teknik Kendaraan Ringan Otomotif( TKRO )</option>
-                            <option value="TE" @if (Auth::user()->keahlian =="TE") selected @endif>Teknik Elektronika ( TE )</option>
-                            <option value="TJKT" @if (Auth::user()->keahlian =="TJKT") selected @endif>Teknik Jaringan Komputer Dan Telekomunikasi ( TJKT )</option>
-                            <option value="TBSM" @if (Auth::user()->keahlian =="TBSM") selected @endif>Teknik Dan Bisnis Sepeda Motor ( TBSM )</option>
-                            <option value="TF" @if (Auth::user()->keahlian =="TF") selected @endif>Teknologi Farmasi ( TF )</option>
+                          <select type="text" class="form-control @error('keahlian') is-invalid @enderror" name="keahlian" id="keahlian" disabled>
+                            <option value="TPFL" @if (Auth::user()->keahlian =="TPFL") selected @endif>Teknik Pengelasan ( TPL )</option>
+                            <option value="TKRO" @if (Auth::user()->keahlian =="TKRO") selected @endif>Teknik Kendaraan Ringan( TKR )</option>
+                            <option value="TE" @if (Auth::user()->keahlian =="TE") selected @endif>Teknik Elektronika Industri ( TEI )</option>
+                            <option value="TJKT" @if (Auth::user()->keahlian =="TJKT") selected @endif>Teknik Komputer dan Jaringan ( TKJ )</option>
+                            <option value="TBSM" @if (Auth::user()->keahlian =="TBSM") selected @endif>Teknik Sepeda Motor ( TSM )</option>
+                            <option value="TF" @if (Auth::user()->keahlian =="TF") selected @endif>Farmasi Klinis dan Komunitas ( FKK )</option>
                           </select>
                         @error('keahlian')
                           <span class="invalid-feedback" role="alert">
@@ -342,7 +342,7 @@
                       <div class="form-group row">
                         <label for="referensi" class="col-sm-3 col-form-label">Referensi :</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" id="referensi" value="{{ Auth::user()->referensi }}">
+                          <input type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" id="referensi" value="{{ Auth::user()->referensi }}" disabled>
                         @error('referensi')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

@@ -305,7 +305,7 @@
                         <div class="row mb-3">
                             <label for="referensi" class="col-md-4 col-form-label text-md-end">Referensi :</label>
                             <div class="col-md-6">
-                                <input oninput="this.value = this.value.toUpperCase()"  id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Ex : Meru Dipantara 11-TJKT-2">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="referensi" type="text" class="form-control @error('referensi') is-invalid @enderror" name="referensi" value="{{ old('referensi') }}" placeholder="Ex : Adi Permana 12-TKJ-2">
                                 @error('referensi')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

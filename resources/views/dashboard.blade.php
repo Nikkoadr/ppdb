@@ -156,7 +156,8 @@
                       <h4 style="text-align: center">untuk bergabung ke grup WhatsApp bisa <a href="https://chat.whatsapp.com/BFETl63iJTD2LTsm6lJMCv">Klik Disini</a>.</h4>
                       <h4 style="text-align: center">atau bisa scan barcode di bawah ini</h4>
                       <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/barcode_grup_wa.gif') }}" alt="Barcode PPDB" width="150"></p>
-                      <h4 style="text-align: center">Untuk melihat profil anda Bisa klik : <a href="/profile">Profile</a> atau klik di nama anda</h4>
+                      <h4 style="text-align: center">Untuk melihat profile anda Bisa klik : <a href="/profile">Profile</a> atau klik di nama anda</h4>
+                      <h4 style="text-align: center">Untuk Print Formulir Anda : <a href="/print/formulir_ppdb" target="_blank">Print</a></h4>
                   </div>
               </div>
           </div>
