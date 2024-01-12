@@ -89,7 +89,7 @@
                 <p>Siswa Baru TPL</p>
               </div>
               <div class="icon">
-                <i class="ion ion-android-contract"></i>
+                <i class="ion ion-ios-flame"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -102,7 +102,7 @@
                 <p>Siswa Baru TEI</p>
               </div>
               <div class="icon">
-                <i class="ion ion-android-contract"></i>
+                <i class="ion ion-flash"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -115,7 +115,7 @@
                 <p>Siswa Baru FKK</p>
               </div>
               <div class="icon">
-                <i class="ion ion-android-contract"></i>
+                <i class="ion ion-ios-medical"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -128,7 +128,7 @@
                 <p>Siswa Baru TSM</p>
               </div>
               <div class="icon">
-                <i class="ion ion-android-contract"></i>
+                <i class="ion ion-android-bicycle"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
