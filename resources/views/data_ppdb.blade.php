@@ -78,7 +78,7 @@
                       <div class="mb-2">
                         <b>Pas Foto <span style="padding-left:10px;">:</span></b>
                           @if ($data -> pasfoto != null)
-                              <span class="btn-success p-1 rounded">Sudah</span>
+                              <a target="_blank" href="{{ asset('storage/dokumen-ppdb/'. $data->pasfoto) }}"><span class="btn-success p-1 rounded">Sudah</span></a>
                           @else
                           <span class="btn-danger p-1 rounded">Belum</span>
                       @endif <br>
@@ -86,7 +86,7 @@
                       <div class="mb-2">
                         <b>KK <span style="padding-left:50px;">:</span></b>
                       @if ($data -> kk != null)
-                          <span class="btn-success p-1 rounded">Sudah</span>
+                          <a target="_blank" href="{{ asset('storage/dokumen-ppdb/'. $data->kk) }}"><span class="btn-success p-1 rounded">Sudah</span></a>
                       @else
                           <span class="btn-danger p-1 rounded">Belum</span>
                       @endif <br>
@@ -94,7 +94,7 @@
                       <div class="mb-2">
                         <b>AKTA <span style="padding-left:35px;">:</span></b>
                       @if ($data -> akta != null)
-                          <span class="btn-success p-1 rounded">Sudah</span>
+                          <a target="_blank" href="{{ asset('storage/dokumen-ppdb/'. $data->akta) }}"><span class="btn-success p-1 rounded">Sudah</span></a>
                       @else
                           <span class="btn-danger p-1 rounded">Belum</span>
                       @endif
@@ -102,7 +102,7 @@
                       <div class="mb-2">
                         <b>Ijazah <span style="padding-left:29px;">:</span></b>
                       @if ($data -> ijazah != null)
-                          <span class="btn-success p-1 rounded">Sudah</span>
+                          <a target="_blank" href="{{ asset('storage/dokumen-ppdb/'. $data->ijazah) }}"><span class="btn-success p-1 rounded">Sudah</span></a>
                       @else
                           <span class="btn-danger p-1 rounded">Belum</span>
                       @endif
