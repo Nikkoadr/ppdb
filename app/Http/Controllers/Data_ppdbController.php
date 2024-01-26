@@ -44,7 +44,7 @@ class Data_ppdbController extends Controller
             'nama'                              => ['required', 'string', 'max:255'],
             'sex'                               => ['required', 'string', 'max:255'],
             'tempat_lahir'                      => ['required', 'string', 'max:255'],
-            'tanggal_lahir'                     => ['required', 'date', 'after_or_equal:2007-01-01', 'before_or_equal:2010-12-31'],
+            'tanggal_lahir'                     => ['required', 'date', 'after_or_equal:2006-01-01', 'before_or_equal:2011-12-31'],
             'asal_sekolah'                      => ['required', 'string', 'max:255'],
             'nama_ayah'                         => ['required', 'string', 'max:255'],
             'pekerjaan_ayah'                    => [],
