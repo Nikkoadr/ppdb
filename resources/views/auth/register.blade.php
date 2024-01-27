@@ -194,9 +194,9 @@
                                 <select name="status_orang_tua" id="status_orang_tua" class="form-control @error('status_orang_tua') is-invalid @enderror" required>
                                     <option value="">Pilih Status Orang Tua</option>
                                     <option value="Masih Ada" @if (old('status_orang_tua') == "Masih Ada") selected @endif>Masih Ada</option>
-                                    <option value="Yatim" @if (old('status_orang_tua') == "yatim") selected @endif>Yatim (Ayah Sudah Tidak Ada)</option>
-                                    <option value="Piatu" @if (old('status_orang_tua') == "piatu") selected @endif>Piatu (Ibu Sudah Tidak Ada)</option>
-                                    <option value="Yatim Piatu" @if (old('status_orang_tua') == "piatu") selected @endif>Yatim Piatu (Ayah Dan Ibu Sudah Tidak Ada)</option>
+                                    <option value="Yatim" @if (old('status_orang_tua') == "Yatim") selected @endif>Yatim (Ayah Sudah Tidak Ada)</option>
+                                    <option value="Piatu" @if (old('status_orang_tua') == "Piatu") selected @endif>Piatu (Ibu Sudah Tidak Ada)</option>
+                                    <option value="Yatim Piatu" @if (old('status_orang_tua') == "Yatim Piatu") selected @endif>Yatim Piatu (Ayah Dan Ibu Sudah Tidak Ada)</option>
                                 </select>
                                 @error('status_orang_tua')
                                     <span class="invalid-feedback" role="alert">
