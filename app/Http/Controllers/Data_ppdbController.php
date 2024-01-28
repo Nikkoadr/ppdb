@@ -29,6 +29,12 @@ class Data_ppdbController extends Controller
         $data_ppdb = User::latest()->get();
         return view('data_ppdb', compact(['data_ppdb']), ["judul" => "Data PPDB"]);
     }
+    public function edit_data_siswa($id)
+    {
+        $this->authorize('isadmin');
+        $user = User::find($id);
+        return view('edit_data_siswa', compact(['user']), ["judul" => "Edit Data Siswa Baru"]);
+    }
 
     public function update_data_ppdb_admin($id, Request $request)
     {

@@ -40,7 +40,8 @@ Route::post('/upload_ijazah_siswa/{id}', [DetailController::class, 'upload_ijaza
 Route::get('/print/formulir_ppdb', [DetailController::class, 'print']);
 
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');
-Route::put('/edit/data_ppdb_admin/{id}', [Data_ppdbController::class, 'update_data_ppdb_admin']);
+Route::get('/edit_data_siswa_id{id}', [Data_ppdbController::class, 'edit_data_siswa'])->name('edit_data_siswa');
+Route::put('/update_data_siswa_id{id}', [Data_ppdbController::class, 'update_data_ppdb_admin']);
 Route::put('/ubah_password_siswa/{id}', [Data_ppdbController::class, 'ubah_password_siswa']);
 Route::get('/hapus_data_ppdb/{id}', [Data_ppdbController::class, 'destroy']);
 Route::get('/print_formulir_ppdb_via_admin/{id}', [Data_ppdbController::class, 'print']);

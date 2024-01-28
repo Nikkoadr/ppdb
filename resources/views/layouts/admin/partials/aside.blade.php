@@ -35,7 +35,7 @@
           </li>
           @can('isadmin')
             <li class="nav-item">
-            <a href="/data_ppdb" class="nav-link {{ $judul === "Data PPDB" ? 'active':'' }}">
+            <a href="/data_ppdb" class="nav-link {{ $judul === "Data PPDB" ? 'active':'' }} {{ $judul === "Edit Data Siswa Baru" ? 'active':'' }}">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
                 Data PPDB

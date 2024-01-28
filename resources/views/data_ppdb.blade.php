@@ -69,7 +69,7 @@
                     <td>
                       {{-- <b>Alamat: </b>Blok {{ $data -> blok }}-RT {{ $data -> rt }}-RW {{ $data -> rw }}-Desa {{ $data -> desa }}-Kecamatan {{ $data -> kecamatan }}-Kabupaten {{ $data -> kabupaten }}  --}}
                       {{-- <br> --}}
-                      <a target="_blank" href="https://wa.me/62{{ $data -> no_siswa }}?text=Assalamualaikum%20wr.%20wb%2C%0ATerimakasih%20telah%20mendaftar%20di%20SMK%20Muhammadiyah%20Kandanghaur.%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Kami%2C%20sebagai%20admin%20PPDB%2C%20ingin%20konfirmasi%20keseriusan%20anda%20untuk%20masuk%20ke%20sekolah%20kami.%20Apakah%20betul%20Kami%20Terhubung%20dengan%0ANama%3A%20{{ $data->nama }}%0AAsal%20Sekolah%3A%20{{ $data->asal_sekolah }}%0AKeseriusan%20Anda%20sangat%20penting%20bagi%20kami%20dalam%20memastikan%20kesesuaian%20data%20di%20SMK%20Muhammadiyah%20Kandanghaur.%0AHarap%20berikan%20perhatian%20khusus%20pada%20proses%20ini%20dan%20beri%20respons%20sesuai%20petunjuk.%20Pertanyaan%20lebih%20lanjut%3F%20dapat%20berinteraksi%20dengan%20nomor%20ini.Terima%20kasih.">
+                      <a target="_blank" href="https://wa.me/62{{ $data -> no_siswa }}?text=Assalamualaikum%20wr.%20wb%2C%0ATerimakasih%20telah%20mendaftar%20di%20SMK%20Muhammadiyah%20Kandanghaur.%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Kami%2C%20sebagai%20admin%20PPDB%2C%20ingin%20konfirmasi%20keseriusan%20anda%20untuk%20masuk%20ke%20sekolah%20kami.%20Apakah%20betul%20Kami%20Terhubung%20dengan%3A%0A%0ANIK%3A%20{{ $data -> no_nik }}%0ANISN%20%3A%20{{ $data -> nisn }}%0ANama%3A%20{{ $data -> nama }}%0ATanggal%20Lahir%3A%20{{ \Carbon\Carbon::parse($data -> tanggal_lahir)->translatedFormat('d F Y')}}%0AAsal%20Sekolah%3A%20{{ $data -> asal_sekolah }}%0A%0AKeseriusan%20Anda%20sangat%20penting%20bagi%20kami%20dalam%20memastikan%20kesesuaian%20data%20di%20SMK%20Muhammadiyah%20Kandanghaur.%0AHarap%20berikan%20perhatian%20khusus%20pada%20proses%20ini%20dan%20beri%20respons%20sesuai%20petunjuk.%20Pertanyaan%20lebih%20lanjut%3F%20dapat%20berinteraksi%20dengan%20nomor%20ini.%20Terima%20kasih.">
                     {{ $data -> no_siswa }}</a>
                       {{-- <br> --}}
                       {{-- <b>Orang tua: </b>{{ $data -> no_wali }} --}}
@@ -138,9 +138,7 @@
                     <td width="10%" style="text-align: center">
                         <div style="display: inline;">
 
-                            <button type="button" class="btn btn-info m-1" data-toggle="modal" data-target="#edit_siswa_id{{ $data->id }}"><i class="fa-regular fa-pen-to-square"></i></button>
-                          @include('layouts.admin.component.modal_edit_data_ppdb')
-                          
+                          <a href="edit_data_siswa_id{{ $data->id }}" class="btn btn-info m-1"><i class="fa-regular fa-pen-to-square"></i></i></a>
                           <a href="print_formulir_ppdb_via_admin/{{ $data->id }}" target="_blank" class="btn btn-primary m-1"><i class="fa-solid fa-print"></i></i></a>
 
                             <button type="button" class="btn btn-warning m-1" data-toggle="modal" data-target="#ubah_password_siswa_id{{ $data->id }}"><i class="fa-solid fa-unlock-keyhole"></i></button>
