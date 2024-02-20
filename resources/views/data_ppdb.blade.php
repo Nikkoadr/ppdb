@@ -189,7 +189,11 @@
       "responsive": true, 
       "lengthChange": true, 
       "autoWidth": true,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      aLengthMenu: [
+        [25, 50, 100, 200, -1],
+        [25, 50, 100, 200, "All"]
+    ]
     }).buttons().container().appendTo('#table_ppdb_wrapper .col-md-6:eq(0)');
   });
 </script>
