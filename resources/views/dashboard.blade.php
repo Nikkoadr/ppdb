@@ -132,15 +132,28 @@
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-secondary">
+              <div class="inner">
+                <h3>{{ $verivikasi_min1 }}</h3>
+                <p>Siswa Sudah Terverifikasi</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-done"></i>
+              </div>
+              <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div style="background: #02fc17" class="small-box">
               <div class="inner">
                 <h3>{{ $daftar_ulang_min1 }}</h3>
                 <p>Siswa Sudah Daftar Ulang</p>
               </div>
               <div class="icon">
-                <i class="ion ion-android-done"></i>
+                <i class="ion ion-android-done-all"></i>
               </div>
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
