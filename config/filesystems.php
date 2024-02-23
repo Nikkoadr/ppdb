@@ -34,7 +34,7 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-        'local' => [
+        'nfs' => [
             'driver' => 'local',
             'root' => '/var/nfs/sharing/ppdb_file',
         ],
