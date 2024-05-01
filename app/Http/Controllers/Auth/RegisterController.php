@@ -67,7 +67,6 @@ class RegisterController extends Controller
             'nama'              => ['required', 'string', 'max:255'],
             'sex'               => ['required', 'string', 'max:255'],
             'keahlian'          => ['required', 'string', 'max:50'],
-            'referensi'         => [],
 
         ]);
     }

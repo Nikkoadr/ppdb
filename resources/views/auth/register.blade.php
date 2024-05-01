@@ -86,9 +86,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="nama" class="col-md-4 col-form-label text-md-end">Nama Lengkap :</label>
+                            <label for="nama" class="col-md-4 col-form-label text-md-end">Nama Lengkap <span style="color: red">*</span> :</label>
                             <div class="col-md-6">
-                                <input oninput="this.value = this.value.toUpperCase()"  id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Nama Lengkap">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Nama Lengkap" required>
                                 @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
