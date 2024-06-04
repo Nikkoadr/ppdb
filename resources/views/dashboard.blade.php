@@ -159,22 +159,26 @@
             </div>
           </div>
           <br>
-                <table class="table-striped" border="1">
-                    <thead>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Asal Sekolah</th>
+                        <th>Total Siswa</th>
+                        <th>Sudah Daftar Ulang</th>
+                        <th>Belum Daftar Ulang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($data as $row)
                         <tr>
-                            <th>Nama Sekolah</th>
-                            <th>Jumlah yang Sudah Daftar Ulang</th>
+                            <td>{{ $row['asal_sekolah'] }}</td>
+                            <td>{{ $row['total'] }}</td>
+                            <td>{{ $row['sudah_daftar_ulang'] }}</td>
+                            <td>{{ $row['belum_daftar_ulang'] }}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($du as $user)
-                            <tr>
-                                <td>{{ $user->asal_sekolah }}</td>
-                                <td>{{ $user->total }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                    @endforeach
+                </tbody>
+            </table>
           @endcan
           @can('isuser')
           <div class="container py-5">
