@@ -158,6 +158,23 @@
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          <br>
+                <table class="table-striped" border="1">
+                    <thead>
+                        <tr>
+                            <th>Nama Sekolah</th>
+                            <th>Jumlah yang Sudah Daftar Ulang</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($du as $user)
+                            <tr>
+                                <td>{{ $user->asal_sekolah }}</td>
+                                <td>{{ $user->total }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
           @endcan
           @can('isuser')
           <div class="container py-5">

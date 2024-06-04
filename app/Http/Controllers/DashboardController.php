@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -38,6 +39,11 @@ class DashboardController extends Controller
         $verifikasi = User::where('verifikasi', 'Verified')->count();
         $daftar_ulang_min1 = $daftar_ulang - $admin;
         $verivikasi_min1 = $verifikasi - $admin;
-        return view('dashboard', compact(['daftar_ulang_min1'], ['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm'], ['verivikasi_min1']), ["judul" => "Dashboard"]);
+        $du = DB::table('users')
+            ->select('asal_sekolah', DB::raw('COUNT(*) as total'))
+            ->where('daftar_ulang', 'Sudah Daftar Ulang')
+            ->groupBy('asal_sekolah')
+            ->get();
+        return view('dashboard', compact(['du'],['daftar_ulang_min1'], ['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm'], ['verivikasi_min1']), ["judul" => "Dashboard"]);
     }
 }
