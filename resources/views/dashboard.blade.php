@@ -159,6 +159,24 @@
             </div>
           </div>
           <br>
+          <h6>Jurusan Sudah Daftar Ulang</h6>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> Konsentrasi keahlian</th>
+                <th> Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($jurusan_du as $du)
+                  <tr>
+                    <td>{{ $du->keahlian }}</td>
+                    <td>{{ $du->total }}</td>
+                  </tr>
+              @endforeach
+            </tbody>
+          </table>
+          <br>
             <table class="table table-striped">
                 <thead>
                     <tr>

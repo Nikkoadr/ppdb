@@ -86,6 +86,12 @@ foreach ($notDu as $row) {
         $data[$asal_sekolah]['belum_daftar_ulang'] = $row->total;
     }
 }
-        return view('dashboard', compact(['data'],['daftar_ulang_min1'], ['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm'], ['verivikasi_min1']), ["judul" => "Dashboard"]);
+$jurusan_du = DB::table('users')
+    ->select('keahlian', DB::raw('count(*) as total'))
+    ->where('daftar_ulang', 'Sudah Daftar Ulang')
+    ->groupBy('keahlian')
+    ->get();
+
+        return view('dashboard', compact(['jurusan_du'],['data'],['daftar_ulang_min1'], ['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm'], ['verivikasi_min1']), ["judul" => "Dashboard"]);
     }
 }
