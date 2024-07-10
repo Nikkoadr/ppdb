@@ -158,45 +158,76 @@
               <a href="data_ppdb" class="small-box-footer">Lihat lebih <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <br>
-          <h6>Jurusan Sudah Daftar Ulang</h6>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th> Konsentrasi keahlian</th>
-                <th> Jumlah</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($jurusan_du as $du)
-                  <tr>
-                    <td>{{ $du->keahlian }}</td>
-                    <td>{{ $du->total }}</td>
-                  </tr>
-              @endforeach
-            </tbody>
-          </table>
-          <br>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Asal Sekolah</th>
-                        <th>Total Siswa</th>
-                        <th>Sudah Daftar Ulang</th>
-                        <th>Belum Daftar Ulang</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data as $row)
-                        <tr>
-                            <td>{{ $row['asal_sekolah'] }}</td>
-                            <td>{{ $row['total'] }}</td>
-                            <td>{{ $row['sudah_daftar_ulang'] }}</td>
-                            <td>{{ $row['belum_daftar_ulang'] }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+          <div class="row">
+            <div class="col-6">
+              <section class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Jumlah Pengguna Berdasarkan Konsentrasi Keahlian</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Konsentrasi Keahlian</th>
+                                        <th>Jumlah</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($jurusan_du as $du)
+                                        <tr>
+                                            <td>{{ $du->keahlian }}</td>
+                                            <td>{{ $du->total }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div><!-- /.container-fluid -->
+            </section>
+            </div>
+            <div class="col-6">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Siswa Berdasarkan Asal Sekolah dan Status Daftar Ulang</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Asal Sekolah</th>
+                                        <th>Total Siswa</th>
+                                        <th>Sudah Daftar Ulang</th>
+                                        <th>Belum Daftar Ulang</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  @foreach($data as $row)
+                                      <tr>
+                                          <td>{{ $row['asal_sekolah'] }}</td>
+                                          <td>{{ $row['total'] }}</td>
+                                          <td>{{ $row['sudah_daftar_ulang'] }}</td>
+                                          <td>{{ $row['belum_daftar_ulang'] }}</td>
+                                      </tr>
+                                  @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div><!-- /.container-fluid -->
+            </section>
+            </div>
+          </div>
           @endcan
           @can('isuser')
           <div class="container py-5">
