@@ -230,6 +230,15 @@
           </div>
           @endcan
           @can('isuser')
+          @if(Auth::user()->daftar_ulang === 'Sudah Daftar Ulang')
+          <div class="container py-5">
+              <div style="background: rgba(128, 128, 128, 0.158); border-radius: 10px;" class="row p-5">
+                  <div class="wow slideInUp" data-wow-delay="0.3s">
+                    <h4 style="text-align: center">Print Kartu MPLS : <a href="/print/kartu_mpls" target="_blank">Print</a></h4>
+                  </div>
+              </div>
+          </div>
+          @else
           <div class="container py-5">
               <div style="background: rgba(128, 128, 128, 0.158); border-radius: 10px;" class="row p-5">
                   <div class="wow slideInUp" data-wow-delay="0.3s">
@@ -241,9 +250,11 @@
                       <p style="text-align: center;"><img class="text-center" src="{{ asset('assets/img/barcode_grup_wa.gif') }}" alt="Barcode PPDB" width="150"></p>
                       <h4 style="text-align: center">Untuk melihat profile anda Bisa klik : <a href="/profile">Profile</a> atau klik di nama anda</h4>
                       <h4 style="text-align: center">Untuk Print Formulir Anda : <a href="/print/formulir_ppdb" target="_blank">Print</a></h4>
+                      
                   </div>
               </div>
           </div>
+          @endif
           @endcan
           {{-- <!-- ./col -->
           <div class="col-lg-3 col-6">

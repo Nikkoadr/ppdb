@@ -151,4 +151,8 @@ class DetailController extends Controller
     {
         return view('layouts.admin.component.cetak_formulir_ppdb', ["judul" => "Cetak Formulir PPDB"]);
     }
+
+    public function print_kartu(){
+        return view('layouts.print_kartu');
+    }
 }

@@ -93,5 +93,7 @@ $jurusan_du = DB::table('users')
     ->get();
 
         return view('dashboard', compact(['jurusan_du'],['data'],['daftar_ulang_min1'], ['data_ppdb'], ['tkjmin1'], ['keahlian_tkro'], ['keahlian_tpfl'], ['keahlian_tei'], ['keahlian_fkk'], ['keahlian_tsm'], ['verivikasi_min1']), ["judul" => "Dashboard"]);
+    
+    
     }
 }

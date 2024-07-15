@@ -38,6 +38,7 @@ Route::post('/upload_kk_siswa/{id}', [DetailController::class, 'upload_kk_siswa'
 Route::post('/upload_akta_siswa/{id}', [DetailController::class, 'upload_akta_siswa']);
 Route::post('/upload_ijazah_siswa/{id}', [DetailController::class, 'upload_ijazah_siswa']);
 Route::get('/print/formulir_ppdb', [DetailController::class, 'print']);
+Route::get('/print/kartu_mpls', [DetailController::class, 'print_kartu']);
 
 Route::get('/data_ppdb', [Data_ppdbController::class, 'index'])->name('data_ppdb');
 Route::get('/edit_data_siswa_id{id}', [Data_ppdbController::class, 'edit_data_siswa'])->name('edit_data_siswa');
