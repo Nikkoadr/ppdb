@@ -19,7 +19,8 @@ use App\Http\Controllers\DetailController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('https://forms.gle/zNAHWegGZoTeCc359');
 });
 
 Route::get('/autocomplete', [RegisterController::class, 'cari_sekolah']);

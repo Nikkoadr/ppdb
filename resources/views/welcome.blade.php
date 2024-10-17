@@ -64,5 +64,6 @@
     <script src="{{ asset('assets/home/lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <!-- Template Javascript -->
     <script src="{{ asset('assets/home/js/main.js') }}"></script>
+    
 </body>
 </html>
