@@ -15,6 +15,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<style>
+    .suggestions {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1000;
+}
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+</style>
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
@@ -147,16 +167,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="id_asal_sekolah" class="col-md-3 col-form-label text-md-right">Asal Sekolah : <span style="color: red">*</span></label>
-                        <div class="col-md-9">
-                            <input required oninput="this.value = this.value.toUpperCase()" type="text" class="form-control @error('id_asal_sekolah') is-invalid @enderror" id="id_asal_sekolah" name="id_asal_sekolah" value="{{ old('id_asal_sekolah') }}">
-                            @error('id_asal_sekolah')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+                    <div class="form-grup row">
+                    <label for="nama_asal_sekolah" class="col-md-3 col-form-label text-md-right">Asal Sekolah:</label>
+                    <div class="col-md-9">
+                        <input 
+                            class="form-control @error('nama_asal_sekolah') is-invalid @enderror" 
+                            type="text" 
+                            id="nama_asal_sekolah" 
+                            name="nama_asal_sekolah"
+                            placeholder="Nama Asal Sekolah">
+                        <input type="hidden" id="id_asal_sekolah" name="id_asal_sekolah">
+                        <div class="suggestions dropdown-item" id="suggestions"></div>
+                        @error('nama_asal_sekolah')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                     </div>
                         <h3><b>Data Orang Tua :</b></h3>
                         <div class="row mb-3">
@@ -346,6 +373,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/plugins/adminlte.min.js') }}"></script>
+<script>
+    document.getElementById('nama_asal_sekolah').addEventListener('input', function () {
+        let query = this.value;
+        let suggestions = document.getElementById('suggestions');
+
+        document.getElementById('id_asal_sekolah').value = '';
+
+        if (query.length > 1) {
+            fetch(`/get_asal_sekolah?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    suggestions.innerHTML = '';
+                    
+                    if (data.length > 0) {
+                        data.forEach(asal_sekolah => {
+                            let suggestion = document.createElement('div');
+                            suggestion.textContent = asal_sekolah.nama_asal_sekolah;
+                            suggestion.classList.add('suggestion-item');
+                            suggestion.addEventListener('click', function () {
+                                document.getElementById('nama_asal_sekolah').value = asal_sekolah.nama_asal_sekolah;
+                                document.getElementById('id_asal_sekolah').value = asal_sekolah.id;
+                                suggestions.innerHTML = '';
+                                suggestions.style.display = 'none';
+                            });
+                            suggestions.appendChild(suggestion);
+                        });
+                        suggestions.style.display = 'block';
+                    } else {
+                        suggestions.style.display = 'none';
+                    }
+                });
+        } else {
+            suggestions.innerHTML = '';
+            suggestions.style.display = 'none';
+        }
+    });
+</script>
+
 <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script>
     @if (session()->has('success'))

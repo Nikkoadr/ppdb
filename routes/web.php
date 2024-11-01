@@ -28,6 +28,7 @@ Auth::routes([
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/form_pendaftaran', [PendaftaranController::class, 'form_pendaftaran']);
+Route::get('/get_asal_sekolah', [PendaftaranController::class, 'getAsalSekolah']);
 Route::post('/proses_pendaftaran', [PendaftaranController::class, 'proses_pendaftaran']);
 Route::post('/bukti_pendaftaran', [PendaftaranController::class, 'bukti_pendaftaran']);
 
