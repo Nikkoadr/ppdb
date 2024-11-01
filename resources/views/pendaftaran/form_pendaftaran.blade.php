@@ -331,32 +331,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
     </div>
 </div>
-
 </div>
-<!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
-
-
-<!-- Main Footer -->
 <footer class="main-footer">
-<!-- To the right -->
 <div class="float-right d-none d-sm-inline">
     Anything you want
 </div>
-<!-- Default to the left -->
+
 <strong>Copyright &copy; 2014-2026 <a href="https://adminlte.io">Nikko Adrian</a>.</strong> All rights reserved.
 </footer>
 </div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/plugins/adminlte.min.js') }}"></script>
+<script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+<script>
+    @if (session()->has('success'))
+        Swal.fire({
+            title: "Sukses!",
+            text: "{{ session('success') }}",
+            icon: "success"
+        });
+    @elseif (session()->has('error'))
+        Swal.fire({
+            title: "Maaf!",
+            text: "{{ session('error') }}",
+            icon: "error"
+        });
+    @endif
+</script>
 </body>
 </html>

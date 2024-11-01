@@ -15,15 +15,15 @@ class seed_status_orang_tua extends Seeder
     public function run()
     {
         Status_orang_tua::create([
-
+            'nama_status_orang_tua' => 'Masih Ada',
+        ]);
+        Status_orang_tua::create([
             'nama_status_orang_tua' => 'Yatim',
         ]);
         Status_orang_tua::create([
-
             'nama_status_orang_tua' => 'Piatu',
         ]);
         Status_orang_tua::create([
-
             'nama_status_orang_tua' => 'Yatim Piatu',
         ]);
     }

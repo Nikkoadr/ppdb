@@ -19,7 +19,15 @@ class PendaftaranController extends Controller
 
 public function proses_pendaftaran(Request $request)
 {
-    // Validasi data
+
+$cek_data = DB::table('pendaftar')
+    ->where('nama', $request->nama)
+    ->where('tanggal_lahir', $request->tanggal_lahir)
+    ->first();
+
+if ($cek_data) {
+    return redirect()->back()->with(['error' => 'Data dengan nama dan tanggal lahir yang sama sudah ada dalam database kami !']);
+}
     $request->validate([
         'nisn' => 'nullable',
         'no_kk' => 'nullable',
@@ -48,6 +56,7 @@ public function proses_pendaftaran(Request $request)
 
     // Insert data ke tabel pendaftaran
     $pendaftaranId = DB::table('pendaftar')->insertGetId([
+        'id_status_siswa' => 1,
         'nisn' => $request->nisn,
         'no_kk' => $request->no_kk,
         'no_nik' => $request->no_nik,
@@ -60,7 +69,7 @@ public function proses_pendaftaran(Request $request)
         'pekerjaan_ayah' => $request->pekerjaan_ayah,
         'nama_ibu' => $request->nama_ibu,
         'pekerjaan_ibu' => $request->pekerjaan_ibu,
-        'id_status_orang_tua' => $request->status_orang_tua,
+        'id_status_orang_tua' => $request->id_status_orang_tua,
         'no_siswa' => $request->no_siswa,
         'no_wali_siswa' => $request->no_wali,
         'blok' => $request->blok,
@@ -69,7 +78,7 @@ public function proses_pendaftaran(Request $request)
         'desa' => $request->desa,
         'kecamatan' => $request->kecamatan,
         'kabupaten' => $request->kabupaten,
-        'id_konsentrasi_keahlian' => $request->keahlian,
+        'id_konsentrasi_keahlian' => $request->id_konsentrasi_keahlian,
         'referensi' => $request->referensi,
         'created_at' => now(),
         'updated_at' => now(),
