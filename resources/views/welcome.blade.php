@@ -39,18 +39,10 @@
                                 <h5 class="text-primary text-uppercase mb-3">Penerimaan Peserta Didik Baru ( PPDB )</h5>
                                 <h1 class="display-3 text-white">SMK Muhammadiyah Kandanghaur</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">SMK Muhammadiyah Kandanghaur adalah sekolah PK ( Pusat Keunggulan ) yang beralamatkan di JL Raya Karanganyar No 28/A Kandanghaur Indramayu</p>
-                                @if (Route::has('login'))
                                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                                        @auth
-                                            <a href="{{ url('/dashboard') }}" class="btn btn-primary py-md-3 px-md-5 me-3">Dashboard</a>
-                                        @else
                                             <a href="{{ route('login') }}" class="btn btn-primary py-md-3 px-md-5 me-3">Sudah Daftar</a>
-                                            @if (Route::has('register'))
-                                                <a href="{{ route('register') }}" class="btn btn-light py-md-3 px-md-5">Daftar Baru</a>
-                                            @endif
-                                        @endauth
+                                                <a href="/form_pendaftaran" class="btn btn-light py-md-3 px-md-5">Daftar Baru</a>
                                     </div>
-                                @endif
                             </div>
                         </div>
                     </div>

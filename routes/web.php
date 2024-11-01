@@ -7,6 +7,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Data_ppdbController;
 use App\Http\Controllers\DetailController;
 
+use App\Http\Controllers\PendaftaranController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,13 +21,18 @@ use App\Http\Controllers\DetailController;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return redirect('https://forms.gle/zNAHWegGZoTeCc359');
+    return view('welcome');
+    //return redirect('https://forms.gle/zNAHWegGZoTeCc359');
 });
 
 Route::get('/autocomplete', [RegisterController::class, 'cari_sekolah']);
 
-Auth::routes();
+Auth::routes([
+    'register' => false,]);
+
+Route::get('/form_pendaftaran', [PendaftaranController::class, 'form_pendaftaran']);
+Route::post('/proses_pendaftaran', [PendaftaranController::class, 'proses_pendaftaran']);
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
