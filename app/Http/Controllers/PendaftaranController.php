@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Asal_sekolah;
+use Illuminate\Support\Str;
 
 class PendaftaranController extends Controller
 {
@@ -76,10 +77,7 @@ class PendaftaranController extends Controller
             ]);
         }
 
-        $no_pendaftaran = null;
-        do {
-            $no_pendaftaran = random_int(1, 1000000);
-        } while (DB::table('pendaftaran')->where('no_pendaftaran', $no_pendaftaran)->exists());
+        $no_pendaftaran = Str::uuid();
         $periode = DB::table('periode')->orderBy('created_at', 'desc')->first();
 
         $id_pendaftaran = DB::table('pendaftaran')->insertGetId([
@@ -118,10 +116,10 @@ class PendaftaranController extends Controller
     public function bukti_pendaftaran($id)
     {
         $pendaftaran = DB::table('pendaftaran')
-            ->join('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
-            ->join('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
-            ->join('status_orang_tua', 'pendaftaran.id_status_orang_tua', '=', 'status_orang_tua.id')
-            ->join('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id')
+            ->leftJoin('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
+            ->leftJoin('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
+            ->leftJoin('status_orang_tua', 'pendaftaran.id_status_orang_tua', '=', 'status_orang_tua.id')
+            ->leftJoin('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id')
             ->select(
                 'pendaftaran.*', 
                 'asal_sekolah.nama_asal_sekolah', 
@@ -131,7 +129,6 @@ class PendaftaranController extends Controller
             )
             ->where('pendaftaran.id', $id)
             ->first();
-
         return view('pendaftaran.bukti_pendaftaran', compact('pendaftaran'));
     }
 }

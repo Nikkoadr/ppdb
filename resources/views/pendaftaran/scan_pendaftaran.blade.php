@@ -118,37 +118,5 @@
             </tr>
         </table>
     </div>
-<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
-<script>
-$(document).ready(function() {
-    // Link grup WhatsApp
-    const whatsappLink = "https://chat.whatsapp.com/EpdbrzKc9akE70vmQft9oj";
-
-    // QR code API URL dengan link WhatsApp sebagai parameter
-    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(whatsappLink)}`;
-
-    Swal.fire({
-        title: "Pendaftaran Berhasil!",
-        icon: "success",
-        html: `
-            <p>Bergabunglah dengan grup WhatsApp Calon Siswa SMK Muhammadiyah Kandanghaur:</p>
-            <a href="${whatsappLink}" target="_blank">${whatsappLink}</a>
-            <br><br>
-            <p>Bracode WhatsApp Grup :</p>
-            <img src="${qrCodeUrl}" alt="QR Code WhatsApp" style="width: 150px; height: 150px;"/>
-            <br>
-            <p>Tekan Ok untuk mencetak bukti pendaftaran</p>
-            <br>
-        `
-    }).then((result) => {
-        if (result.isConfirmed) {
-            setTimeout(function() {
-                window.print();
-            }, 500);
-        }
-    });
-});
-</script>
 </body>
 </html>

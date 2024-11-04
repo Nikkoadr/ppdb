@@ -16,7 +16,7 @@ class CreatePendaftaranTable extends Migration
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id();
             $table->string('id_periode')->nullable();
-            $table->string('no_pendaftaran')->nullable();
+            $table->string('no_pendaftaran');
             $table->foreignId('id_status_siswa')->nullable()->index()->references('id')->on('status_siswa');
             $table->string('nisn')->nullable();
             $table->string('no_kk')->nullable();

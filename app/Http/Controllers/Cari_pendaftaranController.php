@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
+
+class Cari_pendaftaranController extends Controller
+{
+    public function index()
+    {
+        return view('pendaftaran.form_cari_pendaftaran');
+    }
+
+    public function proses_cari_pendaftaran(Request $request)
+    {
+        $nama = $request->input('nama');
+        $tanggal_lahir = $request->input('tanggal_lahir');
+
+        $pendaftaran = DB::table('pendaftaran')
+            ->leftJoin('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
+            ->select('pendaftaran.nama', 'pendaftaran.created_at', 'asal_sekolah.nama_asal_sekolah')
+            ->where('pendaftaran.nama', 'LIKE', "%{$nama}%")
+            ->where('pendaftaran.tanggal_lahir', $tanggal_lahir)
+            ->first();
+
+        if (!$pendaftaran) {
+            return redirect()->back()->with('error', 'Maaf, Nama dan tanggal lahir Anda tidak terdaftar. Silakan daftarkan diri Anda.');
+        } else {
+            $tanggal = Carbon::parse($pendaftaran->created_at)->format('d-m-Y');
+            $message = "Nama {$pendaftaran->nama}, asal sekolah {$pendaftaran->nama_asal_sekolah}, sudah terdaftar di sistem kami pada tanggal $tanggal. terima kasih";
+            return redirect()->back()->with('success', $message);
+        }
+    }
+
+    public function scan($code){
+        $pendaftaran = DB::table('pendaftaran')
+            ->leftJoin('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
+            ->leftJoin('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
+            ->leftJoin('status_orang_tua', 'pendaftaran.id_status_orang_tua', '=', 'status_orang_tua.id')
+            ->leftJoin('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id')
+            ->select(
+                'pendaftaran.*', 
+                'asal_sekolah.nama_asal_sekolah', 
+                'konsentrasi_keahlian.nama_konsentrasi_keahlian',
+                'status_orang_tua.nama_status_orang_tua', 
+                'jenis_kelamin.nama_jenis_kelamin'
+            )->where('no_pendaftaran', $code)
+            ->first();
+        return view('pendaftaran.scan_pendaftaran', compact('pendaftaran'));
+    }
+}

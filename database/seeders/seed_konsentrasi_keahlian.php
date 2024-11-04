@@ -15,7 +15,7 @@ class seed_konsentrasi_keahlian extends Seeder
     public function run()
     {
         Konsentrasi_keahlian::create([
-            'nama_konsentrasi_keahlian' => 'Tenik Pengelasan (LAS)',
+            'nama_konsentrasi_keahlian' => 'Teknik Pengelasan (LAS)',
         ]);
         Konsentrasi_keahlian::create([
             'nama_konsentrasi_keahlian' => 'Teknik Elektronika Industri (TEI)',
