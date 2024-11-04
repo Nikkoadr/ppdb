@@ -20,8 +20,8 @@ use App\Http\Controllers\PendaftaranController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-    //return redirect('https://forms.gle/zNAHWegGZoTeCc359');
+    //return view('welcome');
+    return redirect('https://forms.gle/zNAHWegGZoTeCc359');
 });
 
 Auth::routes([
