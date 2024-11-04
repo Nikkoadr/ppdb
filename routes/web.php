@@ -20,7 +20,7 @@ use App\Http\Controllers\PendaftaranController;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
+    return view('welcome');
     return redirect('https://forms.gle/zNAHWegGZoTeCc359');
 });
 
@@ -36,5 +36,8 @@ Route::get('/bukti_pendaftaran/{id}', [PendaftaranController::class, 'bukti_pend
 Route::get('/cari_pendaftaran', [Cari_pendaftaranController::class, 'index']);
 Route::post('/proses_cari_pendaftaran', [Cari_pendaftaranController::class, 'proses_cari_pendaftaran']);
 Route::get('/scan/{code}', [Cari_pendaftaranController::class, 'scan']);
+
+Route::get('/isi_ukuran_baju/{code}', [Cari_pendaftaranController::class, 'isi_ukuran_baju']);
+Route::post('/proses_isi_ukuran_seragam_{id}', [Cari_pendaftaranController::class, 'proses_isi_ukuran_seragam']);
 
 Route::get('/data_pendaftaran', [Data_pendaftaranController::class, 'index']);
