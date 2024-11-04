@@ -15,7 +15,7 @@ class seed_periode extends Seeder
     public function run()
     {
         Periode::create([
-            'tahun_ajaran' => '2022/2023',
+            'tahun_ajaran' => '2025/2026',
             'periode_aktif' => 'Early Bird',
         ]);
     }

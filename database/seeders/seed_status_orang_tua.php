@@ -18,13 +18,13 @@ class seed_status_orang_tua extends Seeder
             'nama_status_orang_tua' => 'Masih Ada',
         ]);
         Status_orang_tua::create([
-            'nama_status_orang_tua' => 'Yatim',
+            'nama_status_orang_tua' => 'Yatim (ditinggal oleh ayah)',
         ]);
         Status_orang_tua::create([
-            'nama_status_orang_tua' => 'Piatu',
+            'nama_status_orang_tua' => 'Piatu (ditinggal oleh ibu)',
         ]);
         Status_orang_tua::create([
-            'nama_status_orang_tua' => 'Yatim Piatu',
+            'nama_status_orang_tua' => 'Yatim Piatu (ditinggal oleh ayah dan ibu)',
         ]);
     }
 }

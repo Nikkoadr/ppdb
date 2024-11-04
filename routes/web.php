@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Data_pendaftarController;
+use App\Http\Controllers\Data_pendaftaranController;
 
 use App\Http\Controllers\PendaftaranController;
 
@@ -30,6 +30,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/form_pendaftaran', [PendaftaranController::class, 'form_pendaftaran']);
 Route::get('/get_asal_sekolah', [PendaftaranController::class, 'getAsalSekolah']);
 Route::post('/proses_pendaftaran', [PendaftaranController::class, 'proses_pendaftaran']);
-Route::post('/bukti_pendaftaran', [PendaftaranController::class, 'bukti_pendaftaran']);
+Route::get('/bukti_pendaftaran/{id}', [PendaftaranController::class, 'bukti_pendaftaran']);
 
-Route::get('/data_pendaftar', [Data_pendaftarController::class, 'index']);
+Route::get('/data_pendaftaran', [Data_pendaftaranController::class, 'index']);

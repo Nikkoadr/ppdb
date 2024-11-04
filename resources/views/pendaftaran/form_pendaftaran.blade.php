@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="collapse navbar-collapse order-3" id="navbarCollapse">
     <ul class="navbar-nav">
         <li class="nav-item">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
         <a href="#" class="nav-link">Kontak</a>
@@ -168,14 +168,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
                     <div class="form-grup row">
-                    <label for="nama_asal_sekolah" class="col-md-3 col-form-label text-md-right">Asal Sekolah:</label>
+                    <label for="nama_asal_sekolah" class="col-md-3 col-form-label text-md-right">Asal Sekolah : <span style="color: red">*</span></label>
                     <div class="col-md-9">
                         <input 
                             class="form-control @error('nama_asal_sekolah') is-invalid @enderror" 
                             type="text" 
                             id="nama_asal_sekolah" 
                             name="nama_asal_sekolah"
-                            placeholder="Nama Asal Sekolah">
+                            placeholder="Nama Asal Sekolah"
+                            autocomplete="off">
                         <input type="hidden" id="id_asal_sekolah" name="id_asal_sekolah">
                         <div class="suggestions dropdown-item" id="suggestions"></div>
                         @error('nama_asal_sekolah')

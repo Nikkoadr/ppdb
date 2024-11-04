@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pendaftar extends Model
+class Jenis_asal_sekolah extends Model
 {
-    protected $table = 'pendaftar';
+    protected $table = 'jenis_asal_sekolah';
     protected $guarded = [];
 }

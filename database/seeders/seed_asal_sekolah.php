@@ -14,9 +14,9 @@ class seed_asal_sekolah extends Seeder
      */
     public function run()
     {
-        Asal_sekolah::create([
+        // Asal_sekolah::create([
 
-            'nama_asal_sekolah' => 'SMP Muhammadiyah Kandanghaur',
-        ]);
+        //     'nama_asal_sekolah' => 'SMP Muhammadiyah Kandanghaur',
+        // ]);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePendaftarTable extends Migration
+class CreatePendaftaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreatePendaftarTable extends Migration
      */
     public function up()
     {
-        Schema::create('pendaftar', function (Blueprint $table) {
+        Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id();
+            $table->string('id_periode')->nullable();
+            $table->string('no_pendaftaran')->nullable();
             $table->foreignId('id_status_siswa')->nullable()->index()->references('id')->on('status_siswa');
             $table->string('nisn')->nullable();
             $table->string('no_kk')->nullable();
@@ -50,6 +52,6 @@ class CreatePendaftarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pendaftar');
+        Schema::dropIfExists('pendaftaran');
     }
 }

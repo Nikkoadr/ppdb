@@ -52,17 +52,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ($data_pendaftar as $pendaftar)
+                    @foreach ($pendaftaran as $pendaftar)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $pendaftar -> nisn }}</td>
                         <td>{{ $pendaftar -> nama }}</td>
-                        <td>{{ $pendaftar -> id_jenis_kelamin }}</td>
+                        <td>{{ $pendaftar -> nama_jenis_kelamin }}</td>
                         <td>{{ $pendaftar -> tempat_lahir }}, {{ \Carbon\Carbon::parse($pendaftar -> tanggal_lahir)->translatedFormat('d F Y') }}</td>
-                        <td>{{ $pendaftar -> id_asal_sekolah }}</td>    
+                        <td>{{ $pendaftar -> nama_asal_sekolah }}</td>    
                         <td>{{ $pendaftar -> no_siswa }}</td>
-                        <td>{{ $pendaftar -> id_konsentrasi_keahlian }}</td>
-                        <td>{{ $pendaftar -> id_status_siswa }}</td>
+                        <td>{{ $pendaftar -> nama_konsentrasi_keahlian }}</td>
+                        <td>{{ $pendaftar -> nama_status_siswa }}</td>
                         <td>
                             <a href="#" class="btn btn-primary btn-sm">Detail</a>
                         </td>

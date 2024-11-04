@@ -26,86 +26,112 @@ class PendaftaranController extends Controller
             return response()->json($sekolah); // Kembalikan hasil dalam format JSON
         }
 
-public function proses_pendaftaran(Request $request)
-{
-    $cek_data = DB::table('pendaftar')
-        ->where('nama', $request->nama)
-        ->where('tanggal_lahir', $request->tanggal_lahir)
-        ->first();
+    public function proses_pendaftaran(Request $request)
+    {
+        $cek_data = DB::table('pendaftaran')
+            ->where('nama', $request->nama)
+            ->where('tanggal_lahir', $request->tanggal_lahir)
+            ->first();
 
-    if ($cek_data) {
-        return redirect()->back()->with(['error' => 'Data dengan nama dan tanggal lahir yang sama sudah ada dalam database kami !']);
-    }
+        if ($cek_data) {
+            return redirect()->back()->with(['error' => 'Data dengan nama dan tanggal lahir yang sama sudah ada dalam database kami !']);
+        }
 
-    $request->validate([
-        'nisn' => 'nullable',
-        'no_kk' => 'nullable',
-        'no_nik' => 'nullable',
-        'nama' => 'required|string|max:100',
-        'id_jenis_kelamin' => 'required|integer|exists:jenis_kelamin,id',
-        'tempat_lahir' => 'required|string|max:50',
-        'tanggal_lahir' => 'required|date|before:today',
-        'id_asal_sekolah' => 'nullable|integer|exists:asal_sekolah,id',
-        'nama_asal_sekolah' => 'required|string|max:100',
-        'nama_ayah' => 'nullable|string|max:100',
-        'pekerjaan_ayah' => 'nullable|string|max:100',
-        'nama_ibu' => 'nullable|string|max:100',
-        'pekerjaan_ibu' => 'nullable|string|max:100',
-        'id_status_orang_tua' => 'nullable|integer|exists:status_orang_tua,id',
-        'no_siswa' => 'required|string|max:20',
-        'no_wali_siswa' => 'nullable|string|max:20',
-        'blok' => 'nullable|string|max:20',
-        'rt' => 'nullable|numeric',
-        'rw' => 'nullable|numeric',
-        'desa' => 'nullable|string|max:100',
-        'kecamatan' => 'nullable|string|max:100',
-        'kabupaten' => 'nullable|string|max:100',
-        'id_konsentrasi_keahlian' => 'required|integer|exists:konsentrasi_keahlian,id',
-        'referensi' => 'nullable|string|max:255',
-    ]);
+        $request->validate([
+            'tahun_ajaran' => 'required',
+            'periode' => 'required',
+            'nisn' => 'nullable',
+            'no_kk' => 'nullable',
+            'no_nik' => 'nullable',
+            'nama' => 'required|string|max:100',
+            'id_jenis_kelamin' => 'required|integer|exists:jenis_kelamin,id',
+            'tempat_lahir' => 'required|string|max:50',
+            'tanggal_lahir' => 'required|date|before:today',
+            'id_asal_sekolah' => 'nullable|integer|exists:asal_sekolah,id',
+            'nama_asal_sekolah' => 'required|string|max:100',
+            'nama_ayah' => 'nullable|string|max:100',
+            'pekerjaan_ayah' => 'nullable|string|max:100',
+            'nama_ibu' => 'nullable|string|max:100',
+            'pekerjaan_ibu' => 'nullable|string|max:100',
+            'id_status_orang_tua' => 'nullable|integer|exists:status_orang_tua,id',
+            'no_siswa' => 'required|string|max:20',
+            'no_wali_siswa' => 'nullable|string|max:20',
+            'blok' => 'nullable|string|max:20',
+            'rt' => 'nullable|numeric',
+            'rw' => 'nullable|numeric',
+            'desa' => 'nullable|string|max:100',
+            'kecamatan' => 'nullable|string|max:100',
+            'kabupaten' => 'nullable|string|max:100',
+            'id_konsentrasi_keahlian' => 'required|integer|exists:konsentrasi_keahlian,id',
+            'referensi' => 'nullable|string|max:255',
+        ]);
 
-    $idAsalSekolah = $request->input('id_asal_sekolah');
+        $id_asal_sekolah = $request->input('id_asal_sekolah');
 
-    if (!$idAsalSekolah) {
-        $idAsalSekolah = DB::table('asal_sekolah')->insertGetId([
-            'nama_asal_sekolah' => $request->input('nama_asal_sekolah'),
+        if (!$id_asal_sekolah) {
+            $id_asal_sekolah = DB::table('asal_sekolah')->insertGetId([
+                'nama_asal_sekolah' => $request->input('nama_asal_sekolah'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
+        $no_pendaftaran = null;
+        do {
+            $no_pendaftaran = random_int(1, 1000000);
+        } while (DB::table('pendaftaran')->where('no_pendaftaran', $no_pendaftaran)->exists());
+        $periode = DB::table('periode')->orderBy('created_at', 'desc')->first();
+
+        $id_pendaftaran = DB::table('pendaftaran')->insertGetId([
+            'id_periode' => $periode->id,
+            'no_pendaftaran' => $no_pendaftaran,
+            'id_status_siswa' => 1,
+            'nisn' => $request->nisn,
+            'no_kk' => $request->no_kk,
+            'no_nik' => $request->no_nik,
+            'nama' => $request->nama,
+            'id_jenis_kelamin' => $request->id_jenis_kelamin,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'id_asal_sekolah' => $id_asal_sekolah,
+            'nama_ayah' => $request->nama_ayah,
+            'pekerjaan_ayah' => $request->pekerjaan_ayah,
+            'nama_ibu' => $request->nama_ibu,
+            'pekerjaan_ibu' => $request->pekerjaan_ibu,
+            'id_status_orang_tua' => $request->id_status_orang_tua,
+            'no_siswa' => $request->no_siswa,
+            'no_wali_siswa' => $request->no_wali_siswa,
+            'blok' => $request->blok,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            'desa' => $request->desa,
+            'kecamatan' => $request->kecamatan,
+            'kabupaten' => $request->kabupaten,
+            'id_konsentrasi_keahlian' => $request->id_konsentrasi_keahlian,
+            'referensi' => $request->referensi,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        return redirect('/bukti_pendaftaran/'.$id_pendaftaran);
     }
 
-    $pendaftaranId = DB::table('pendaftar')->insertGetId([
-        'id_status_siswa' => 1,
-        'nisn' => $request->nisn,
-        'no_kk' => $request->no_kk,
-        'no_nik' => $request->no_nik,
-        'nama' => $request->nama,
-        'id_jenis_kelamin' => $request->id_jenis_kelamin,
-        'tempat_lahir' => $request->tempat_lahir,
-        'tanggal_lahir' => $request->tanggal_lahir,
-        'id_asal_sekolah' => $idAsalSekolah,
-        'nama_ayah' => $request->nama_ayah,
-        'pekerjaan_ayah' => $request->pekerjaan_ayah,
-        'nama_ibu' => $request->nama_ibu,
-        'pekerjaan_ibu' => $request->pekerjaan_ibu,
-        'id_status_orang_tua' => $request->id_status_orang_tua,
-        'no_siswa' => $request->no_siswa,
-        'no_wali_siswa' => $request->no_wali_siswa,
-        'blok' => $request->blok,
-        'rt' => $request->rt,
-        'rw' => $request->rw,
-        'desa' => $request->desa,
-        'kecamatan' => $request->kecamatan,
-        'kabupaten' => $request->kabupaten,
-        'id_konsentrasi_keahlian' => $request->id_konsentrasi_keahlian,
-        'referensi' => $request->referensi,
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    public function bukti_pendaftaran($id)
+    {
+        $pendaftaran = DB::table('pendaftaran')
+            ->join('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
+            ->join('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
+            ->join('status_orang_tua', 'pendaftaran.id_status_orang_tua', '=', 'status_orang_tua.id')
+            ->join('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id')
+            ->select(
+                'pendaftaran.*', 
+                'asal_sekolah.nama_asal_sekolah', 
+                'konsentrasi_keahlian.nama_konsentrasi_keahlian',
+                'status_orang_tua.nama_status_orang_tua', 
+                'jenis_kelamin.nama_jenis_kelamin'
+            )
+            ->where('pendaftaran.id', $id)
+            ->first();
 
-    return redirect()   ->route('pendaftaran.print', ['id' => $pendaftaranId])
-                        ->with('success', 'Data berhasil ditambahkan');
-}
-
-
+        return view('pendaftaran.bukti_pendaftaran', compact('pendaftaran'));
+    }
 }

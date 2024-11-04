@@ -33,10 +33,10 @@
             </a>
           </li>
             <li class="nav-item">
-            <a href="/data_pendaftar" class="nav-link {{ request()->is('data_pendaftar') ? 'active':'' }}">
+            <a href="/data_pendaftaran" class="nav-link {{ request()->is('data_pendaftaran') ? 'active':'' }}">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
-                Data PPDB
+                Data Pendaftaran
               </p>
             </a>
           </li>
