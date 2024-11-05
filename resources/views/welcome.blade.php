@@ -38,7 +38,7 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3">Penerimaan Peserta Didik Baru ( PPDB )</h5>
                                 <h1 class="display-3 text-white">SMK Muhammadiyah Kandanghaur</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">SMK Muhammadiyah Kandanghaur adalah sekolah PK ( Pusat Keunggulan ) yang beralamatkan di JL Raya Karanganyar No 28/A Kandanghaur Indramayu</p>
+                                <p class="fs-5 text-white mb-4 pb-2">Bergerak Maju Menjadi Yang Terdepan</p>
                                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                                             <a href="/cari_pendaftaran" class="btn btn-primary py-md-3 px-md-5 me-3">Sudah Daftar</a>
                                                 <a href="/form_pendaftaran" class="btn btn-light py-md-3 px-md-5">Daftar Baru</a>
