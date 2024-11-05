@@ -41,3 +41,9 @@ Route::get('/isi_ukuran_baju/{code}', [Cari_pendaftaranController::class, 'isi_u
 Route::post('/proses_isi_ukuran_seragam_{id}', [Cari_pendaftaranController::class, 'proses_isi_ukuran_seragam']);
 
 Route::get('/data_pendaftaran', [Data_pendaftaranController::class, 'index']);
+Route::get('/data_pendaftaran/tambah', [Data_pendaftaranController::class, 'form_tambah_pendaftaran']);
+Route::post('/data_pendaftaran/proses', [Data_pendaftaranController::class, 'proses_pendaftaran_admin']);
+Route::get('/data_pendaftaran/edit/{id}', [Data_pendaftaranController::class, 'form_edit_pendaftaran_admin']);
+Route::put('/data_pendaftaran/update/{id}', [Data_pendaftaranController::class, 'update_pendaftaran_admin']);
+Route::get('/data_pendaftaran/cetak/{id}', [Data_pendaftaranController::class, 'cetak_pendaftaran']);
+Route::get('/data_pendaftaran/hapus/{id}', [Data_pendaftaranController::class, 'hapus']);

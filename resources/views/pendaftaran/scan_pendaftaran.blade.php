@@ -98,7 +98,20 @@
                     </div>
                 </td>
                 <td align="center">
-                    {!! QrCode::size(100)->backgroundColor(255,255,255)->generate('https://ppdb.smkmuhkandanghaur.sch.id/scan/'.$pendaftaran->no_pendaftaran) !!}
+                    <p>Barcode Pengisian Ukuran Baju</p>
+                    <br>
+                    {!! QrCode::size(70)->backgroundColor(255,255,255)->generate('https://ppdb.smkmuhkandanghaur.sch.id/isi_ukuran_baju/'.$pendaftaran->no_pendaftaran) !!}
+                    <br>
+                    <br>
+                    <br>
+                </td>
+                <td align="center">
+                    <p>Indramayu, {{ \Carbon\Carbon::parse($pendaftaran->created_at)->translatedFormat('d F Y') }}</p>
+                    <br>
+                    {!! QrCode::size(70)->backgroundColor(255,255,255)->generate('https://ppdb.smkmuhkandanghaur.sch.id/scan/'.$pendaftaran->no_pendaftaran) !!}
+                    <br>
+                    <br>
+                    <p>Panitia PPDB</p>
                 </td>
             </tr>
         </table>

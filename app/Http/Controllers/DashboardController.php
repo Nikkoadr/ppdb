@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Pendaftaran;
 
 class DashboardController extends Controller
 {
@@ -21,10 +22,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-
-
-        return view('dashboard', ["judul" => "Dashboard"]);
-    
-    
+        $jumlah_pendaftaran = Pendaftaran::count();
+        $las = Pendaftaran::where('id_konsentrasi_keahlian', '1')->count();
+        $tei = Pendaftaran::where('id_konsentrasi_keahlian', '2')->count();
+        $tkr = Pendaftaran::where('id_konsentrasi_keahlian', '3')->count();
+        $tkj = Pendaftaran::where('id_konsentrasi_keahlian', '4')->count();
+        $tsm = Pendaftaran::where('id_konsentrasi_keahlian', '5')->count();
+        $fkk = Pendaftaran::where('id_konsentrasi_keahlian', '6')->count();
+        $jumlah_daftar_ulang = Pendaftaran::where('id_status_siswa', '3')->count();
+        return view('dashboard', compact('jumlah_pendaftaran','las', 'tei', 'tkr', 'tkj', 'tsm', 'fkk','jumlah_daftar_ulang'));
     }
 }

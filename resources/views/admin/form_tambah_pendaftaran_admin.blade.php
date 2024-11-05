@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PPDB SMK Muhammadiyah Kandanghaur</title>
-
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
-<!-- Theme style -->
-<link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+@extends('layouts.admin.main_admin')
+@section('link')
+<link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 <style>
     .suggestions {
     display: none; /* Sembunyikan secara default */
@@ -35,49 +20,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
     background-color: #f0f0f0;
 }
 </style>
-</head>
-<body class="hold-transition layout-top-nav">
-<div class="wrapper">
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-<div class="container">
-    <a href="/" class="navbar-brand">
-    <img src="{{ asset('assets/img/logo.png') }}" alt="smkmuhkandanghaur" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">Smkmuhkandanghaur</span>
-    </a>
-    <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-        <a href="/" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-        <a href="https://wa.me/6281122207770" class="nav-link">Kontak</a>
-        </li>
-        <li class="nav-item">
-        <a href="/login" class="nav-link">login</a>
-        </li>
-    </ul>
-    </div>
-</div>
-</nav>
+@endsection
+@section('title')
+    {{'Form Tambah Pendaftar'}}
+@endsection
+@section('content')
 <div class="content-wrapper">
+<!-- Content Header (Page header) -->
 <div class="content-header">
-    <div class="container">
+    <div class="container-fluid">
     <div class="row mb-2">
-        <div class="col-sm-12">
-        <h1 class="m-0 text-center"> Form Penerimaan Peseta Didik Baru (PPDB) <small>TA {{ $periode->tahun_ajaran }}</small></h1>
-        </div>
-    </div>
-    </div>
-</div>
-<div class="content">
-<div class="container my-4">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card bg-white p-4 shadow-sm">
-                <form action="/proses_pendaftaran" method="POST">
+        <div class="col-sm-6">
+        <h1 class="m-0">Data PPDB</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Admin</a></li>
+            <li class="breadcrumb-item active">Form Tambah Pendaftar</li>
+        </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div><!-- /.content-header -->
+    <!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+            <h3 class="card-title">Form Tambah Pendaftar</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <form action="/data_pendaftaran/proses" method="POST">
                     @csrf
                     <div class="form-group row">
                         <label for="periode" class="col-md-3 col-form-label text-md-right">Periode :</label>
@@ -359,24 +335,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                 </form>
             </div>
+            <!-- /.card-body -->
         </div>
+        <!-- /.card -->
+        </div>
+        <!-- /.col -->
     </div>
+    <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
 </div>
-</div>
-</div>
-<footer class="main-footer">
-<div class="float-right d-none d-sm-inline">
-    Anything you want
-</div>
+@endsection
+@section('script')
 
-<strong>Copyright &copy; 2014-2026 <a href="https://adminlte.io">Nikko Adrian</a>.</strong> All rights reserved.
-</footer>
-</div>
-<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/plugins/adminlte.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <script>
     document.getElementById('nama_asal_sekolah').addEventListener('input', function () {
         let query = this.value;
@@ -414,8 +392,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
     });
 </script>
-
-<script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="{{asset('assets/plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
 <script>
     @if (session()->has('success'))
         Swal.fire({
@@ -431,5 +408,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
         });
     @endif
 </script>
-</body>
-</html>
+@endsection
