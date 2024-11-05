@@ -135,12 +135,8 @@
 <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
 <script>
 $(document).ready(function() {
-    // Link grup WhatsApp
     const whatsappLink = "https://chat.whatsapp.com/EpdbrzKc9akE70vmQft9oj";
-
-    // QR code API URL dengan link WhatsApp sebagai parameter
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(whatsappLink)}`;
-
     Swal.fire({
         title: "Pendaftaran Berhasil!",
         icon: "success",
