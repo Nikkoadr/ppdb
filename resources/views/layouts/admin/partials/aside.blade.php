@@ -18,7 +18,7 @@
           @endif
         </div>
         <div class="info">
-          <a href="/profile" class="d-block">{{ Auth::user()->nama }}</a>
+          <a href="#" class="d-block">{{ Auth::user()->nama }}</a>
         </div>
       </div>
       <!-- Sidebar Menu -->
@@ -32,11 +32,48 @@
               </p>
             </a>
           </li>
+                <li class="nav-item menu-open">
+                    <a href="" class="nav-link {{ in_array(request()->path(), ['data_guru', 'data_user', 'data_mapel', 'data_role', 'data_jurusan', 'data_kelas', 'data_siswa', 'data_ketua_kelas', 'data_walas']) ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-database"></i>
+                    <p>
+                        Database
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/data_priode" class="nav-link {{ request()->is('data_priode') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Periode</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/data_keahlian" class="nav-link {{ request()->is('data_keahlian') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Konsentrasi Keahlian</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/data_asal_sekolah" class="nav-link {{ request()->is('data_asal_sekolah') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Asal Sekolah</p>
+                        </a>
+                    </li>
+                    </ul>
+                </li>
             <li class="nav-item">
             <a href="/data_pendaftaran" class="nav-link {{ request()->is('data_pendaftaran') ? 'active':'' }}">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
                 Data Pendaftaran
+              </p>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a href="/data_ukuran_seragam" class="nav-link {{ request()->is('data_ukuran_seragam') ? 'active':'' }}">
+              <i class="nav-icon fa-solid fa-shirt"></i>
+              <p>
+                Ukuran Seragam
               </p>
             </a>
           </li>
