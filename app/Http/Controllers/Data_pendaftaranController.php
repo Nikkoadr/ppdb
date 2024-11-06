@@ -27,7 +27,7 @@ class Data_pendaftaranController extends Controller
             )
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('admin.data_pendaftaran', compact("pendaftaran"), ["judul" => "Data Pendaftaran"]);
+        return view('admin.data_pendaftaran.view_data_pendaftaran', compact("pendaftaran"), ["judul" => "Data Pendaftaran"]);
     }
 
     public function form_tambah_pendaftaran(){
@@ -37,7 +37,7 @@ class Data_pendaftaranController extends Controller
         $status_orang_tua = DB::table('status_orang_tua')->get();
         $konsentrasi_keahlian = DB::table('konsentrasi_keahlian')->get();
 
-        return view('admin.form_tambah_pendaftaran_admin', compact('jenis_kelamin', 'asal_sekolah', 'status_orang_tua', 'konsentrasi_keahlian', 'periode'));
+        return view('admin.data_pendaftaran.form_tambah_pendaftaran_admin', compact('jenis_kelamin', 'asal_sekolah', 'status_orang_tua', 'konsentrasi_keahlian', 'periode'));
     }
 
     public function proses_pendaftaran_admin(Request $request)
@@ -139,7 +139,7 @@ class Data_pendaftaranController extends Controller
         $asal_sekolah = DB::table('asal_sekolah')->get();
         $status_orang_tua = DB::table('status_orang_tua')->get();
         $status_siswa = DB::table('status_siswa')->get();
-        return view('admin.form_edit_pendaftaran_admin', compact('pendaftaran', 'periode', 'jenis_kelamin', 'konsentrasi_keahlian', 'asal_sekolah', 'status_orang_tua','status_siswa'));
+        return view('admin.data_pendaftaran.form_edit_pendaftaran_admin', compact('pendaftaran', 'periode', 'jenis_kelamin', 'konsentrasi_keahlian', 'asal_sekolah', 'status_orang_tua','status_siswa'));
         
     }
 
