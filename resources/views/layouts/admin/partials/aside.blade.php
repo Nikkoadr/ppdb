@@ -29,7 +29,7 @@
             </a>
           </li>
                 <li class="nav-item menu-open">
-                    <a href="" class="nav-link {{ in_array(request()->path(), ['data_guru', 'data_user', 'data_mapel', 'data_role', 'data_jurusan', 'data_kelas', 'data_siswa', 'data_ketua_kelas', 'data_walas']) ? 'active' : '' }}">
+                    <a href="" class="nav-link {{ in_array(request()->path(), ['data_priode', 'data_konsentrasi_keahlian','data_asal_sekolah']) ? 'active' : '' }}">
                     <i class="nav-icon fas fa-database"></i>
                     <p>
                         Database
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/data_konsentrasi_keahlian" class="nav-link {{ request()->is('data_keahlian') ? 'active' : '' }}">
+                        <a href="/data_konsentrasi_keahlian" class="nav-link {{ request()->is('data_konsentrasi_keahlian') ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Konsentrasi Keahlian</p>
                         </a>

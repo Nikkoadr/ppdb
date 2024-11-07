@@ -12,7 +12,7 @@ class Data_priodeController extends Controller
         $data_periode = DB::table('periode')
         ->orderBy('created_at', 'asc')
         ->get();
-        return view('admin\data_periode\view_data_periode', compact('data_periode'));
+        return view('admin.data_periode.view_data_periode', compact('data_periode'));
     }
     public function form_tambah_periode()
         {
