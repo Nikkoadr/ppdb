@@ -50,8 +50,8 @@ Route::get('/data_pendaftaran/cetak/{id}', [Data_pendaftaranController::class, '
 Route::get('/data_pendaftaran/hapus/{id}', [Data_pendaftaranController::class, 'hapus']);
 
 Route::get('/data_priode', [Data_priodeController::class, 'index']);
-Route::get('/data_priode/tambah', [Data_priodeController::class, 'form_tabah_priode']);
-Route::get('/data_priode/proses', [Data_priodeController::class, 'proses_priode']);
-Route::get('/data_priode/edit/{id}', [Data_priodeController::class, 'form_edit_priode']);
-Route::get('/data_priode/update/{id}', [Data_priodeController::class, 'update_priode']);
-Route::get('/data_priode/hapus/{id}', [Data_priodeController::class, 'hapus']);
+Route::get('/databases/tambah_periode', [Data_priodeController::class, 'form_tambah_periode']);
+Route::post('/databases/proses_tambah_periode', [Data_priodeController::class, 'proses_tambah_periode']);
+Route::get('/databases/edit_periode/{id}', [Data_priodeController::class, 'form_edit_priode']);
+Route::get('/databases/update_periode/{id}', [Data_priodeController::class, 'update_priode']);
+Route::get('/databases/hapus_periode/{id}', [Data_priodeController::class, 'hapus_periode']);

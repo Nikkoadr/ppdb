@@ -8,6 +8,7 @@ use Carbon\Carbon;
 
 class Cari_pendaftaranController extends Controller
 {
+
     public function index()
     {
         return view('pendaftaran.form_cari_pendaftaran');
