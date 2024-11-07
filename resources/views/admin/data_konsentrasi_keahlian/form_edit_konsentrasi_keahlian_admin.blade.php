@@ -18,8 +18,8 @@
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Admin</a></li>
             <li class="breadcrumb-item">Databases</li>
-            <li class="breadcrumb-item">Periode</li>
-            <li class="breadcrumb-item active">Tambah</li>
+            <li class="breadcrumb-item">Konsentrasi Keahlian</li>
+            <li class="breadcrumb-item active">Edit</li>
         </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
@@ -32,23 +32,21 @@
         <div class="col-12">
         <div class="card">
             <div class="card-header">
-            <h3 class="card-title">Form Tambah Periode</h3>
+            <h3 class="card-title">Form Edit Konsentrasi Keahlian</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="/databases/proses_tambah_periode" method="POST">
+                <form action="/databases/update_konsentrasi_keahlian/{{ $data->id }}" method="POST">
                     @csrf
+                    @method('put')
                     <div class="form-group row">
-                        <label for="periode" class="col-md-1 col-form-label text-md-right">Periode :</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" placeholder="Masukkan Tahun Ajaran" required>
-                        </div>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" id="periode" name="periode_aktif" placeholder="Masukkan Periode" required>
+                        <label for="nama_konsentrasi_keahlian" class="col-md-2 col-form-label text-md-right">Periode :</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="nama_konsentrasi_keahlian" name="nama_konsentrasi_keahlian" value="{{ $data->nama_konsentrasi_keahlian }}" required>
                         </div>
                     </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary float-right">Tambah</button>
+                            <button type="submit" class="btn btn-primary float-right">Edit</button>
                         </div>
                 </form>
             </div>
@@ -66,10 +64,7 @@
 </div>
 @endsection
 @section('script')
-
-<!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
 <script src="{{ asset('assets/plugins/adminlte.min.js') }}"></script>
 <script src="{{asset('assets/plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
 <script>

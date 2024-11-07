@@ -18,7 +18,7 @@
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Admin</a></li>
             <li class="breadcrumb-item">Databases</li>
-            <li class="breadcrumb-item">Periode</li>
+            <li class="breadcrumb-item">Konsentrasi Keahlian</li>
             <li class="breadcrumb-item active">Tambah</li>
         </ol>
         </div><!-- /.col -->
@@ -32,19 +32,16 @@
         <div class="col-12">
         <div class="card">
             <div class="card-header">
-            <h3 class="card-title">Form Tambah Periode</h3>
+            <h3 class="card-title">Form Tambah Konsentrasi Keahlian</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="/databases/proses_tambah_periode" method="POST">
+                <form action="/databases/proses_tambah_konsentrasi_keahlian" method="POST">
                     @csrf
                     <div class="form-group row">
-                        <label for="periode" class="col-md-1 col-form-label text-md-right">Periode :</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" placeholder="Masukkan Tahun Ajaran" required>
-                        </div>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" id="periode" name="periode_aktif" placeholder="Masukkan Periode" required>
+                        <label for="nama_konsentrasi_keahlian" class="col-md-2 col-form-label text-md-right">Nama konsentrasi Keahlian :</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="nama_konsentrasi_keahlian" name="nama_konsentrasi_keahlian" placeholder="Masukkan Nama Konsentrasi Keahlian" required>
                         </div>
                     </div>
                         <div class="col-12">

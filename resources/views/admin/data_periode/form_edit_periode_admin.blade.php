@@ -36,19 +36,20 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="/databases/proses_tambah_periode" method="POST">
+                <form action="/databases/update_periode/{{ $data_periode->id }}" method="POST">
                     @csrf
+                    @method('put')
                     <div class="form-group row">
                         <label for="periode" class="col-md-1 col-form-label text-md-right">Periode :</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" placeholder="Masukkan Tahun Ajaran" required>
+                            <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" value="{{ $data_periode->tahun_ajaran }}" required>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" id="periode" name="periode_aktif" placeholder="Masukkan Periode" required>
+                            <input type="text" class="form-control" id="periode" name="periode_aktif" value="{{ $data_periode->periode_aktif }}" required>
                         </div>
                     </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary float-right">Tambah</button>
+                            <button type="submit" class="btn btn-primary float-right">Edit</button>
                         </div>
                 </form>
             </div>
@@ -66,10 +67,7 @@
 </div>
 @endsection
 @section('script')
-
-<!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
 <script src="{{ asset('assets/plugins/adminlte.min.js') }}"></script>
 <script src="{{asset('assets/plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
 <script>

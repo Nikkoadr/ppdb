@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Data_pendaftaranController;
 use App\Http\Controllers\Cari_pendaftaranController;
 use App\Http\Controllers\Data_priodeController;
+use App\Http\Controllers\Data_konsentrasi_keahlianController;
 
 use App\Http\Controllers\PendaftaranController;
 
@@ -52,6 +53,13 @@ Route::get('/data_pendaftaran/hapus/{id}', [Data_pendaftaranController::class, '
 Route::get('/data_priode', [Data_priodeController::class, 'index']);
 Route::get('/databases/tambah_periode', [Data_priodeController::class, 'form_tambah_periode']);
 Route::post('/databases/proses_tambah_periode', [Data_priodeController::class, 'proses_tambah_periode']);
-Route::get('/databases/edit_periode/{id}', [Data_priodeController::class, 'form_edit_priode']);
-Route::get('/databases/update_periode/{id}', [Data_priodeController::class, 'update_priode']);
+Route::get('/databases/edit_periode/{id}', [Data_priodeController::class, 'view_edit_periode']);
+Route::put('/databases/update_periode/{id}', [Data_priodeController::class, 'update_priode']);
 Route::get('/databases/hapus_periode/{id}', [Data_priodeController::class, 'hapus_periode']);
+
+Route::get('/data_konsentrasi_keahlian', [Data_konsentrasi_keahlianController::class, 'index']);
+Route::get('/databases/form_tambah_konsentrasi_keahlian', [Data_konsentrasi_keahlianController::class, 'form_tambah_konsentrasi_keahlian']);
+Route::post('/databases/proses_tambah_konsentrasi_keahlian', [Data_konsentrasi_keahlianController::class, 'proses_tambah_konsentrasi_keahlian']);
+Route::get('/databases/edit_konsentrasi_keahlian/{id}', [Data_konsentrasi_keahlianController::class, 'form_edit_konsentrasi_keahlian']);
+Route::put('/databases/update_konsentrasi_keahlian/{id}', [Data_konsentrasi_keahlianController::class, 'update_konsentrasi_keahlian']);
+Route::get('/databases/hapus_konsentrasi_keahlian/{id}', [Data_konsentrasi_keahlianController::class, 'hapus_konsentrasi_keahlian']);

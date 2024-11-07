@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/data_keahlian" class="nav-link {{ request()->is('data_keahlian') ? 'active' : '' }}">
+                        <a href="/data_konsentrasi_keahlian" class="nav-link {{ request()->is('data_keahlian') ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Konsentrasi Keahlian</p>
                         </a>
