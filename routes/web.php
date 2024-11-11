@@ -8,7 +8,7 @@ use App\Http\Controllers\Cari_pendaftaranController;
 use App\Http\Controllers\Data_priodeController;
 use App\Http\Controllers\Data_konsentrasi_keahlianController;
 use App\Http\Controllers\Data_asal_sekolahController;
-
+use App\Http\Controllers\Data_ukuran_seragamController;
 use App\Http\Controllers\PendaftaranController;
 
 /*
@@ -71,3 +71,10 @@ Route::post('/databases/proses_tambah_asal_sekolah', [Data_asal_sekolahControlle
 Route::get('/databases/edit_asal_sekolah/{id}', [Data_asal_sekolahController::class, 'form_edit_asal_sekolah']);
 Route::put('/databases/update_asal_sekolah/{id}', [Data_asal_sekolahController::class, 'update_asal_sekolah']);
 Route::get('/databases/hapus_asal_sekolah/{id}', [Data_asal_sekolahController::class, 'hapus_asal_sekolah']);
+
+Route::get('/data_ukuran_seragam', [Data_ukuran_seragamController::class, 'index']);
+Route::get('/databases/form_tambah_ukuran_seragam', [Data_ukuran_seragamController::class, 'form_tambah_ukuran_seragam']);
+Route::post('/databases/proses_tambah_ukuran_seragam', [Data_ukuran_seragamController::class, 'proses_tambah_ukuran_seragam']);
+Route::get('/databases/edit_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'form_edit_ukuran_seragam']);
+Route::put('/databases/update_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'update_ukuran_seragam']);
+Route::get('/databases/hapus_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'hapus_ukuran_seragam']);

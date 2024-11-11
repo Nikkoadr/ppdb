@@ -1,0 +1,65 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class Data_ukuran_seragamController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+public function index()
+{
+    $data_ukuran_seragam = DB::table('pendaftaran')
+        ->leftJoin('ukuran_seragam_siswa_baru', 'pendaftaran.id', '=', 'ukuran_seragam_siswa_baru.id_pendaftaran')
+        ->select('pendaftaran.nama', 'pendaftaran.no_pendaftaran', 'ukuran_seragam_siswa_baru.*')
+        ->get();
+
+    return view('admin.data_ukuran_seragam.view_data_ukuran_seragam', compact("data_ukuran_seragam"));
+}
+
+public function form_tambah_ukuran_seragam(){
+    return view('admin.data_ukuran_seragam.form_tambah_ukuran_seragam_admin');
+}
+
+public function proses_tambah_ukuran_seragam(Request $request){
+    DB::table('ukuran_seragam_siswa_baru')->insert([
+        'id_pendaftaran' => $request->id_pendaftaran,
+        'ukuran_seragam' => $request->ukuran_seragam,
+    ]);
+    return redirect('/data_ukuran_seragam');
+}
+
+public function form_edit_ukuran_seragam($id){
+    $data_ukuran_seragam = DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->first();
+    return view('admin.data_ukuran_seragam.form_edit_ukuran_seragam_admin', compact("data_ukuran_seragam"));
+}
+
+public function update_ukuran_seragam(Request $request, $id){
+    DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->update([
+        'id_pendaftaran' => $request->id_pendaftaran,
+        'ukuran_seragam' => $request->ukuran_seragam,
+    ]);
+    return redirect('/data_ukuran_seragam');
+}
+
+public function hapus_ukuran_seragam($id){
+    DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->delete();
+    return redirect('/data_ukuran_seragam');
+}
+
+}
