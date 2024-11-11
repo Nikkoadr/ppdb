@@ -7,9 +7,24 @@ use Illuminate\Support\Facades\DB;
 
 class Data_konsentrasi_keahlianController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index(){
         $data_konsentrasi_keahlian = DB::table('konsentrasi_keahlian')->get();
-        return view('admin.data_konsentrasi_keahlian.view_data__konsentrasi_keahlian', compact('data_konsentrasi_keahlian'));
+        return view('admin.data_konsentrasi_keahlian.view_data_konsentrasi_keahlian', compact('data_konsentrasi_keahlian'));
     }
 
     public function form_tambah_konsentrasi_keahlian(){

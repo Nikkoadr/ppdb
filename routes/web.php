@@ -7,6 +7,7 @@ use App\Http\Controllers\Data_pendaftaranController;
 use App\Http\Controllers\Cari_pendaftaranController;
 use App\Http\Controllers\Data_priodeController;
 use App\Http\Controllers\Data_konsentrasi_keahlianController;
+use App\Http\Controllers\Data_asal_sekolahController;
 
 use App\Http\Controllers\PendaftaranController;
 
@@ -63,3 +64,10 @@ Route::post('/databases/proses_tambah_konsentrasi_keahlian', [Data_konsentrasi_k
 Route::get('/databases/edit_konsentrasi_keahlian/{id}', [Data_konsentrasi_keahlianController::class, 'form_edit_konsentrasi_keahlian']);
 Route::put('/databases/update_konsentrasi_keahlian/{id}', [Data_konsentrasi_keahlianController::class, 'update_konsentrasi_keahlian']);
 Route::get('/databases/hapus_konsentrasi_keahlian/{id}', [Data_konsentrasi_keahlianController::class, 'hapus_konsentrasi_keahlian']);
+
+Route::get('/data_asal_sekolah', [Data_asal_sekolahController::class, 'index']);
+Route::get('/databases/form_tambah_asal_sekolah', [Data_asal_sekolahController::class, 'form_tambah_asal_sekolah']);
+Route::post('/databases/proses_tambah_asal_sekolah', [Data_asal_sekolahController::class, 'proses_tambah_asal_sekolah']);
+Route::get('/databases/edit_asal_sekolah/{id}', [Data_asal_sekolahController::class, 'form_edit_asal_sekolah']);
+Route::put('/databases/update_asal_sekolah/{id}', [Data_asal_sekolahController::class, 'update_asal_sekolah']);
+Route::get('/databases/hapus_asal_sekolah/{id}', [Data_asal_sekolahController::class, 'hapus_asal_sekolah']);
