@@ -74,7 +74,6 @@ Route::get('/databases/hapus_asal_sekolah/{id}', [Data_asal_sekolahController::c
 
 Route::get('/data_ukuran_seragam', [Data_ukuran_seragamController::class, 'index']);
 Route::get('/databases/form_tambah_ukuran_seragam/{code}', [Data_ukuran_seragamController::class, 'form_tambah_ukuran_seragam']);
-Route::post('/databases/proses_tambah_ukuran_seragam', [Data_ukuran_seragamController::class, 'proses_tambah_ukuran_seragam']);
 Route::get('/databases/edit_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'form_edit_ukuran_seragam']);
 Route::put('/databases/update_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'update_ukuran_seragam']);
 Route::get('/databases/hapus_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'hapus_ukuran_seragam']);

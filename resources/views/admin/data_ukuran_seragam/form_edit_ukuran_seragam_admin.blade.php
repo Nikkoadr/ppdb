@@ -18,7 +18,7 @@
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Admin</a></li>
             <li class="breadcrumb-item">Databases</li>
-            <li class="breadcrumb-item">Konsentrasi Keahlian</li>
+            <li class="breadcrumb-item">Ukuran Seragam</li>
             <li class="breadcrumb-item active">Edit</li>
         </ol>
         </div><!-- /.col -->
@@ -32,22 +32,73 @@
         <div class="col-12">
         <div class="card">
             <div class="card-header">
-            <h3 class="card-title">Form Edit Konsentrasi Keahlian</h3>
+            <h3 class="card-title">Form Edit Ukuran Seragam</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="/databases/update_konsentrasi_keahlian/{{ $data->id }}" method="POST">
+                <form action="/databases/update_ukuran_seragam/{{ $data_ukuran_seragam->id }}" method="POST">
                     @csrf
                     @method('put')
                     <div class="form-group row">
-                        <label for="nama_konsentrasi_keahlian" class="col-md-2 col-form-label text-md-right">Periode :</label>
+                        <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Siswa :</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" id="nama_konsentrasi_keahlian" name="nama_konsentrasi_keahlian" value="{{ $data->nama_konsentrasi_keahlian }}" required>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $data_ukuran_seragam->nama }}" readonly>
                         </div>
                     </div>
-                        <div class="col-12">
+                    <div class="form-group row">
+                        <label for="ukuran_baju" class="col-md-2 col-form-label text-md-right">Ukuran Baju :</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="ukuran_baju" id="ukuran_baju" required>
+                                <option value="{{ $data_ukuran_seragam->ukuran_baju }}" selected>{{ $data_ukuran_seragam->ukuran_baju }}</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ukuran_celana" class="col-md-2 col-form-label text-md-right">Ukuran Celana :</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="ukuran_celana" id="ukuran_celana" required>
+                                <option value="{{ $data_ukuran_seragam->ukuran_celana }}" selected>{{ $data_ukuran_seragam->ukuran_celana }}</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>    
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ukuran_sepatu" class="col-md-2 col-form-label text-md-right">Ukuran Sepatu:</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="ukuran_sepatu" id="ukuran_sepatu" required>
+                                <option value="{{ $data_ukuran_seragam->ukuran_sepatu }}" selected>{{ $data_ukuran_seragam->ukuran_sepatu }}</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
                             <button type="submit" class="btn btn-primary float-right">Edit</button>
                         </div>
+                    </div>
                 </form>
             </div>
             <!-- /.card-body -->

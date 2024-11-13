@@ -36,25 +36,27 @@ public function form_tambah_ukuran_seragam($code){
     return view('admin.data_ukuran_seragam.form_tambah_ukuran_seragam_admin', compact('data'));
 }
 
-public function proses_tambah_ukuran_seragam(Request $request){
-    DB::table('ukuran_seragam_siswa_baru')->insert([
-        'id_pendaftaran' => $request->id_pendaftaran,
-        'ukuran_seragam' => $request->ukuran_seragam,
-    ]);
-    return redirect('/data_ukuran_seragam');
-}
-
 public function form_edit_ukuran_seragam($id){
-    $data_ukuran_seragam = DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->first();
+    $data_ukuran_seragam = DB::table('ukuran_seragam_siswa_baru')
+    ->join('pendaftaran', 'ukuran_seragam_siswa_baru.id_pendaftaran', '=', 'pendaftaran.id')
+    ->select('ukuran_seragam_siswa_baru.*', 'pendaftaran.nama', 'pendaftaran.no_pendaftaran')
+    ->where('ukuran_seragam_siswa_baru.id', $id)
+    ->first();
     return view('admin.data_ukuran_seragam.form_edit_ukuran_seragam_admin', compact("data_ukuran_seragam"));
 }
 
 public function update_ukuran_seragam(Request $request, $id){
-    DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->update([
-        'id_pendaftaran' => $request->id_pendaftaran,
-        'ukuran_seragam' => $request->ukuran_seragam,
+    $request->validate([
+        'ukuran_baju' => 'required',
+        'ukuran_celana' => 'required',
+        'ukuran_sepatu' => 'required'
     ]);
-    return redirect('/data_ukuran_seragam');
+    DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->update([
+        'ukuran_baju' => $request->ukuran_baju,
+        'ukuran_celana' => $request->ukuran_celana,
+        'ukuran_sepatu' => $request->ukuran_sepatu
+    ]);
+    return redirect('/data_ukuran_seragam')->with('success', 'Data ukuran baju, celana, dan sepatu berhasil diupdate.');
 }
 
 public function hapus_ukuran_seragam($id){
