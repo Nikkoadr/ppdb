@@ -138,16 +138,20 @@
         <thead>
           <tr>
             <th>Asal Sekolah</th>
-            <th>Yang Baru daftar</th>
+            <th>Tidak Terverifikasi</th>
+            <th>Sudah Terverifikasi</th>
             <th>Sudah Daftar Ulang</th>
+            <th>Total</th>
           </tr>
         </thead>
         <tbody>
         @foreach($pendaftaran as $data)
             <tr>
                 <td>{{ $data->nama_asal_sekolah }}</td>
-                <td>{{ $data->sudah_daftar }}</td>
+                <td>{{ $data->tidak_terverifikasi }}</td>
+                <td>{{ $data->sudah_terverifikasi }}</td>
                 <td>{{ $data->sudah_daftar_ulang }}</td>
+                <td>{{ $data->total_pendaftaran_by_sekolah }}</td>
             </tr>
         @endforeach
         </tbody>

@@ -26,9 +26,11 @@ class DashboardController extends Controller
         $pendaftaran = DB::table('pendaftaran')
             ->join('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
             ->select(
-                'asal_sekolah.nama_asal_sekolah',
-                DB::raw('COUNT(CASE WHEN pendaftaran.id_status_siswa = 1 THEN 1 END) as sudah_daftar'),
-                DB::raw('COUNT(CASE WHEN pendaftaran.id_status_siswa = 3 THEN 1 END) as sudah_daftar_ulang')
+                'asal_sekolah.nama_asal_sekolah as nama_asal_sekolah',
+                DB::raw('COUNT(CASE WHEN pendaftaran.id_status_siswa = 1 THEN 1 END) as tidak_terverifikasi'),
+                DB::raw('COUNT(CASE WHEN pendaftaran.id_status_siswa = 2 THEN 1 END) as sudah_terverifikasi'),
+                DB::raw('COUNT(CASE WHEN pendaftaran.id_status_siswa = 3 THEN 1 END) as sudah_daftar_ulang'),
+                DB::raw('COUNT(*) as total_pendaftaran_by_sekolah')
             )
             ->groupBy('asal_sekolah.nama_asal_sekolah')
             ->get();
