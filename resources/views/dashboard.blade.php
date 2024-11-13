@@ -134,6 +134,24 @@
           </div>
         </div>
       </div>
+      <table class="table table-bordered table-striped" >
+        <thead>
+          <tr>
+            <th>Asal Sekolah</th>
+            <th>Yang Baru daftar</th>
+            <th>Sudah Daftar Ulang</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach($pendaftaran as $data)
+            <tr>
+                <td>{{ $data->nama_asal_sekolah }}</td>
+                <td>{{ $data->sudah_daftar }}</td>
+                <td>{{ $data->sudah_daftar_ulang }}</td>
+            </tr>
+        @endforeach
+        </tbody>
+      </table>
     </section>
   </div>
 @endsection
