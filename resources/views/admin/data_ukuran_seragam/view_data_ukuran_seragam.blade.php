@@ -67,7 +67,7 @@
                         </td>
                         @else
                         <td>
-                            Belum Isi Seragam    
+                            <a href="/databases/form_tambah_ukuran_seragam/{{ $seragam->no_pendaftaran }}" class="btn btn-info btn-sm"><i class="fa-solid fa-shirt"></i></i></a>    
                         </td>
                         @endif
                     </tr>

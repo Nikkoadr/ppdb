@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class Cari_pendaftaranController extends Controller
 {
@@ -81,7 +82,11 @@ public function proses_isi_ukuran_seragam(Request $request, $id)
             'ukuran_celana' => $request->ukuran_celana,
             'ukuran_sepatu' => $request->ukuran_sepatu,
         ]);
+        if(Auth::check()){
+            return redirect('/data_ukuran_seragam')->with('success', 'Data ukuran baju, celana, dan sepatu berhasil diupdate.');
+        }else{
         return redirect('/cari_pendaftaran')->with('success', 'Data ukuran baju, celana, dan sepatu berhasil diupdate.');
+        }
     }else{
         DB::table('ukuran_seragam_siswa_baru')->insert([
         'id_pendaftaran' => $id,
@@ -89,7 +94,11 @@ public function proses_isi_ukuran_seragam(Request $request, $id)
         'ukuran_celana' => $request->ukuran_celana,
         'ukuran_sepatu' => $request->ukuran_sepatu,
     ]);
+    if(Auth::check()){
+        return redirect('/data_ukuran_seragam')->with('success', 'Data ukuran baju, celana, dan sepatu berhasil ditambahkan.');
+    }else{
     return redirect('/cari_pendaftaran')->with('success', 'Data ukuran baju, celana, dan sepatu berhasil ditambahkan.');
+    }
     }
     
 }

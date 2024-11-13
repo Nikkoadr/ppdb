@@ -119,7 +119,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option value="42">42</option>
                                 <option value="43">43</option>
                                 <option value="44">44</option>
-                                <option value="45">45</option>
                             </select>
                         </div>
                     </div>

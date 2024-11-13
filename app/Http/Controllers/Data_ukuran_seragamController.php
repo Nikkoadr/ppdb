@@ -28,12 +28,12 @@ public function index()
         ->leftJoin('ukuran_seragam_siswa_baru', 'pendaftaran.id', '=', 'ukuran_seragam_siswa_baru.id_pendaftaran')
         ->select('pendaftaran.nama', 'pendaftaran.no_pendaftaran', 'ukuran_seragam_siswa_baru.*')
         ->get();
-
     return view('admin.data_ukuran_seragam.view_data_ukuran_seragam', compact("data_ukuran_seragam"));
 }
 
-public function form_tambah_ukuran_seragam(){
-    return view('admin.data_ukuran_seragam.form_tambah_ukuran_seragam_admin');
+public function form_tambah_ukuran_seragam($code){
+            $data = DB::table('pendaftaran')->where('no_pendaftaran', $code)->first();
+    return view('admin.data_ukuran_seragam.form_tambah_ukuran_seragam_admin', compact('data'));
 }
 
 public function proses_tambah_ukuran_seragam(Request $request){
