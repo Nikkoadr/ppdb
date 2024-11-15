@@ -81,7 +81,7 @@
                     </div>
                     <img src="{{ asset('assets/img/ukuran/ukuran_sepatu.webp') }}" alt="">
                     <div class="form-group row">
-                        <label for="ukuran_sepatu" class="col-sm-2 col-form-label">Ukuran Celana : </label>
+                        <label for="ukuran_sepatu" class="col-sm-2 col-form-label">Ukuran Sepatu : </label>
                         <div class="col-sm-10">
                             <select name="ukuran_sepatu" id="ukuran_sepatu" class="form-control">
                                 <option value="">Pilih Ukuran</option>
