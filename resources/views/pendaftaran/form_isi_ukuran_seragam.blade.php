@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <input type="text" class="form-control" id="asal_sekolah" name="asal_sekolah" value="{{ $pendaftaran->nama_asal_sekolah }}" readonly>
                         </div>
                     </div>
-                    <img src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" alt="">
+                    <img width="1000" src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" alt="">
                     <div class="form-group row">
                         <label for="ukuran_baju" class="col-sm-2 col-form-label">Ukuran baju : </label>
                         <div class="col-sm-10">
@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </select>
                         </div>
                     </div>
-                    <img src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" alt="">
+                    <img width="1000" src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" alt="">
                     <div class="form-group row">
                         <label for="ukuran_celana" class="col-sm-2 col-form-label">Ukuran Celana : </label>
                         <div class="col-sm-10">
