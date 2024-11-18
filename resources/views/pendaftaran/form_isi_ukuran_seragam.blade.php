@@ -76,11 +76,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-10">
                             <select name="ukuran_baju" id="ukuran_baju" class="form-control">
                                 <option value="">Pilih Ukuran</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>    
-                                <option value="L">L</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>    
                                 <option value="XL">XL</option>
                                 <option value="XXL">XXL</option>
+                                <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
                         </div>
                     </div>
@@ -90,18 +90,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-10">
                             <select name="ukuran_celana" id="ukuran_celana" class="form-control">
                                 <option value="">Pilih Ukuran</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>    
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                                <option value="32">32</option>
-                                <option value="33">33</option>
-                                <option value="34">34</option>
-                                <option value="35">35</option>
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
+                                <option value="">Pilih Ukuran</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                                <option value="XXXL">XXXL (Ukur Ulang)</option>
+                                <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
                         </div>
                     </div>

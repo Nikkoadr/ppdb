@@ -1,6 +1,6 @@
 @extends('layouts.admin.main_admin')
 @section('link')
-<link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+<link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
 @endsection
 @section('title')
     {{'Form Tambah Periode'}}
@@ -44,42 +44,36 @@
                             <input type="text" class="form-control" id="nama" name="nama" value="{{ $data->nama }}" readonly>
                         </div>
                     </div>
-                    <img src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" alt="">
+                    <img width="1000" src="{{ asset('assets/img/ukuran/ukuran_baju.png') }}" alt="">
                     <div class="form-group row">
                         <label for="ukuran_baju" class="col-sm-2 col-form-label">Ukuran baju : </label>
                         <div class="col-sm-10">
                             <select name="ukuran_baju" id="ukuran_baju" class="form-control">
                                 <option value="">Pilih Ukuran</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>    
-                                <option value="L">L</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>    
                                 <option value="XL">XL</option>
                                 <option value="XXL">XXL</option>
+                                <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
                         </div>
                     </div>
-                    <img src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" alt="">
+                    <img width="1000" src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" alt="">
                     <div class="form-group row">
                         <label for="ukuran_celana" class="col-sm-2 col-form-label">Ukuran Celana : </label>
                         <div class="col-sm-10">
                             <select name="ukuran_celana" id="ukuran_celana" class="form-control">
                                 <option value="">Pilih Ukuran</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>    
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                                <option value="32">32</option>
-                                <option value="33">33</option>
-                                <option value="34">34</option>
-                                <option value="35">35</option>
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                                <option value="XXXL">XXXL (Ukur Ulang)</option>
+                                <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
                         </div>
                     </div>
-                    <img src="{{ asset('assets/img/ukuran/ukuran_sepatu.webp') }}" alt="">
+                    <img width="700" src="{{ asset('assets/img/ukuran/ukuran_sepatu.webp') }}" alt="">
                     <div class="form-group row">
                         <label for="ukuran_sepatu" class="col-sm-2 col-form-label">Ukuran Sepatu : </label>
                         <div class="col-sm-10">
@@ -121,7 +115,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('assets/plugins/adminlte.min.js') }}"></script>
+<script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
 <script src="{{asset('assets/plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
 <script>
     @if (session()->has('success'))
