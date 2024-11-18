@@ -35,6 +35,7 @@
         <div class="card">
             <div class="card-header">
             <h3 class="card-title">Data Ukuran Seragam</h3>
+            <a href="/data_ukuran_seragam/download" class="btn btn-info float-right m-1"><i class="fa-solid fa-download"></i> Download</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

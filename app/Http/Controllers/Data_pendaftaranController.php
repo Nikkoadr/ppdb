@@ -6,6 +6,8 @@ use App\Models\Pendaftaran;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Exports\PendaftaranExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Data_pendaftaranController extends Controller
 {
@@ -239,5 +241,10 @@ class Data_pendaftaranController extends Controller
         $pendaftaran = Pendaftaran::find($id);
         $pendaftaran->delete();
         return redirect('/data_pendaftaran')->with('success', 'Data pendaftaran berhasil dihapus.');
+    }
+
+    public function download(){
+        $nama_file = 'data_pendaftaran-' . date('Y-m-d') . '.xlsx';
+        return Excel::download(new PendaftaranExport, $nama_file);
     }
 }

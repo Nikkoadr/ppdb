@@ -35,7 +35,8 @@
         <div class="card">
             <div class="card-header">
             <h3 class="card-title">Data Peserta Didik Baru</h3>
-            <a href="/data_pendaftaran/tambah" class="btn btn-primary float-right"><i class="fa-solid fa-user-plus"></i> Tambah Baru</a>
+            <a href="/data_pendaftaran/tambah" class="btn btn-primary float-right m-1"><i class="fa-solid fa-user-plus"></i> Tambah Baru</a>
+            <a href="/data_pendaftaran/download" class="btn btn-info float-right m-1"><i class="fa-solid fa-download"></i> Download</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
