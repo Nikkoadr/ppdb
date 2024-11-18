@@ -29,6 +29,7 @@ class Data_asal_sekolahController extends Controller
         ->leftJoin('jenis_asal_sekolah', 'asal_sekolah.id_jenis_asal_sekolah', '=', 'jenis_asal_sekolah.id')
         ->leftJoin('status_asal_sekolah', 'asal_sekolah.id_status_asal_sekolah', '=', 'status_asal_sekolah.id')
         ->select('asal_sekolah.*', 'jenis_asal_sekolah.nama_jenis_asal_sekolah', 'status_asal_sekolah.nama_status_asal_sekolah')
+        ->orderBy('created_at', 'desc')
         ->get();
         return view('admin.data_asal_sekolah.view_data_asal_sekolah', compact('data_asal_sekolah'));
     }
