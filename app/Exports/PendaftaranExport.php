@@ -25,37 +25,36 @@ class PendaftaranExport implements FromCollection, WithHeadings, WithMapping, Wi
             ->join('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
             ->join('status_orang_tua', 'pendaftaran.id_status_orang_tua', '=', 'status_orang_tua.id')
             ->select(
-                'status_siswa.nama_status_siswa',
-                'pendaftaran.no_pendaftaran',
-                'periode.tahun_ajaran',
-                'periode.periode_aktif',
-                'pendaftaran.nisn',
-                DB::raw("COALESCE(pendaftaran.no_kk, 'Tidak Ada') AS no_kk"),
-                DB::raw("COALESCE(pendaftaran.no_nik, 'Tidak Ada') AS no_nik"),
-                DB::raw("COALESCE(pendaftaran.nama, 'Tidak Ada') AS nama"),
-                'jenis_kelamin.nama_jenis_kelamin',
-                DB::raw("COALESCE(pendaftaran.tempat_lahir, 'Tidak Ada') AS tempat_lahir"),
-                'pendaftaran.tanggal_lahir',
+                'status_siswa.nama_status_siswa', 
+                'pendaftaran.no_pendaftaran', 
+                'periode.tahun_ajaran', 
+                'periode.periode_aktif', 
+                'pendaftaran.nisn', 
+                'pendaftaran.no_kk', 
+                'pendaftaran.no_nik', 
+                'pendaftaran.nama', 
+                'jenis_kelamin.nama_jenis_kelamin', 
+                'pendaftaran.tempat_lahir', 
+                'pendaftaran.tanggal_lahir', 
                 'status_orang_tua.nama_status_orang_tua',
-                DB::raw("COALESCE(pendaftaran.nama_ayah, 'Tidak Ada') AS nama_ayah"),
-                DB::raw("COALESCE(pendaftaran.pekerjaan_ayah, 'Tidak Ada') AS pekerjaan_ayah"),
-                DB::raw("COALESCE(pendaftaran.nama_ibu, 'Tidak Ada') AS nama_ibu"),
-                DB::raw("COALESCE(pendaftaran.pekerjaan_ibu, 'Tidak Ada') AS pekerjaan_ibu"),
-                DB::raw("COALESCE(pendaftaran.blok, 'Tidak Ada') AS blok"),
-                DB::raw("COALESCE(pendaftaran.rt, 0) AS rt"),
-                DB::raw("COALESCE(pendaftaran.rw, 0) AS rw"),
-                DB::raw("COALESCE(pendaftaran.desa, 'Tidak Ada') AS desa"),
-                DB::raw("COALESCE(pendaftaran.kecamatan, 'Tidak Ada') AS kecamatan"),
-                DB::raw("COALESCE(pendaftaran.kabupaten, 'Tidak Ada') AS kabupaten"),
-                DB::raw("COALESCE(pendaftaran.no_siswa, 'Tidak Ada') AS no_siswa"),
-                DB::raw("COALESCE(pendaftaran.no_wali_siswa, 'Tidak Ada') AS no_wali_siswa"),
-                DB::raw("COALESCE(asal_sekolah.nama_asal_sekolah, 'Tidak Ada') AS nama_asal_sekolah"),
-                DB::raw("COALESCE(konsentrasi_keahlian.nama_konsentrasi_keahlian, 'Tidak Ada') AS nama_konsentrasi_keahlian"),
-                DB::raw("COALESCE(pendaftaran.referensi, 'Tidak Ada') AS referensi")
+                'pendaftaran.nama_ayah', 
+                'pendaftaran.pekerjaan_ayah', 
+                'pendaftaran.nama_ibu', 
+                'pendaftaran.pekerjaan_ibu', 
+                'pendaftaran.blok', 
+                'pendaftaran.rt', 
+                'pendaftaran.rw', 
+                'pendaftaran.desa', 
+                'pendaftaran.kecamatan', 
+                'pendaftaran.kabupaten', 
+                'pendaftaran.no_siswa', 
+                'pendaftaran.no_wali_siswa',
+                'asal_sekolah.nama_asal_sekolah', 
+                'konsentrasi_keahlian.nama_konsentrasi_keahlian', 
+                'pendaftaran.referensi', 
             )
             ->get();
     }
-
     public function headings(): array
     {
         return [
