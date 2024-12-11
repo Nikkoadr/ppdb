@@ -190,6 +190,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     </div>
                         <h3><b>Data Orang Tua :</b></h3>
+                        <div class="form-group row">
+                            <label for="id_status_orang_tua" class="col-md-3 col-form-label text-md-right">Status Orang Tua :</label>
+                            <div class="col-md-9">
+                                <select name="id_status_orang_tua" id="status_orang_tua" class="form-control @error('id_status_orang_tua') is-invalid @enderror">
+                                @foreach ($status_orang_tua as $status)
+                                    <option value="{{ $status->id }}" {{ old('id_status_orang_tua') == $status->id ? 'selected' : '' }}>{{ $status->nama_status_orang_tua }}</option>
+                                @endforeach
+                                </select>
+                                @error('id_status_orang_tua')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row mb-3">
                             <label for="nama_ayah" class="col-md-3 col-form-label text-md-right">Nama Ayah :</label>
                             <div class="col-md-9">
@@ -228,22 +243,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="col-md-9">
                                 <input oninput="this.value = this.value.toUpperCase()"  id="pekerjaan_ibu" type="text" class="form-control @error('pekerjaan_ibu') is-invalid @enderror" name="pekerjaan_ibu" value="{{ old('pekerjaan_ibu') }}" placeholder="Pekerjaan Ibu">
                                 @error('pekerjaan_ibu')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="id_status_orang_tua" class="col-md-3 col-form-label text-md-right">Status Orang Tua :</label>
-                            <div class="col-md-9">
-                                <select name="id_status_orang_tua" id="status_orang_tua" class="form-control @error('id_status_orang_tua') is-invalid @enderror">
-                                <option value="">Pilih Status Orang Tua</option>
-                                @foreach ($status_orang_tua as $status)
-                                    <option value="{{ $status->id }}" {{ old('id_status_orang_tua') == $status->id ? 'selected' : '' }}>{{ $status->nama_status_orang_tua }}</option>
-                                @endforeach
-                                </select>
-                                @error('id_status_orang_tua')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
