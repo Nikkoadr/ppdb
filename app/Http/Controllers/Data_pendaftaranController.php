@@ -87,7 +87,7 @@ class Data_pendaftaranController extends Controller
             'id_status_orang_tua' => 'nullable|integer|exists:status_orang_tua,id',
             'no_siswa' => 'required|string|max:20',
             'no_wali_siswa' => 'nullable|string|max:20',
-            'blok' => 'nullable|string|max:20',
+            'blok' => 'nullable|string|max:100',
             'rt' => 'nullable|numeric',
             'rw' => 'nullable|numeric',
             'desa' => 'nullable|string|max:100',
