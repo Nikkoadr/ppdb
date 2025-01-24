@@ -240,7 +240,6 @@
                             <label for="id_status_orang_tua" class="col-md-3 col-form-label text-md-right">Status Orang Tua :</label>
                             <div class="col-md-9">
                                 <select name="id_status_orang_tua" id="status_orang_tua" class="form-control @error('id_status_orang_tua') is-invalid @enderror">
-                                <option value="">Pilih Status Orang Tua</option>
                                 @foreach ($status_orang_tua as $row)
                                     <option value="{{ $row->id }}" {{ $pendaftaran->id_status_orang_tua == $row->id ? 'selected' : '' }}>{{ $row->nama_status_orang_tua }}</option>
                                 @endforeach
