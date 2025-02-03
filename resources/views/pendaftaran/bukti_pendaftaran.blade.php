@@ -135,7 +135,7 @@
 <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
 <script>
 $(document).ready(function() {
-    const whatsappLink = "https://chat.whatsapp.com/EpdbrzKc9akE70vmQft9oj";
+    const whatsappLink = "https://chat.whatsapp.com/JVnWE8SKkfr2v1BDfVuCAD";
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(whatsappLink)}`;
     Swal.fire({
         title: "Pendaftaran Berhasil!",
