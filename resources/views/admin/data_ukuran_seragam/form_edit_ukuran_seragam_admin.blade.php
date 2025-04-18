@@ -50,11 +50,11 @@
                         <div class="col-md-10">
                             <select class="form-control" name="ukuran_baju" id="ukuran_baju" required>
                                 <option value="{{ $data_ukuran_seragam->ukuran_baju }}" selected>{{ $data_ukuran_seragam->ukuran_baju }}</option>
-                                <option value="S">S</option>
                                 <option value="M">M</option>
                                 <option value="L">L</option>
                                 <option value="XL">XL</option>
                                 <option value="XXL">XXL</option>
+                                <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
                         </div>
                     </div>
@@ -63,18 +63,12 @@
                         <div class="col-md-10">
                             <select class="form-control" name="ukuran_celana" id="ukuran_celana" required>
                                 <option value="{{ $data_ukuran_seragam->ukuran_celana }}" selected>{{ $data_ukuran_seragam->ukuran_celana }}</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>    
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                                <option value="32">32</option>
-                                <option value="33">33</option>
-                                <option value="34">34</option>
-                                <option value="35">35</option>
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                                <option value="XXXL">XXXL (Ukur Ulang)</option>
+                                <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
                         </div>
                     </div>
