@@ -18,15 +18,17 @@ class Data_ukuran_seragamExport implements FromCollection, WithHeadings, WithMap
     public function collection()
     {
         return DB::table('ukuran_seragam_siswa_baru')
-            ->join('pendaftaran', 'ukuran_seragam_siswa_baru.id_pendaftaran', '=', 'pendaftaran.id')
-            ->join('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
-            ->join('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id') // Join jenis kelamin
+            ->leftJoin('pendaftaran', 'ukuran_seragam_siswa_baru.id_pendaftaran', '=', 'pendaftaran.id')
+            ->leftJoin('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
+            ->leftJoin('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id')
+            ->leftJoin('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
             ->select(
                 'ukuran_seragam_siswa_baru.*',
                 'pendaftaran.nama',
                 'pendaftaran.no_pendaftaran',
                 'konsentrasi_keahlian.nama_konsentrasi_keahlian',
-                'jenis_kelamin.nama_jenis_kelamin' // Ambil nama jenis kelamin
+                'jenis_kelamin.nama_jenis_kelamin',
+                'asal_sekolah.nama_asal_sekolah'
             )
             ->get();
     }
@@ -37,6 +39,7 @@ class Data_ukuran_seragamExport implements FromCollection, WithHeadings, WithMap
             'No. Pendaftaran',
             'Nama',
             'Jenis Kelamin',
+            'Asal Sekolah',
             'Konsentrasi Keahlian',
             'Ukuran Baju',
             'Ukuran Celana',
@@ -49,7 +52,8 @@ class Data_ukuran_seragamExport implements FromCollection, WithHeadings, WithMap
         return [
             $row->no_pendaftaran,
             $row->nama,
-            $row->nama_jenis_kelamin, // Tambah di sini
+            $row->nama_jenis_kelamin,
+            $row->nama_asal_sekolah,
             $row->nama_konsentrasi_keahlian,
             $row->ukuran_baju,
             $row->ukuran_celana,
