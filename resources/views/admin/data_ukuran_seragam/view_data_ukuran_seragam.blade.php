@@ -46,6 +46,7 @@
                 <th>No pendaftaran</th>
                 <th>Nama </th>
                 <th>Jenis Kelaimin </th>
+                <th>Asal Sekolah </th>
                 <th>Kuruan baju</th>
                 <th>Ukuran Celana</th>
                 <th>Ukuran Sepatu</th>
@@ -59,6 +60,7 @@
                         <td>{{ $seragam->no_pendaftaran }}</td>
                         <td>{{ $seragam->nama }}</td>
                         <td>{{ $seragam->nama_jenis_kelamin }}</td>
+                        <td>{{ $seragam->nama_asal_sekolah }}</td>
                         <td>{{ $seragam->ukuran_baju }}</td>
                         <td>{{ $seragam->ukuran_celana }}</td>
                         <td>{{ $seragam->ukuran_sepatu }}</td>

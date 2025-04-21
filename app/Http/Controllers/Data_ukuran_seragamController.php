@@ -29,16 +29,19 @@ class Data_ukuran_seragamController extends Controller
         $data_ukuran_seragam = DB::table('pendaftaran')
             ->leftJoin('ukuran_seragam_siswa_baru', 'pendaftaran.id', '=', 'ukuran_seragam_siswa_baru.id_pendaftaran')
             ->leftJoin('jenis_kelamin', 'pendaftaran.id_jenis_kelamin', '=', 'jenis_kelamin.id')
+            ->leftJoin('asal_sekolah', 'pendaftaran.id_asal_sekolah', '=', 'asal_sekolah.id')
             ->select(
                 'pendaftaran.nama',
                 'pendaftaran.no_pendaftaran',
                 'jenis_kelamin.nama_jenis_kelamin',
+                'asal_sekolah.nama_asal_sekolah',
                 'ukuran_seragam_siswa_baru.*'
             )
             ->get();
 
         return view('admin.data_ukuran_seragam.view_data_ukuran_seragam', compact("data_ukuran_seragam"));
     }
+
 
 
     public function form_tambah_ukuran_seragam($code)
