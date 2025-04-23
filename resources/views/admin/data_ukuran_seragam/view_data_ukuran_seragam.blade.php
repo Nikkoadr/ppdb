@@ -48,7 +48,8 @@
                 <th>Jenis Kelaimin </th>
                 <th>Asal Sekolah </th>
                 <th>Kuruan baju</th>
-                <th>Ukuran Celana</th>
+                <th>Ukuran Panjang Celana</th>
+                <th>Ukuran Lingkar Pinggang Celana</th>
                 <th>Ukuran Sepatu</th>
                 <th data-orderable="false">Menu</th>
                 </tr>
@@ -62,7 +63,9 @@
                         <td>{{ $seragam->nama_jenis_kelamin }}</td>
                         <td>{{ $seragam->nama_asal_sekolah }}</td>
                         <td>{{ $seragam->ukuran_baju }}</td>
-                        <td>{{ $seragam->ukuran_celana }}</td>
+                        {{-- <td>{{ $seragam->ukuran_celana }}</td> --}}
+                        <td>{{ $seragam->ukuran_panjang_celana }}</td>
+                        <td>{{ $seragam->ukuran_lingkar_pinggang_celana }}</td>
                         <td>{{ $seragam->ukuran_sepatu }}</td>
                         @if($seragam->ukuran_baju != null || $seragam->ukuran_celana != null || $seragam->ukuran_sepatu != null)
                         <td>

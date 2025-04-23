@@ -64,12 +64,16 @@ class Data_ukuran_seragamController extends Controller
     {
         $request->validate([
             'ukuran_baju' => 'required',
-            'ukuran_celana' => 'required',
+            // 'ukuran_celana' => 'required',
+            'ukuran_panjang_celana' => 'required',
+            'ukuran_lingkar_pinggang_celana' => 'required',
             'ukuran_sepatu' => 'required'
         ]);
         DB::table('ukuran_seragam_siswa_baru')->where('id', $id)->update([
             'ukuran_baju' => $request->ukuran_baju,
-            'ukuran_celana' => $request->ukuran_celana,
+            // 'ukuran_celana' => $request->ukuran_celana,
+            'ukuran_panjang_celana' => $request->ukuran_panjang_celana,
+            'ukuran_lingkar_pinggang_celana' => $request->ukuran_lingkar_pinggang_celana,
             'ukuran_sepatu' => $request->ukuran_sepatu
         ]);
         return redirect('/data_ukuran_seragam')->with('success', 'Data ukuran baju, celana, dan sepatu berhasil diupdate.');
