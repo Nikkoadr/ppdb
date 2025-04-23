@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
                     <img width="1000" src="{{ asset('assets/img/ukuran/ukuran_celana.png') }}" alt="">
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label for="ukuran_celana" class="col-sm-2 col-form-label">Ukuran Celana : </label>
                         <div class="col-sm-10">
                             <select name="ukuran_celana" id="ukuran_celana" class="form-control">
@@ -98,6 +98,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option value="XXXL">XXXL (Ukur Ulang)</option>
                                 <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
+                        </div>
+                    </div> --}}
+                    <div class="form-group row">
+                        <label for="ukuran_panjang_celana" class="col-sm-2 col-form-label">Ukuran Celana Panjang: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ukuran_panjang_celana" name="ukuran_panjang_celana" placeholder="Ukuran Panjang Celana" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ukuran_lingkar_pinggang_celana" class="col-sm-2 col-form-label">Ukuran Lingkar Pinggang Celana: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ukuran_lingkar_pinggang_celana" name="ukuran_lingkar_pinggang_celana" placeholder="Ukuran Lingkar Pinggang Celana" required>
                         </div>
                     </div>
                     <img src="{{ asset('assets/img/ukuran/ukuran_sepatu.webp') }}" alt="">

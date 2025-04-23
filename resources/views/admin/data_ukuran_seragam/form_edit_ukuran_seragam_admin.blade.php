@@ -58,7 +58,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label for="ukuran_celana" class="col-md-2 col-form-label text-md-right">Ukuran Celana :</label>
                         <div class="col-md-10">
                             <select class="form-control" name="ukuran_celana" id="ukuran_celana" required>
@@ -70,6 +70,18 @@
                                 <option value="XXXL">XXXL (Ukur Ulang)</option>
                                 <option value="JUMBO">JUMBO (Ukur Ulang)</option>
                             </select>
+                        </div>
+                    </div> --}}
+                    <div class="form-group row">
+                        <label for="ukuran_panjang_celana" class="col-md-2 col-form-label text-md-right">Ukuran Celana Panjang:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="ukuran_panjang_celana" name="ukuran_panjang_celana" placeholder="Ukuran Panjang Celana" value="{{ $data_ukuran_seragam->ukuran_panjang_celana }}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ukuran_lingkar_pinggang_celana" class="col-md-2 col-form-label text-md-right">Ukuran Celana Pendek:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="ukuran_lingkar_pinggang_celana" name="ukuran_lingkar_pinggang_celana" placeholder="Ukuran Lingkar Pinggang Celana" value="{{ $data_ukuran_seragam->ukuran_lingkar_pinggang_celana }}" required>
                         </div>
                     </div>
                     <div class="form-group row">
