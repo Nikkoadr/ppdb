@@ -42,7 +42,9 @@ class Data_ukuran_seragamExport implements FromCollection, WithHeadings, WithMap
             'Asal Sekolah',
             'Konsentrasi Keahlian',
             'Ukuran Baju',
-            'Ukuran Celana',
+            // 'Ukuran Celana',
+            'Ukuran Panjang Celana',
+            'Ukuran Lingkar Pinggang Celana',
             'Ukuran Sepatu',
         ];
     }
@@ -56,7 +58,9 @@ class Data_ukuran_seragamExport implements FromCollection, WithHeadings, WithMap
             $row->nama_asal_sekolah,
             $row->nama_konsentrasi_keahlian,
             $row->ukuran_baju,
-            $row->ukuran_celana,
+            // $row->ukuran_celana,
+            $row->ukuran_panjang_celana,
+            $row->ukuran_lingkar_pinggang_celana,
             $row->ukuran_sepatu,
         ];
     }
