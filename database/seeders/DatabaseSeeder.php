@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             seed_status_siswa::class,
             seed_konsentrasi_keahlian::class,
             seed_jenis_asal_sekolah::class,
-            seed_status_asal_sekolah::class
+            seed_status_asal_sekolah::class,
+            seed_soal::class,
         ]);
     }
 }
