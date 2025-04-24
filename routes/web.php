@@ -10,6 +10,8 @@ use App\Http\Controllers\Data_konsentrasi_keahlianController;
 use App\Http\Controllers\Data_asal_sekolahController;
 use App\Http\Controllers\Data_ukuran_seragamController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\TesMinatBakatController;
+use App\Models\TesMinatBakat;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,8 @@ Route::get('/', function () {
 });
 
 Auth::routes([
-    'register' => false]);
+    'register' => false
+]);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -79,3 +82,5 @@ Route::get('/databases/form_tambah_ukuran_seragam/{code}', [Data_ukuran_seragamC
 Route::get('/databases/edit_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'form_edit_ukuran_seragam']);
 Route::put('/databases/update_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'update_ukuran_seragam']);
 Route::get('/databases/hapus_ukuran_seragam/{id}', [Data_ukuran_seragamController::class, 'hapus_ukuran_seragam']);
+
+Route::get('/tes_minat_bakat', [TesMinatBakatController::class, 'index']);

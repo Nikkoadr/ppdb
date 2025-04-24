@@ -40,8 +40,9 @@
                                 <h1 class="display-3 text-white">SMK Muhammadiyah Kandanghaur</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Bergerak Maju Menjadi Yang Terdepan</p>
                                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                                            <a href="/cari_pendaftaran" class="btn btn-primary py-md-3 px-md-5 me-3">Sudah Daftar</a>
-                                                <a href="/form_pendaftaran" class="btn btn-light py-md-3 px-md-5">Daftar Baru</a>
+                                        <a href="/cari_pendaftaran" class="btn btn-primary btn-custom py-md-3 px-md-5">Sudah Daftar</a>
+                                        <a href="/form_pendaftaran" class="btn btn-light btn-custom py-md-3 px-md-5">Daftar Baru</a>
+                                        <a href="/tes_minat_bakat" class="btn btn-success btn-custom py-md-3 px-md-5">Tes Minat Bakat</a>
                                     </div>
                             </div>
                         </div>
