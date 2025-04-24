@@ -24,22 +24,25 @@ class Data_asal_sekolahController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index(){
+    public function index()
+    {
         $data_asal_sekolah = DB::table('asal_sekolah')
-        ->leftJoin('jenis_asal_sekolah', 'asal_sekolah.id_jenis_asal_sekolah', '=', 'jenis_asal_sekolah.id')
-        ->leftJoin('status_asal_sekolah', 'asal_sekolah.id_status_asal_sekolah', '=', 'status_asal_sekolah.id')
-        ->select('asal_sekolah.*', 'jenis_asal_sekolah.nama_jenis_asal_sekolah', 'status_asal_sekolah.nama_status_asal_sekolah')
-        ->orderBy('created_at', 'desc')
-        ->get();
+            ->leftJoin('jenis_asal_sekolah', 'asal_sekolah.id_jenis_asal_sekolah', '=', 'jenis_asal_sekolah.id')
+            ->leftJoin('status_asal_sekolah', 'asal_sekolah.id_status_asal_sekolah', '=', 'status_asal_sekolah.id')
+            ->select('asal_sekolah.*', 'jenis_asal_sekolah.nama_jenis_asal_sekolah', 'status_asal_sekolah.nama_status_asal_sekolah')
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('admin.data_asal_sekolah.view_data_asal_sekolah', compact('data_asal_sekolah'));
     }
-    public function form_tambah_asal_sekolah(){
+    public function form_tambah_asal_sekolah()
+    {
         $jenis_asal_sekolah = DB::table('jenis_asal_sekolah')->get();
         $status_asal_sekolah = DB::table('status_asal_sekolah')->get();
         return view('admin.data_asal_sekolah.form_tambah_asal_sekolah_admin', compact('jenis_asal_sekolah', 'status_asal_sekolah'));
     }
 
-    public function proses_tambah_asal_sekolah(Request $request){
+    public function proses_tambah_asal_sekolah(Request $request)
+    {
         $request->validate([
             'id_jenis_asal_sekolah' => 'required',
             'id_status_asal_sekolah' => 'required',
@@ -57,14 +60,16 @@ class Data_asal_sekolahController extends Controller
         return redirect('data_asal_sekolah')->with(['success' => 'Data asal sekolah berhasil ditambahkan !']);
     }
 
-    public function form_edit_asal_sekolah($id){
+    public function form_edit_asal_sekolah($id)
+    {
         $data_asal_sekolah = DB::table('asal_sekolah')->where('id', $id)->first();
         $jenis_asal_sekolah = DB::table('jenis_asal_sekolah')->get();
         $status_asal_sekolah = DB::table('status_asal_sekolah')->get();
         return view('admin.data_asal_sekolah.form_edit_asal_sekolah_admin', compact('data_asal_sekolah', 'jenis_asal_sekolah', 'status_asal_sekolah'));
     }
 
-    public function update_asal_sekolah(Request $request, $id){
+    public function update_asal_sekolah(Request $request, $id)
+    {
         $request->validate([
             'id_jenis_asal_sekolah' => 'required',
             'id_status_asal_sekolah' => 'required',
@@ -82,8 +87,18 @@ class Data_asal_sekolahController extends Controller
         return redirect('data_asal_sekolah')->with(['success' => 'Data asal sekolah berhasil diupdate !']);
     }
 
-    public function hapus_asal_sekolah($id){
+    public function hapus_asal_sekolah($id)
+    {
+        // Cek apakah asal_sekolah dipakai oleh siswa
+        $siswaCount = DB::table('pendaftaran')->where('id_asal_sekolah', $id)->count();
+
+        if ($siswaCount > 0) {
+            return redirect()->back()->with('error', 'Tidak bisa menghapus: Masih ada siswa yang terdaftar di sekolah ini.');
+        }
+
+        // Jika tidak dipakai, hapus
         DB::table('asal_sekolah')->where('id', $id)->delete();
-        return redirect('data_asal_sekolah')->with(['success' => 'Data asal sekolah berhasil dihapus !']);
+
+        return redirect()->back()->with('success', 'Data asal sekolah berhasil dihapus!');
     }
 }

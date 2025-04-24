@@ -118,17 +118,15 @@ $("#tabel_pendaftaran").DataTable({
 });
 </script>
 <script>
-    @if (session()->has('success'))
-    var Toast = Swal.mixin({
+    @if (session()->has('success') || session()->has('error'))
+    Swal.fire({
         toast: true,
+        icon: '{{ session()->has('success') ? 'success' : 'error' }}',
+        title: '{{ session('success') ?? session('error') }}',
         position: 'top-end',
         showConfirmButton: false,
         timer: 5000
     });
-        Toast.fire({
-        icon: 'success',
-        title: '{{ session('success') }}'
-        })
     @endif
 </script>
 <script>
