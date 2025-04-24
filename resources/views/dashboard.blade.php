@@ -35,7 +35,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{ $las }}</h3>
+                <h3>{{ $las }} / {{ $las_daftar_ulang }}</h3>
 
                 <p>LAS</p>
               </div>
@@ -50,7 +50,7 @@
             <!-- small box -->
             <div style="background: orange" class="small-box">
               <div class="inner">
-                <h3>{{ $tei }}</sup></h3>
+                <h3>{{ $tei }} / {{ $tei_daftar_ulang }}</sup></h3>
 
                 <p>TEI</p>
               </div>
@@ -63,7 +63,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-primary">
               <div class="inner">
-                <h3>{{ $tkr }}</h3>
+                <h3>{{ $tkr }} / {{ $tkr_daftar_ulang }}</h3>
                 <p>TKR</p>
               </div>
               <div class="icon">
@@ -75,7 +75,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{ $tkj }}</h3>
+                <h3>{{ $tkj }} / {{ $tkj_daftar_ulang }}</h3>
                 <p>TKJ</p>
               </div>
               <div class="icon">
@@ -87,7 +87,7 @@
           <div class="col-lg-3 col-6">
             <div style="background-color: tomato" class="small-box">
               <div class="inner">
-                <h3>{{ $tsm }}</h3>
+                <h3>{{ $tsm }} / {{ $tsm_daftar_ulang }}</h3>
                 <p>TSM</p>
               </div>
               <div class="icon">
@@ -99,7 +99,7 @@
           <div class="col-lg-3 col-6">
             <div style="background-color: aqua" class="small-box">
               <div class="inner">
-                <h3>{{ $fkk }}</h3>
+                <h3>{{ $fkk }} / {{ $fkk_daftar_ulang }}</h3>
                 <p>FKK</p>
               </div>
               <div class="icon">
