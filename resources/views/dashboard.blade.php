@@ -138,8 +138,8 @@
         <thead>
           <tr>
             <th>Asal Sekolah</th>
-            <th>Tidak Terverifikasi</th>
-            <th>Sudah Terverifikasi</th>
+            <th>Belum Ukur Seragam</th>
+            <th>Sudah Ukur Seragam</th>
             <th>Sudah Daftar Ulang</th>
             <th>Total</th>
           </tr>

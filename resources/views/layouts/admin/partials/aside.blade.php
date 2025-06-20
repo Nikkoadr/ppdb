@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="dashboard" class="brand-link">
       <img src="{{ asset('assets/img/logo.png') }}" alt="Test" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">PPDB SMK MUH KDH</span>
+      <span class="brand-text font-weight-light">SPMB SMK MUH KDH</span>
     </a>
 
     <!-- Sidebar -->
