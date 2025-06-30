@@ -193,6 +193,17 @@
                     </div>
                         <h3><b>Data Orang Tua :</b></h3>
                         <div class="row mb-3">
+                            <label for="nik_ayah" class="col-md-3 col-form-label text-md-right">NIK Ayah :</label>
+                            <div class="col-md-9">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nik_ayah" type="text" class="form-control @error('nik_ayah') is-invalid @enderror" name="nik_ayah" value="{{ $pendaftaran->nik_ayah }}">
+                                @error('nik_ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
                             <label for="nama_ayah" class="col-md-3 col-form-label text-md-right">Nama Ayah :</label>
                             <div class="col-md-9">
                                 <input oninput="this.value = this.value.toUpperCase()"  id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ $pendaftaran->nama_ayah }}">
@@ -208,6 +219,17 @@
                             <div class="col-md-9">
                                 <input oninput="this.value = this.value.toUpperCase()"  id="pekerjaan_ayah" type="text" class="form-control @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" value="{{ $pendaftaran->pekerjaan_ayah }}">
                                 @error('pekerjaan_ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="nik_ibu" class="col-md-3 col-form-label text-md-right">NIK Ibu :</label>
+                            <div class="col-md-9">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nik_ibu" type="text" class="form-control @error('nik_ibu') is-invalid @enderror" name="nik_ibu" value="{{ $pendaftaran->nik_ibu }}">
+                                @error('nik_ibu')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

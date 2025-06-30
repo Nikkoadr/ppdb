@@ -206,6 +206,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <label for="nik_ayah" class="col-md-3 col-form-label text-md-right">NIK Ayah :</label>
+                            <div class="col-md-9">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nik_ayah" type="text" class="form-control @error('nik_ayah') is-invalid @enderror" name="nik_ayah" value="{{ old('nik_ayah') }}" placeholder="NIK Ayah Kandung">
+                                @error('nik_ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
                             <label for="nama_ayah" class="col-md-3 col-form-label text-md-right">Nama Ayah :</label>
                             <div class="col-md-9">
                                 <input oninput="this.value = this.value.toUpperCase()"  id="nama_ayah" type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Nama Ayah Kandung">
@@ -221,6 +232,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="col-md-9">
                                 <input oninput="this.value = this.value.toUpperCase()"  id="pekerjaan_ayah" type="text" class="form-control @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" value="{{ old('pekerjaan_ayah') }}" placeholder="Pekerjaan Ayah">
                                 @error('pekerjaan_ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="nik_ibu" class="col-md-3 col-form-label text-md-right">NIK Ibu :</label>
+                            <div class="col-md-9">
+                                <input oninput="this.value = this.value.toUpperCase()"  id="nik_ibu" type="text" class="form-control @error('nik_ibu') is-invalid @enderror" name="nik_ibu" value="{{ old('nik_ibu') }}" placeholder="NIK Ibu Kandung">
+                                @error('nik_ibu')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
