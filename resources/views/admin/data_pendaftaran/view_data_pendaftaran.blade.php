@@ -80,8 +80,10 @@
                                     @break
                                 @case(3)
                                     <span class="badge badge-primary">{{ $pendaftar->nama_status_siswa }}</span>
+                                    @break
                                 @case(4)
                                     <span class="badge badge-info">{{ $pendaftar->nama_status_siswa }}</span>
+                                    @break
                             @endswitch
                         </td>
                         <td>
