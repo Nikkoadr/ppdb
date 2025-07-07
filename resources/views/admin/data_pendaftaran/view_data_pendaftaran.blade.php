@@ -76,10 +76,12 @@
                                     <span class="badge badge-danger">{{ $pendaftar->nama_status_siswa }}</span>
                                     @break
                                 @case(2)
-                                    <span class="badge badge-success">{{ $pendaftar->nama_status_siswa }}</span>
+                                    <span class="badge badge-warning">{{ $pendaftar->nama_status_siswa }}</span>
                                     @break
                                 @case(3)
                                     <span class="badge badge-primary">{{ $pendaftar->nama_status_siswa }}</span>
+                                @case(4)
+                                    <span class="badge badge-info">{{ $pendaftar->nama_status_siswa }}</span>
                             @endswitch
                         </td>
                         <td>
