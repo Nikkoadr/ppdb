@@ -13,8 +13,8 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 class PendaftaranExport implements FromCollection, WithHeadings, WithMapping, WithStyles, ShouldAutoSize
 {
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
         return DB::table('pendaftaran')
@@ -25,33 +25,35 @@ class PendaftaranExport implements FromCollection, WithHeadings, WithMapping, Wi
             ->join('konsentrasi_keahlian', 'pendaftaran.id_konsentrasi_keahlian', '=', 'konsentrasi_keahlian.id')
             ->join('status_orang_tua', 'pendaftaran.id_status_orang_tua', '=', 'status_orang_tua.id')
             ->select(
-                'status_siswa.nama_status_siswa', 
-                'pendaftaran.no_pendaftaran', 
-                'periode.tahun_ajaran', 
-                'periode.periode_aktif', 
-                'pendaftaran.nisn', 
-                'pendaftaran.no_kk', 
-                'pendaftaran.no_nik', 
-                'pendaftaran.nama', 
-                'jenis_kelamin.nama_jenis_kelamin', 
-                'pendaftaran.tempat_lahir', 
-                'pendaftaran.tanggal_lahir', 
+                'status_siswa.nama_status_siswa',
+                'pendaftaran.no_pendaftaran',
+                'periode.tahun_ajaran',
+                'periode.periode_aktif',
+                'pendaftaran.nisn',
+                'pendaftaran.no_kk',
+                'pendaftaran.no_nik',
+                'pendaftaran.nama',
+                'jenis_kelamin.nama_jenis_kelamin',
+                'pendaftaran.tempat_lahir',
+                'pendaftaran.tanggal_lahir',
                 'status_orang_tua.nama_status_orang_tua',
-                'pendaftaran.nama_ayah', 
-                'pendaftaran.pekerjaan_ayah', 
-                'pendaftaran.nama_ibu', 
-                'pendaftaran.pekerjaan_ibu', 
-                'pendaftaran.blok', 
-                'pendaftaran.rt', 
-                'pendaftaran.rw', 
-                'pendaftaran.desa', 
-                'pendaftaran.kecamatan', 
-                'pendaftaran.kabupaten', 
-                'pendaftaran.no_siswa', 
+                'pendaftaran.nik_ayah',
+                'pendaftaran.nama_ayah',
+                'pendaftaran.pekerjaan_ayah',
+                'pendaftaran.nik_ibu',
+                'pendaftaran.nama_ibu',
+                'pendaftaran.pekerjaan_ibu',
+                'pendaftaran.blok',
+                'pendaftaran.rt',
+                'pendaftaran.rw',
+                'pendaftaran.desa',
+                'pendaftaran.kecamatan',
+                'pendaftaran.kabupaten',
+                'pendaftaran.no_siswa',
                 'pendaftaran.no_wali_siswa',
-                'asal_sekolah.nama_asal_sekolah', 
-                'konsentrasi_keahlian.nama_konsentrasi_keahlian', 
-                'pendaftaran.referensi', 
+                'asal_sekolah.nama_asal_sekolah',
+                'konsentrasi_keahlian.nama_konsentrasi_keahlian',
+                'pendaftaran.referensi',
             )
             ->get();
     }
